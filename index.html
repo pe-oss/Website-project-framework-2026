@@ -4,21 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- SEO Meta Tags -->
-  <title>Website Project Framework 2026 | Khung Dựng Website Frontend Chuẩn Hóa</title>
-  <meta name="description" content="Khung dựng website Frontend cơ bản chuẩn hóa HTML5, Modern CSS3 và Vanilla JS. Hệ thống hóa kiến thức, quy trình thiết kế và tối ưu SEO cho mọi dự án.">
-  <meta name="keywords" content="website framework, HTML5, CSS3, JavaScript, web design, frontend starter template, responsive web">
+  <!-- SEO & Meta Tags -->
+  <title>Minimalist Web Framework 2026 | Bố Cục Khối Tối Giản & Chuẩn Hóa</title>
+  <meta name="description" content="Framework thiết lập website phong cách Minimalist tối giản, trình bày trực quan bố cục các khối (Nav, Content, Block, Sidebar, Footer).">
+  <meta name="keywords" content="minimalist website, HTML framework, web layout, semantic HTML, modern CSS">
   <meta name="author" content="Antigravity Web Team">
-
-  <!-- Open Graph Meta Tags (Social Media Sharing) -->
-  <meta property="og:title" content="Website Project Framework 2026">
-  <meta property="og:description" content="Khung dựng website chuẩn hóa cho mọi dự án với HTML5, Modern CSS và Vanilla JS.">
-  <meta property="og:type" content="website">
 
   <!-- Google Fonts Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700&display=swap" rel="stylesheet">
 
   <!-- Framework Stylesheets -->
   <link rel="stylesheet" href="css/reset.css">
@@ -31,225 +26,204 @@
 <body>
 
   <!-- ==========================================
-       SITE HEADER / NAVIGATION
+       BLOCK: HEADER & NAV
        ========================================== -->
   <header class="site-header">
-    <div class="container navbar flex-between">
+    <div class="container navbar">
       <a href="#" class="logo">
-        <div class="logo-icon">WF</div>
-        <span>WebFramework<span class="text-gradient">2026</span></span>
+        <span>MINIMAL</span>
+        <span class="logo-badge">FRAMEWORK</span>
       </a>
 
+      <!-- NAV BLOCK -->
       <nav class="nav-menu" id="navMenu">
-        <a href="#features" class="nav-link active">Tính Năng Framework</a>
-        <a href="#concepts" class="nav-link">Kiến Thức Cốt Lõi</a>
-        <a href="#quickstart" class="nav-link">Hướng Dẫn Nhanh</a>
+        <a href="#layout-demo" class="nav-link active">Bố Cục Layout</a>
+        <a href="#content-blocks" class="nav-link">Các Khối Content</a>
+        <a href="#code-demo" class="nav-link">Cấu Trúc HTML</a>
         <a href="README.md" target="_blank" class="nav-link">Tài Liệu README</a>
       </nav>
 
       <div class="nav-actions">
-        <!-- Dark/Light Theme Switcher -->
-        <button class="theme-toggle-btn" id="themeToggle" aria-label="Đổi giao diện sáng/tối">
+        <!-- Theme Toggle -->
+        <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle Theme">
           <span id="themeIcon">🌙</span>
         </button>
 
-        <!-- Mobile Menu Toggle Button -->
-        <button class="menu-toggle" id="menuToggle" aria-label="Mở Menu Điều Hướng">
+        <!-- Mobile Toggle -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
           ☰
         </button>
       </div>
     </div>
   </header>
 
-  <main>
+  <div class="container" style="margin-top: 2rem;">
+
     <!-- ==========================================
-         HERO SECTION
+         BLOCK: HERO / BANNER
          ========================================== -->
-    <section class="section hero">
-      <div class="container">
-        <div class="hero-badge">
-          <span>✨</span> Standard Website Starter Framework
+    <section class="block hero-block">
+      <span class="block-tag">&lt;header&gt; &amp; &lt;section class="hero"&gt;</span>
+      <h1>Thiết Kế Framework Minimalist Tối Giản</h1>
+      <p>
+        Mô hình chuẩn hóa trình bày minh bạch vị trí các **khối cấu trúc HTML**: Thanh điều hướng (Nav), Khối nội dung chính (Content), Khối phụ (Sidebar / Aside), Các ô tính năng (Blocks) và Chân trang (Footer).
+      </p>
+      <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+        <a href="#layout-demo" class="btn btn-primary">Khám Phá Bố Cục</a>
+        <a href="README.md" target="_blank" class="btn btn-outline">Xem README.md</a>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         MAIN LAYOUT SPLIT: CONTENT & SIDEBAR
+         ========================================== -->
+    <main class="layout-split" id="layout-demo">
+
+      <!-- PRIMARY CONTENT COLUMN -->
+      <article class="content-primary">
+
+        <!-- CONTENT BLOCK 1: ARTICLE INTRO -->
+        <div class="block">
+          <span class="block-tag">&lt;main&gt; -&gt; &lt;article class="content-primary"&gt;</span>
+          <h2>Khối Nội Dung Chính (Main Content Block)</h2>
+          <p>
+            Đây là khu vực truyền tải thông điệp cốt lõi của website. Được bao bọc bởi thẻ ngữ nghĩa <code>&lt;main&gt;</code> và phân chia các bài viết bằng <code>&lt;article&gt;</code> hoặc <code>&lt;section&gt;</code>.
+          </p>
+          <p>
+            Phong cách Minimalist chú trọng vào sự thông thoáng của khoảng cách (Spacious Padding), tỷ lệ phông chữ chuẩn xác (Typography Scale) và màu sắc trung tính tịnh tiến.
+          </p>
         </div>
 
-        <h1 class="hero-title">
-          Khung Dựng Website Chuẩn Hóa & <span class="text-gradient">Hệ Thống Kiến Thức Frontend</span>
-        </h1>
+        <!-- CONTENT BLOCK 2: FEATURE GRID BLOCKS -->
+        <div class="block" id="content-blocks">
+          <span class="block-tag">&lt;section class="grid-2"&gt;</span>
+          <h2>Khối Tính Năng Dạng Lưới (Grid Blocks)</h2>
+          <p style="margin-bottom: 1.5rem;">Phân chia nội dung thành các ô thẻ (Blocks) đồng đều nhờ <code>display: grid</code>.</p>
 
-        <p class="hero-subtitle">
-          Bộ khung hoàn chỉnh cho mọi dự án Website cơ bản. Xây dựng bằng **HTML5 Semantic**, **Modern Vanilla CSS** (CSS Variables, Flexbox/Grid, Dark Mode) và **JavaScript Clean Architecture**.
-        </p>
-
-        <div class="hero-cta">
-          <a href="#quickstart" class="btn btn-primary">
-            🚀 Khám Phá Framework
-          </a>
-          <a href="#concepts" class="btn btn-secondary">
-            📖 Nắm Vững Kiến Thức
-          </a>
-        </div>
-
-        <!-- Interactive Visual Code Window -->
-        <div class="code-window">
-          <div class="code-header flex-between">
-            <div style="display: flex; gap: 8px;">
-              <span class="code-dot dot-red"></span>
-              <span class="code-dot dot-yellow"></span>
-              <span class="code-dot dot-green"></span>
+          <div class="grid-2">
+            <div class="block" style="margin-bottom: 0; padding: 1.25rem;">
+              <span class="block-tag" style="font-size: 0.65rem;">BLOCK A: NAV &amp; HEADER</span>
+              <h4>Thanh Điều Hướng Nav</h4>
+              <p style="font-size: 0.875rem; margin-bottom: 0;">Định vị sticky ở đỉnh trang, giúp người dùng dễ dàng di chuyển giữa các phân đoạn nội dung.</p>
             </div>
-            <span style="font-size: 0.8rem; opacity: 0.7;">variables.css & index.html</span>
-            <button class="btn btn-secondary" id="copyCodeBtn" style="padding: 0.25rem 0.75rem; font-size: 0.75rem;">📋 Copy Code</button>
-          </div>
-          <div class="code-body" id="codeSnippetText">
-<span style="color: var(--color-accent); font-weight: bold;">:root</span> {
-  <span style="color: var(--color-text-muted);">/* Design Tokens System 2026 */</span>
-  --gradient-primary: <span style="color: #38bdf8;">linear-gradient(135deg, #6366f1, #06b6d4)</span>;
-  --glass-bg: <span style="color: #38bdf8;">rgba(255, 255, 255, 0.7)</span>;
-  --font-sans: <span style="color: #38bdf8;">'Inter', system-ui, sans-serif</span>;
-}
 
-<span style="color: var(--color-accent); font-weight: bold;">&lt;!-- HTML5 Semantic Structure --&gt;</span>
-&lt;<span style="color: #ec4899;">header</span> <span style="color: #a855f7;">class</span>=<span style="color: #22c55e;">"site-header"</span>&gt;
-  &lt;<span style="color: #ec4899;">nav</span> <span style="color: #a855f7;">class</span>=<span style="color: #22c55e;">"container flex-between"</span>&gt; ... &lt;/<span style="color: #ec4899;">nav</span>&gt;
-&lt;/<span style="color: #ec4899;">header</span>&gt;
+            <div class="block" style="margin-bottom: 0; padding: 1.25rem;">
+              <span class="block-tag" style="font-size: 0.65rem;">BLOCK B: CONTENT &amp; ARTICLE</span>
+              <h4>Khối Nội Dung Content</h4>
+              <p style="font-size: 0.875rem; margin-bottom: 0;">Hiển thị bài viết, sản phẩm hoặc thông tin chi tiết với sự phân cấp tiêu đề H1-H6 rõ ràng.</p>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+
+      </article>
+
+      <!-- SIDEBAR COLUMN -->
+      <aside class="content-sidebar">
+
+        <!-- SIDEBAR BLOCK 1 -->
+        <div class="block">
+          <span class="block-tag">&lt;aside class="content-sidebar"&gt;</span>
+          <h3>Khối Sidebar (Aside)</h3>
+          <p style="font-size: 0.875rem;">
+            Chứa các thông tin phụ bổ trợ cho nội dung chính, danh mục bài viết, tác giả hoặc tiện ích nhanh.
+          </p>
+          <ul style="font-size: 0.875rem; border-top: 1px solid var(--color-border); padding-top: 0.75rem; margin-top: 0.75rem; display: flex; flex-direction: column; gap: 0.5rem;">
+            <li>📌 <strong>Khối Nav:</strong> Định vị điều hướng</li>
+            <li>📝 <strong>Khối Content:</strong> Nội dung trọng tâm</li>
+            <li>📐 <strong>Khối Grid:</strong> Bố cục đa cột</li>
+            <li>🏁 <strong>Khối Footer:</strong> Thông tin bản quyền</li>
+          </ul>
+        </div>
+
+        <!-- SIDEBAR BLOCK 2 -->
+        <div class="block">
+          <span class="block-tag">WIDGET: SYSTEM INFO</span>
+          <h4>Thông Số Framework</h4>
+          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.8;">
+            <div>• Style: Minimalist 2026</div>
+            <div>• Layout: Grid + Flexbox</div>
+            <div>• Theme: Light / Dark Mode</div>
+            <div>• Standard: HTML5 Semantic</div>
+          </div>
+        </div>
+
+      </aside>
+    </main>
 
     <!-- ==========================================
-         FEATURES SECTION
+         BLOCK: CODE ARCHITECTURE DEMO
          ========================================== -->
-    <section id="features" class="section">
-      <div class="container">
-        <div style="text-align: center; margin-bottom: 3rem;">
-          <h2>Ưu Điểm Của Bộ Framework</h2>
-          <p>Thiết kế tinh gọn, hiệu năng cao và dễ dàng tùy biến cho mọi loại dự án.</p>
+    <section class="block" id="code-demo">
+      <span class="block-tag">&lt;section class="code-architecture"&gt;</span>
+      <h2>Sơ Đồ Bố Cục HTML Minimalist</h2>
+      <p>Cấu trúc tổng quan các khối được định nghĩa minh bạch trong <code>index.html</code>:</p>
+
+      <div class="code-box">
+        <div class="code-box-header">
+          <span>HTML Layout Structure</span>
+          <button class="btn btn-outline" id="copyCodeBtn" style="padding: 0.15rem 0.5rem; font-size: 0.7rem;">📋 Copy Sơ Đồ</button>
         </div>
+        <div class="code-box-body" id="codeSnippetText">
+&lt;<span style="color: var(--color-accent);">header</span> class="site-header"&gt;
+  &lt;<span style="color: var(--color-accent);">nav</span> class="navbar"&gt; [1. KHỐI ĐIỀU HƯỚNG NAV] &lt;/<span style="color: var(--color-accent);">nav</span>&gt;
+&lt;/<span style="color: var(--color-accent);">header</span>&gt;
 
-        <div class="grid grid-3">
-          <div class="card">
-            <div class="card-icon">🎨</div>
-            <h3 class="card-title">Modern Design Tokens</h3>
-            <p>Hệ thống biến CSS (Variables) quản lý màu sắc HSL, font chữ, khoảng cách và hiệu ứng tại một nơi duy nhất. Đổi màu giao diện tức thì!</p>
-          </div>
+&lt;<span style="color: var(--color-accent);">main</span> class="layout-split"&gt;
+  &lt;<span style="color: var(--color-accent);">article</span> class="content-primary"&gt;
+    &lt;<span style="color: var(--color-accent);">div</span> class="block"&gt; [2. KHỐI NỘI DUNG CHÍNH CONTENT] &lt;/<span style="color: var(--color-accent);">div</span>&gt;
+    &lt;<span style="color: var(--color-accent);">div</span> class="grid-2"&gt; [3. KHỐI TÍNH NĂNG BLOCK GRID] &lt;/<span style="color: var(--color-accent);">div</span>&gt;
+  &lt;/<span style="color: var(--color-accent);">article</span>&gt;
 
-          <div class="card">
-            <div class="card-icon">🌗</div>
-            <h3 class="card-title">Dark & Light Mode</h3>
-            <p>Hỗ trợ chuyển đổi giao diện Sáng/Tối linh hoạt, tự động nhận diện hệ điều hành và lưu trạng thái người dùng vào LocalStorage.</p>
-          </div>
+  &lt;<span style="color: var(--color-accent);">aside</span> class="content-sidebar"&gt;
+    &lt;<span style="color: var(--color-accent);">div</span> class="block"&gt; [4. KHỐI PHỤ SIDEBAR / ASIDE] &lt;/<span style="color: var(--color-accent);">div</span>&gt;
+  &lt;/<span style="color: var(--color-accent);">aside</span>&gt;
+&lt;/<span style="color: var(--color-accent);">main</span>&gt;
 
-          <div class="card">
-            <div class="card-icon">📐</div>
-            <h3 class="card-title">Responsive & Grid System</h3>
-            <p>Xây dựng theo tư duy Mobile-First kết hợp Flexbox và CSS Grid, đảm bảo website của bạn hiển thị sắc nét trên mọi thiết bị.</p>
-          </div>
+&lt;<span style="color: var(--color-accent);">footer</span> class="site-footer"&gt; [5. KHỐI CHÂN TRANG FOOTER] &lt;/<span style="color: var(--color-accent);">footer</span>&gt;
         </div>
       </div>
     </section>
 
-    <!-- ==========================================
-         CONCEPTS SECTION
-         ========================================== -->
-    <section id="concepts" class="section" style="background: rgba(99, 102, 241, 0.03);">
-      <div class="container">
-        <div style="text-align: center; margin-bottom: 3rem;">
-          <h2>Các Khái Niệm Cần Nắm Rõ</h2>
-          <p>Chi tiết đầy đủ được hệ thống hóa trong tài liệu README.md đi kèm.</p>
-        </div>
-
-        <div class="grid grid-2">
-          <div class="card">
-            <h3>1. CSS Box Model & Positioning</h3>
-            <p>Nắm rõ cách tính toán thể tích phần tử với <code>box-sizing: border-box</code> và điều khiển vị trí chính xác bằng <code>relative</code>, <code>absolute</code>, <code>fixed</code>, <code>sticky</code>.</p>
-          </div>
-
-          <div class="card">
-            <h3>2. HTML5 Semantic & SEO</h3>
-            <p>Sử dụng đúng các thẻ ngữ nghĩa <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code> kết hợp meta tags OpenGraph để tối ưu điểm SEO trên Google Search.</p>
-          </div>
-
-          <div class="card">
-            <h3>3. Modern Visual Aesthetics</h3>
-            <p>Áp dụng hiệu ứng Glassmorphism (làm mờ nền), gradients hiện đại, bo góc đồng bộ và hiệu ứng micro-animations tăng trải nghiệm người dùng.</p>
-          </div>
-
-          <div class="card">
-            <h3>4. Quy Trình Phát Triển Web</h3>
-            <p>Từ ý tưởng Wireframe, thiết kế UI/UX trên Figma, viết mã HTML/CSS/JS cho đến kiểm thử đa trình duyệt và deploy lên hosting.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================
-         QUICKSTART SECTION
-         ========================================== -->
-    <section id="quickstart" class="section">
-      <div class="container">
-        <div style="text-align: center; margin-bottom: 3rem;">
-          <h2>Hướng Dẫn Khởi Tạo Dự Án Mới</h2>
-          <p>Tái sử dụng bộ Framework này chỉ trong 3 bước đơn giản.</p>
-        </div>
-
-        <div class="grid grid-3">
-          <div class="card">
-            <h4 style="color: var(--color-accent); margin-bottom: 0.5rem;">Bước 1</h4>
-            <h3>Copy Thư Mục</h3>
-            <p>Sao chép toàn bộ thư mục framework này và đổi tên thành tên dự án mới của bạn.</p>
-          </div>
-
-          <div class="card">
-            <h4 style="color: var(--color-accent); margin-bottom: 0.5rem;">Bước 2</h4>
-            <h3>Chỉnh `variables.css`</h3>
-            <p>Chỉnh sửa các giá trị màu sắc, phông chữ trong file <code>css/variables.css</code> phù hợp với thương hiệu mới.</p>
-          </div>
-
-          <div class="card">
-            <h4 style="color: var(--color-accent); margin-bottom: 0.5rem;">Bước 3</h4>
-            <h3>Viết Code & Run</h3>
-            <p>Thêm nội dung HTML vào <code>index.html</code>, mở với Live Server và sẵn sàng trình diễn!</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+  </div>
 
   <!-- ==========================================
-       SITE FOOTER
+       BLOCK: FOOTER
        ========================================== -->
   <footer class="site-footer">
     <div class="container">
-      <div class="flex-between" style="flex-wrap: wrap; gap: 2rem;">
+      <span class="block-tag">&lt;footer class="site-footer"&gt;</span>
+      
+      <div class="footer-grid">
         <div>
-          <a href="#" class="logo" style="margin-bottom: 1rem;">
-            <div class="logo-icon">WF</div>
-            <span>WebFramework<span class="text-gradient">2026</span></span>
+          <a href="#" class="logo" style="margin-bottom: 0.75rem;">
+            <span>MINIMAL</span>
+            <span class="logo-badge">2026</span>
           </a>
-          <p style="max-width: 400px;">Bộ khung dự án Website mẫu chuẩn hóa kiến thức Frontend HTML5, Modern CSS & Vanilla JS.</p>
+          <p style="font-size: 0.875rem; max-width: 360px;">
+            Khung dựng Website phong cách Minimalist tối giản. Trình bày rõ ràng cấu trúc các khối Nav, Content, Block, Sidebar và Footer.
+          </p>
         </div>
 
-        <div style="display: flex; gap: 3rem;">
-          <div>
-            <h4 style="margin-bottom: 1rem; font-size: 1rem;">Liên Kết</h4>
-            <ul style="display: flex; flex-direction: column; gap: 0.5rem;">
-              <li><a href="#features" class="nav-link">Tính Năng</a></li>
-              <li><a href="#concepts" class="nav-link">Kiến Thức</a></li>
-              <li><a href="#quickstart" class="nav-link">Hướng Dẫn</a></li>
-            </ul>
-          </div>
+        <div>
+          <h4 style="font-size: 0.875rem; margin-bottom: 0.75rem;">CẤU TRÚC KHỐI</h4>
+          <ul style="font-size: 0.85rem; display: flex; flex-direction: column; gap: 0.4rem;">
+            <li><a href="#layout-demo" class="nav-link">Bố cục Nav &amp; Content</a></li>
+            <li><a href="#content-blocks" class="nav-link">Khối Grid Blocks</a></li>
+            <li><a href="#code-demo" class="nav-link">Sơ đồ HTML</a></li>
+          </ul>
+        </div>
 
-          <div>
-            <h4 style="margin-bottom: 1rem; font-size: 1rem;">Tài Liệu</h4>
-            <ul style="display: flex; flex-direction: column; gap: 0.5rem;">
-              <li><a href="README.md" target="_blank" class="nav-link">File README.md</a></li>
-            </ul>
-          </div>
+        <div>
+          <h4 style="font-size: 0.875rem; margin-bottom: 0.75rem;">TÀI LIỆU</h4>
+          <ul style="font-size: 0.85rem; display: flex; flex-direction: column; gap: 0.4rem;">
+            <li><a href="README.md" target="_blank" class="nav-link">Tài liệu README.md</a></li>
+          </ul>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p>© 2026 Website Project Framework. Phát triển chuẩn hóa cho mọi dự án Website về sau.</p>
+        <span>© 2026 Minimalist Web Framework</span>
+        <span>HTML5 • Modern CSS • Vanilla JS</span>
       </div>
     </div>
   </footer>

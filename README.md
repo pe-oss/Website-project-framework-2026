@@ -170,6 +170,14 @@ Thuộc tính `position` xác định vị trí của phần tử trên trang we
 * **Dark Mode Support:** Sử dụng thuộc tính `data-theme="dark"` trên thẻ `<html>` hoặc `<body>` kết hợp với CSS Variables để chuyển đổi giao diện sáng/tối dễ dàng.
 * **Micro-interactions:** Các hiệu ứng chuyển động nhỏ như nút bấm đổi màu mượt mà khi hover (`transition: all 0.3s ease`), thẻ bài nổi nhẹ khi di chuột (`transform: translateY(-4px)`).
 
+### 4.7 Mô Hình Bố Cục Minimalist (Minimalist Block Layout)
+Framework phân chia bố cục giao diện trực quan thành 5 khối chính:
+1. **Khối Điều Hướng (Nav Block - `<header>` & `<nav>`):** Nằm cố định ở đỉnh trang, chứa logo và thanh điều hướng chính.
+2. **Khối Nội Dung Chính (Content Block - `<main>` & `<article>`):** Khu vực hiển thị thông tin cốt lõi, bài viết chính của trang.
+3. **Khối Phụ (Sidebar Block - `<aside>`):** Khu vực bên cạnh chứa danh mục, tiện ích, đường dẫn nhanh bổ trợ cho bài viết chính.
+4. **Khối Lưới Tính Năng (Grid Blocks - `.grid-2`, `.grid-3`):** Phân chia thành các ô thẻ vuông vức, tối giản với viền 1px tinh tế.
+5. **Khối Chân Trang (Footer Block - `<footer>`):** Chứa thông tin bản quyền, bản đồ liên kết phụ.
+
 ---
 
 ## 5. Cấu Trúc Thư Mục & Hướng Dẫn Sử Dụng Framework
