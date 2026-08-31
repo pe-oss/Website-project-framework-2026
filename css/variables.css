@@ -79,10 +79,55 @@
   --container-max-width: 1140px;
   --transition-fast: 0.15s ease;
   --transition-normal: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* -----------------------------------
+     6. Store Style Palette Tokens (Phong cách Cửa hàng)
+     ----------------------------------- */
+  /* Cà phê (Coffee): Warm Espresso, Rich Caramel, Cream */
+  --coffee-accent: #8b5a2b;
+  --coffee-accent-hover: #6f4721;
+  --coffee-bg-soft: #fbf6f0;
+  --coffee-border: #e6d7c3;
+  --coffee-tag-bg: #eddcc6;
+
+  /* Tiệm Bánh (Bakery): Warm Rose, Golden Crust, Soft Cream */
+  --bakery-accent: #d97706;
+  --bakery-accent-hover: #b45309;
+  --bakery-bg-soft: #fffbeb;
+  --bakery-border: #fde68a;
+  --bakery-tag-bg: #fef3c7;
+
+  /* Thực Phẩm Clean (Grocery): Organic Emerald, Mint, Amber */
+  --grocery-accent: #059669;
+  --grocery-accent-hover: #047857;
+  --grocery-bg-soft: #ecfdf5;
+  --grocery-border: #a7f3d0;
+  --grocery-tag-bg: #d1fae5;
+
+  /* Cửa Hàng Tổng Hợp (General Store): Dynamic Indigo, High-Contrast Red */
+  --general-accent: #4f46e5;
+  --general-accent-hover: #4338ca;
+  --general-bg-soft: #eef2ff;
+  --general-border: #c7d2fe;
+  --general-tag-bg: #e0e7ff;
+
+  /* Customer Psychology Tokens */
+  --psych-purple: #8b5cf6;
+  --psych-bg-soft: #f5f3ff;
+  --psych-border: #ddd6fe;
+
+  /* Framework vs Feature Classification Badges */
+  --tag-framework-bg: #e0f2fe;
+  --tag-framework-color: #0369a1;
+  --tag-framework-border: #7dd3fc;
+
+  --tag-feature-bg: #dcfce7;
+  --tag-feature-color: #15803d;
+  --tag-feature-border: #86efac;
 }
 
 /* -----------------------------------
-   6. Minimalist Dark Theme
+   7. Minimalist Dark Theme
    ----------------------------------- */
 [data-theme="dark"] {
   --hsl-bg: 0, 0%, 7%;               /* Charcoal Black #121212 */
@@ -94,4 +139,94 @@
 
   --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.3);
   --shadow-hover: 0 4px 20px rgba(0, 0, 0, 0.5);
+
+  /* Dark Store Accent Soft Backgrounds */
+  --coffee-bg-soft: #241a14;
+  --coffee-border: #443224;
+  --coffee-tag-bg: #36261b;
+
+  --bakery-bg-soft: #2a1f10;
+  --bakery-border: #4a3617;
+  --bakery-tag-bg: #3b2b13;
+
+  --grocery-bg-soft: #0e271d;
+  --grocery-border: #184c37;
+  --grocery-tag-bg: #143d2c;
+
+  --general-bg-soft: #181a30;
+  --general-border: #2c3258;
+  --general-tag-bg: #222746;
+
+  --psych-bg-soft: #201735;
+  --psych-border: #3d2b63;
+
+  --tag-framework-bg: #0c2a40;
+  --tag-framework-color: #38bdf8;
+  --tag-framework-border: #0369a1;
+
+  --tag-feature-bg: #0f3822;
+  --tag-feature-color: #4ade80;
+  --tag-feature-border: #15803d;
 }
+
+/* -----------------------------------
+   8. Global Store Style Full-Page Theme Overrides
+   ----------------------------------- */
+[data-store-style="coffee"] {
+  --color-accent: var(--coffee-accent);
+  --color-accent-hover: var(--coffee-accent-hover);
+  --color-bg: #fdfbf7;
+  --color-border: var(--coffee-border);
+  --color-block-badge: var(--coffee-tag-bg);
+}
+
+[data-store-style="bakery"] {
+  --color-accent: var(--bakery-accent);
+  --color-accent-hover: var(--bakery-accent-hover);
+  --color-bg: #fffdf5;
+  --color-border: var(--bakery-border);
+  --color-block-badge: var(--bakery-tag-bg);
+}
+
+[data-store-style="grocery"] {
+  --color-accent: var(--grocery-accent);
+  --color-accent-hover: var(--grocery-accent-hover);
+  --color-bg: #f4fbf7;
+  --color-border: var(--grocery-border);
+  --color-block-badge: var(--grocery-tag-bg);
+}
+
+[data-store-style="general"] {
+  --color-accent: var(--general-accent);
+  --color-accent-hover: var(--general-accent-hover);
+  --color-bg: #f8fafc;
+  --color-border: var(--general-border);
+  --color-block-badge: var(--general-tag-bg);
+}
+
+/* Dark Mode Store Style Global Overrides */
+[data-theme="dark"][data-store-style="coffee"] {
+  --color-bg: #1a1410;
+  --color-border: var(--coffee-border);
+  --color-block-badge: var(--coffee-tag-bg);
+}
+
+[data-theme="dark"][data-store-style="bakery"] {
+  --color-bg: #1c160e;
+  --color-border: var(--bakery-border);
+  --color-block-badge: var(--bakery-tag-bg);
+}
+
+[data-theme="dark"][data-store-style="grocery"] {
+  --color-bg: #091712;
+  --color-border: var(--grocery-border);
+  --color-block-badge: var(--grocery-tag-bg);
+}
+
+[data-theme="dark"][data-store-style="general"] {
+  --color-bg: #101222;
+  --color-border: var(--general-border);
+  --color-block-badge: var(--general-tag-bg);
+}
+
+

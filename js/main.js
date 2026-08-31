@@ -137,5 +137,132 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  console.log('🚀 Minimalist Web Framework 2026 initialized successfully!');
+  /* -----------------------------------
+     6. Store Style Switcher (Thay Đổi Toàn Trang: Cà phê, Tiệm Bánh, Thực Phẩm, General Store)
+     ----------------------------------- */
+  const storeBtns = document.querySelectorAll('.store-btn');
+  const storePresetContainers = document.querySelectorAll('.store-preset-container');
+  const logoBadge = document.querySelector('.logo-badge');
+  const savedStoreStyle = localStorage.getItem('storeStyle') || 'coffee';
+
+  const storeBrandingMap = {
+    coffee: '☕ COFFEE STORE',
+    bakery: '🍰 BAKERY SHOP',
+    grocery: '🥬 FRESH FOOD',
+    general: '🛍️ GENERAL STORE'
+  };
+
+  setStoreStyle(savedStoreStyle);
+
+  storeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedStore = btn.getAttribute('data-store');
+      setStoreStyle(selectedStore);
+    });
+  });
+
+  function setStoreStyle(store) {
+    // 1. Chuyển đổi theme màu sắc toàn trang (Full-page global theme)
+    document.documentElement.setAttribute('data-store-style', store);
+
+    // 2. Cập nhật nhãn Logo Branding toàn hệ thống ở Header
+    if (logoBadge && storeBrandingMap[store]) {
+      logoBadge.textContent = storeBrandingMap[store];
+    }
+
+    // 3. Cập nhật trạng thái Active trên nút chọn phong cách
+    storeBtns.forEach(btn => {
+      if (btn.getAttribute('data-store') === store) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+
+    // 4. Hiển thị khối nội dung giao diện tương ứng với loại cửa hàng
+    storePresetContainers.forEach(container => {
+      if (container.getAttribute('data-store-preset') === store) {
+        container.classList.add('active');
+      } else {
+        container.classList.remove('active');
+      }
+    });
+
+    localStorage.setItem('storeStyle', store);
+  }
+
+
+  /* -----------------------------------
+     7. Layout Framework Block Filter
+     ----------------------------------- */
+  const layoutBtns = document.querySelectorAll('.layout-btn');
+
+  layoutBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.getAttribute('data-layout');
+
+      layoutBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const activeContainer = document.querySelector('.store-preset-container.active');
+      if (!activeContainer) return;
+
+      const layoutBlocks = activeContainer.querySelectorAll('.layout-block');
+      layoutBlocks.forEach(block => {
+        if (filter === 'all' || block.getAttribute('data-layout-type') === filter) {
+          block.style.display = 'block';
+        } else {
+          block.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  /* -----------------------------------
+     8. Customer Psychology Insights Toggle
+     ----------------------------------- */
+  const psychToggleBtn = document.getElementById('psychToggleBtn');
+  const psychToggleText = document.getElementById('psychToggleText');
+  let isPsychologyActive = localStorage.getItem('showPsychology') === 'true';
+
+  updatePsychologyState(isPsychologyActive);
+
+  if (psychToggleBtn) {
+    psychToggleBtn.addEventListener('click', () => {
+      isPsychologyActive = !isPsychologyActive;
+      updatePsychologyState(isPsychologyActive);
+    });
+  }
+
+  function updatePsychologyState(show) {
+    const psychCards = document.querySelectorAll('.psych-note-card');
+    psychCards.forEach(card => {
+      if (show) {
+        card.classList.add('show');
+      } else {
+        card.classList.remove('show');
+      }
+    });
+
+    if (psychToggleText) {
+      psychToggleText.textContent = show
+        ? 'Ẩn Phân Tích Tâm Lý Khách Hàng'
+        : 'Bật Phân Tích Tâm Lý Khách Hàng';
+    }
+
+    if (psychToggleBtn) {
+      if (show) {
+        psychToggleBtn.style.backgroundColor = 'var(--psych-purple)';
+        psychToggleBtn.style.color = '#fff';
+      } else {
+        psychToggleBtn.style.backgroundColor = 'var(--psych-bg-soft)';
+        psychToggleBtn.style.color = 'var(--psych-purple)';
+      }
+    }
+
+    localStorage.setItem('showPsychology', show ? 'true' : 'false');
+  }
+
+  console.log('🚀 Store Styles, Layout Frameworks & Customer Psychology initialized successfully!');
 });
+

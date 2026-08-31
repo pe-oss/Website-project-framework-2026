@@ -177,6 +177,33 @@ Framework phân chia bố cục giao diện trực quan thành các khối chín
 
 Bộ chuyển đổi chế độ (`.mode-switcher`) nằm trực tiếp tại thẻ `<header>` giúp bạn linh hoạt phát triển hoặc kiểm thử cả 2 dạng giao diện trên cùng một bộ khung.
 
+### 4.8 Đa Dạng Phong Cách Cửa Hàng, Khung Bố Cục Block & Tâm Lý Khách Hàng (Customer Psychology)
+Framework 2026 mở rộng khả năng trình bày đa dạng 4 mô hình cửa hàng thực tế kèm phân tích chiều sâu về **Tâm lý học hành vi người tiêu dùng**:
+
+1. **4 Phong Cách Cửa Hàng Chuyên Biệt (Store Presets):**
+   - **☕ Quán Cà Phê (Coffee Shop):** Tone màu Espresso & Kem trầm ấm, tối ưu câu chuyện nguồn gốc hạt (Authenticity) và danh mục đồ uống Signature.
+   - **🍰 Tiệm Bánh (Bakery):** Tone vàng nướng & hồng pastel kích thích vị giác trực giác (Sensory Craving), kết hợp ưu đãi theo đợt bánh nóng hổi trong ngày.
+   - **🥬 Thực Phẩm Clean (Grocery):** Tone xanh lá Emerald bảo chứng sức khỏe (Health Framing), đóng gói Combo giảm ma sát suy nghĩ của bà nội trợ.
+   - **🛍️ Cửa Hàng Tổng Hợp (General Store):** Tone Indigo & Đỏ rực rỡ hướng tới tỷ lệ chuyển đổi cao, đếm ngược Flash Sale và bằng chứng xã hội số lượng lớn.
+
+2. **Các Mẫu Khung Bố Cục Trình Bày Block (Layout Frameworks):**
+   - **Split Hero & Story:** Phân đôi hình ảnh & thông điệp cốt lõi, phù hợp truyền tải giá trị thương hiệu.
+   - **Grid Showcase & Menu:** Dàn trang dạng lưới tối ưu thị giác, tránh nghịch lý quá tải lựa chọn (Paradox of Choice).
+   - **Urgency Offer (FOMO):** Khối khuyến mãi gấp gắn đếm ngược và thông báo số lượng có hạn.
+   - **Trust & Social Proof:** Khối đánh giá khách hàng, chỉ số uy tín và cam kết đổi trả rủi ro bằng 0.
+   - **Store Space & Location:** Khối mô phỏng không gian thực tế (Bếp mở, góc chill window view, quầy phun sương, bàn live demo) kết hợp bản đồ chỉ đường & quảng cáo sản phẩm đi kèm bối cảnh.
+
+3. **Nguyên Lý Tâm Lý Khách Hàng Được Áp Dụng (Customer Psychology Callouts):**
+   - 👁️ **Thị giác F/Z Pattern:** Dẫn dắt ánh mắt người dùng mượt mà đến nút bấm đặt hàng (CTA).
+   - 🎨 **Tâm lý học Màu sắc (Color Priming):** Tác động đến xúc cảm tiềm thức theo từng loại hình sản phẩm.
+   - ⚓ **Hiệu ứng Mỏ neo Giá (Anchoring Effect):** Đặt giá gốc gạch ngang làm nổi bật số tiền tiết kiệm được.
+   - ⏳ **Tâm lý né tránh mất mát (Loss Aversion):** Thúc đẩy hành động mua ngay nhờ tính khan hiếm.
+   - 🛡️ **Triệt tiêu rủi ro (Risk Reversal):** Cam kết đổi trả & bảo hành giúp loại bỏ e ngại chốt đơn.
+   - 🏡 **Mô phỏng kịch bản thực tế (Mental Simulation & Spatial Trust):** Mô tả chi tiết trải nghiệm tại chỗ và minh bạch bếp mở/showroom dùng thử giúp biến mong muốn trải nghiệm thành quyết định mua sắm thực tế.
+
+4. **🚀 Lộ Trình Mở Rộng Mã Nguồn Mở Nâng Cao (Open-Source UX Roadmap):**
+   - Trong các phiên bản phát triển tiếp theo, framework sẽ tích hợp các thư viện mở hàng đầu thế giới (**Swiper JS** cho slider mượt, **Lucide Icons** cho biểu tượng vector, **Framer Motion/Alpine JS** cho hiệu ứng vi chuyển động micro-interactions) nhằm đem lại trải nghiệm UX làm thỏa mãn người dùng ở mức tối đa.
+
 ---
 
 ## 5. Cấu Trúc Thư Mục & Hướng Dẫn Sử Dụng Framework
@@ -186,13 +213,13 @@ Bộ chuyển đổi chế độ (`.mode-switcher`) nằm trực tiếp tại th
 ```text
 Website-project-framework-2026/
 ├── README.md               # Tài liệu hướng dẫn & hệ thống kiến thức (File này)
-├── index.html              # Trang chủ mẫu chuẩn SEO & Semantic HTML5
+├── index.html              # Trang chủ mẫu chuẩn SEO & Semantic HTML5 (Tích hợp 4 Store Presets & Psych Callouts)
 ├── css/
 │   ├── reset.css           # Đưa style các trình duyệt về chuẩn thống nhất
-│   ├── variables.css       # Khai báo hệ thống Design Tokens (Màu HSL, Font, Spacing, Shadows)
-│   └── style.css           # Stylesheet chính (Layout, Components, Responsive, Micro-animations)
+│   ├── variables.css       # Khai báo hệ thống Design Tokens (Màu HSL, Store Themes, Psych Tokens)
+│   └── style.css           # Stylesheet chính (Layout Split, Grid Showcase, Store Themes, Psychology UI)
 ├── js/
-│   └── main.js             # Logic Vanilla JS (Dark mode switcher, mobile menu, smooth scroll)
+│   └── main.js             # Logic Vanilla JS (Theme Switcher, Store Switcher, Layout Filter, Psych Toggle)
 └── assets/
     ├── images/             # Thư mục chứa tài nguyên hình ảnh
     └── fonts/              # Thư mục chứa fonts tùy chỉnh
@@ -202,10 +229,11 @@ Website-project-framework-2026/
 
 1. **Sao chép thư mục:** Copy toàn bộ thư mục framework này đặt tên thành dự án mới của bạn (ví dụ: `My-New-Website`).
 2. **Khai báo thông tin dự án:** Mở file `index.html`, thay đổi các thẻ `<title>`, `<meta name="description">` phù hợp với dự án mới.
-3. **Tùy chỉnh Bảng màu & Design System:** Mở `css/variables.css`, chỉnh sửa các tham số mã màu HSL (`--color-primary`, `--color-accent`) để khớp với bộ nhận diện thương hiệu của bạn.
-4. **Phát triển thành phần UI mới:** Thêm mã HTML vào `index.html` và viết style tương ứng vào `css/style.css`. Dùng sẵn các Utility Classes đã cung cấp (như `.container`, `.btn`, `.card`, `.grid`).
+3. **Tùy chỉnh Bảng màu & Design System:** Mở `css/variables.css`, chỉnh sửa các tham số mã màu HSL (`--color-primary`, `--color-accent`, `--coffee-accent`, `--bakery-accent`, v.v.) để khớp với bộ nhận diện thương hiệu của bạn.
+4. **Phát triển thành phần UI mới:** Thêm mã HTML vào `index.html` và viết style tương ứng vào `css/style.css`. Dùng sẵn các Utility Classes đã cung cấp (như `.container`, `.btn`, `.card`, `.grid`, `.store-btn`, `.psych-badge`).
 5. **Xem trực tiếp:** Nhấp chuột phải vào file `index.html` trong VS Code và chọn **Open with Live Server** để bắt đầu lập trình!
 
 ---
 
 *Framework được biên soạn & tối ưu hóa theo tiêu chuẩn phát triển Web chuyên nghiệp 2026.*
+
