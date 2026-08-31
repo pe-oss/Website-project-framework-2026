@@ -1,6 +1,6 @@
 /* ==========================================
    MAIN.JS - Vanilla JavaScript Application Logic
-   Xử lý tương tác giao diện, Dark Mode & Navigation
+   Xử lý tương tác giao diện, Dark Mode, Mode Switcher (Landing vs Admin)
    ========================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -11,13 +11,48 @@ document.addEventListener('DOMContentLoaded', () => {
   const navMenu = document.getElementById('navMenu');
   const navLinks = document.querySelectorAll('.nav-link');
 
+  // Mode Switcher Elements (Landing Page vs Admin Dashboard)
+  const btnLandingMode = document.getElementById('btnLandingMode');
+  const btnAdminMode = document.getElementById('btnAdminMode');
+  const landingView = document.getElementById('landingView');
+  const adminView = document.getElementById('adminView');
+
   /* -----------------------------------
-     1. Xử lý Dark / Light Theme Switcher
+     1. Xử lý Chế Độ Hiển Thị (Landing Page vs Admin Dashboard)
+     ----------------------------------- */
+  const savedViewMode = localStorage.getItem('viewMode') || 'landing';
+  setViewMode(savedViewMode);
+
+  if (btnLandingMode) {
+    btnLandingMode.addEventListener('click', () => setViewMode('landing'));
+  }
+
+  if (btnAdminMode) {
+    btnAdminMode.addEventListener('click', () => setViewMode('admin'));
+  }
+
+  function setViewMode(mode) {
+    if (mode === 'admin') {
+      if (adminView) adminView.classList.add('active');
+      if (landingView) landingView.classList.remove('active');
+      if (btnAdminMode) btnAdminMode.classList.add('active');
+      if (btnLandingMode) btnLandingMode.classList.remove('active');
+      localStorage.setItem('viewMode', 'admin');
+    } else {
+      if (landingView) landingView.classList.add('active');
+      if (adminView) adminView.classList.remove('active');
+      if (btnLandingMode) btnLandingMode.classList.add('active');
+      if (btnAdminMode) btnAdminMode.classList.remove('active');
+      localStorage.setItem('viewMode', 'landing');
+    }
+  }
+
+  /* -----------------------------------
+     2. Xử lý Dark / Light Theme Switcher
      ----------------------------------- */
   const savedTheme = localStorage.getItem('theme') || 
     (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 
-  // Áp dụng theme ban đầu
   setTheme(savedTheme);
 
   if (themeToggleBtn) {
@@ -41,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* -----------------------------------
-     2. Responsive Mobile Navigation Menu
+     3. Responsive Mobile Navigation Menu
      ----------------------------------- */
   if (menuToggleBtn && navMenu) {
     menuToggleBtn.addEventListener('click', () => {
@@ -50,7 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
       menuToggleBtn.setAttribute('aria-expanded', isExpanded);
     });
 
-    // Đóng menu di động khi nhấp ra ngoài hoặc chọn link
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
         navMenu.classList.remove('is-active');
@@ -60,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* -----------------------------------
-     3. Smooth Scrolling & Active State
+     4. Smooth Scrolling & Active State
      ----------------------------------- */
   navLinks.forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -77,7 +111,6 @@ document.addEventListener('DOMContentLoaded', () => {
             behavior: 'smooth'
           });
 
-          // Cập nhật trạng thái active
           navLinks.forEach(l => l.classList.remove('active'));
           this.classList.add('active');
         }
@@ -86,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* -----------------------------------
-     4. Interactive Code Snippet Copy Demo
+     5. Interactive Code Snippet Copy Demo
      ----------------------------------- */
   const copyBtn = document.getElementById('copyCodeBtn');
   if (copyBtn) {
@@ -96,17 +129,13 @@ document.addEventListener('DOMContentLoaded', () => {
         navigator.clipboard.writeText(codeSnippet.innerText).then(() => {
           const originalText = copyBtn.innerText;
           copyBtn.innerText = '✓ Đã Copy!';
-          copyBtn.style.background = 'var(--gradient-primary)';
-          copyBtn.style.color = '#fff';
           setTimeout(() => {
             copyBtn.innerText = originalText;
-            copyBtn.style.background = '';
-            copyBtn.style.color = '';
           }, 2000);
         });
       }
     });
   }
 
-  console.log('🚀 Website Framework 2026 initialized successfully!');
+  console.log('🚀 Minimalist Web Framework 2026 initialized successfully!');
 });

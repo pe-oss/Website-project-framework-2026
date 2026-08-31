@@ -1,7 +1,7 @@
 /* ==========================================
    STYLE.CSS - Minimalist Framework Layout
    Thiết kế giao diện phong cách Tối giản (Minimalist)
-   Trình bày rõ ràng Bố cục: Nav, Content, Block, Sidebar
+   Hỗ trợ 2 chế độ: Landing Page & Admin Dashboard
    ========================================== */
 
 /* -----------------------------------
@@ -44,6 +44,15 @@ p {
   margin-right: auto;
   padding-left: var(--space-6);
   padding-right: var(--space-6);
+}
+
+/* Page Views Toggle Container */
+.page-view {
+  display: none;
+}
+
+.page-view.active {
+  display: block;
 }
 
 /* -----------------------------------
@@ -116,6 +125,43 @@ p {
   background: var(--color-accent);
   color: #fff;
   border-radius: var(--radius-sm);
+}
+
+/* Mode Switcher Segmented Button Group */
+.mode-switcher {
+  display: flex;
+  background-color: var(--color-block-badge);
+  border: 1px solid var(--color-border);
+  padding: 0.2rem;
+  border-radius: var(--radius-md);
+  gap: 0.2rem;
+}
+
+.mode-btn {
+  padding: 0.35rem 0.85rem;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-muted);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.mode-btn:hover {
+  color: var(--color-text);
+}
+
+.mode-btn.active {
+  background-color: var(--color-card-bg);
+  color: var(--color-text);
+  font-weight: var(--font-weight-semibold);
+  box-shadow: var(--shadow-subtle);
+  border: 1px solid var(--color-border);
 }
 
 .nav-menu {
@@ -235,8 +281,86 @@ p {
   gap: var(--space-6);
 }
 
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-4);
+}
+
 /* -----------------------------------
-   8. Minimalist Code Box
+   8. Admin Dashboard Specific Styles
+   ----------------------------------- */
+.admin-stats-grid {
+  margin-bottom: var(--space-8);
+}
+
+.stat-card {
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.stat-value {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+}
+
+.stat-change {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+}
+
+.stat-change.up { color: #16a34a; }
+.stat-change.down { color: #dc2626; }
+
+/* Admin Data Table */
+.data-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-size-sm);
+  text-align: left;
+}
+
+.data-table th,
+.data-table td {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.data-table th {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+  background-color: var(--color-block-badge);
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-medium);
+}
+
+.status-badge.active { background-color: rgba(22, 163, 74, 0.1); color: #16a34a; }
+.status-badge.pending { background-color: rgba(234, 179, 8, 0.1); color: #ca8a04; }
+.status-badge.inactive { background-color: rgba(220, 38, 38, 0.1); color: #dc2626; }
+
+/* -----------------------------------
+   9. Minimalist Code Box
    ----------------------------------- */
 .code-box {
   background-color: var(--color-card-bg);
@@ -266,7 +390,7 @@ p {
 }
 
 /* -----------------------------------
-   9. Footer Architecture
+   10. Footer Architecture
    ----------------------------------- */
 .site-footer {
   border-top: 1px solid var(--color-border);
@@ -294,7 +418,7 @@ p {
 }
 
 /* -----------------------------------
-   10. Responsive Adjustments
+   11. Responsive Adjustments
    ----------------------------------- */
 .menu-toggle {
   display: none;
@@ -336,5 +460,9 @@ p {
 
   .grid-2 {
     grid-template-columns: 1fr;
+  }
+
+  .mode-switcher {
+    margin-right: auto;
   }
 }

@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- SEO & Meta Tags -->
-  <title>Minimalist Web Framework 2026 | Bố Cục Khối Tối Giản & Chuẩn Hóa</title>
-  <meta name="description" content="Framework thiết lập website phong cách Minimalist tối giản, trình bày trực quan bố cục các khối (Nav, Content, Block, Sidebar, Footer).">
-  <meta name="keywords" content="minimalist website, HTML framework, web layout, semantic HTML, modern CSS">
+  <title>Minimalist Web Framework 2026 | Dual Mode (Landing & Admin)</title>
+  <meta name="description" content="Framework thiết lập website phong cách Minimalist tối giản, hỗ trợ 2 chế độ: Landing Page & Admin Dashboard quản trị.">
+  <meta name="keywords" content="minimalist website, HTML framework, admin dashboard, landing page, web layout">
   <meta name="author" content="Antigravity Web Team">
 
   <!-- Google Fonts Preconnect -->
@@ -26,7 +26,7 @@
 <body>
 
   <!-- ==========================================
-       BLOCK: HEADER & NAV
+       BLOCK: HEADER & NAV WITH DUAL-MODE SWITCHER
        ========================================== -->
   <header class="site-header">
     <div class="container navbar">
@@ -35,156 +35,308 @@
         <span class="logo-badge">FRAMEWORK</span>
       </a>
 
-      <!-- NAV BLOCK -->
+      <!-- MODE SWITCHER SEGMENTED CONTROL IN HEADER -->
+      <div class="mode-switcher" id="modeSwitcher">
+        <button class="mode-btn active" id="btnLandingMode" title="Chuyển sang giao diện Landing Page">
+          🚀 Landing Page
+        </button>
+        <button class="mode-btn" id="btnAdminMode" title="Chuyển sang giao diện Website Quản Trị">
+          📊 Admin Dashboard
+        </button>
+      </div>
+
+      <!-- NAV MENU LINKS -->
       <nav class="nav-menu" id="navMenu">
         <a href="#layout-demo" class="nav-link active">Bố Cục Layout</a>
-        <a href="#content-blocks" class="nav-link">Các Khối Content</a>
-        <a href="#code-demo" class="nav-link">Cấu Trúc HTML</a>
-        <a href="README.md" target="_blank" class="nav-link">Tài Liệu README</a>
+        <a href="#content-blocks" class="nav-link">Khối Chức Năng</a>
+        <a href="#code-demo" class="nav-link">Cấu Trúc Code</a>
+        <a href="README.md" target="_blank" class="nav-link">README.md</a>
       </nav>
 
       <div class="nav-actions">
-        <!-- Theme Toggle -->
-        <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle Theme">
+        <!-- Theme Toggle Button -->
+        <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle Light/Dark Theme">
           <span id="themeIcon">🌙</span>
         </button>
 
-        <!-- Mobile Toggle -->
-        <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+        <!-- Mobile Nav Toggle -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle Mobile Menu">
           ☰
         </button>
       </div>
     </div>
   </header>
 
-  <div class="container" style="margin-top: 2rem;">
+  <main class="container" style="margin-top: 2rem;">
 
-    <!-- ==========================================
-         BLOCK: HERO / BANNER
-         ========================================== -->
-    <section class="block hero-block">
-      <span class="block-tag">&lt;header&gt; &amp; &lt;section class="hero"&gt;</span>
-      <h1>Thiết Kế Framework Minimalist Tối Giản</h1>
-      <p>
-        Mô hình chuẩn hóa trình bày minh bạch vị trí các **khối cấu trúc HTML**: Thanh điều hướng (Nav), Khối nội dung chính (Content), Khối phụ (Sidebar / Aside), Các ô tính năng (Blocks) và Chân trang (Footer).
-      </p>
-      <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
-        <a href="#layout-demo" class="btn btn-primary">Khám Phá Bố Cục</a>
-        <a href="README.md" target="_blank" class="btn btn-outline">Xem README.md</a>
+    <!-- ====================================================================
+         VIEW 1: LANDING PAGE TEMPLATE
+         ==================================================================== -->
+    <div id="landingView" class="page-view active">
+
+      <!-- HERO BLOCK -->
+      <section class="block hero-block">
+        <span class="block-tag">&lt;header&gt; &amp; &lt;section class="hero"&gt; [LANDING MODE]</span>
+        <h1>Thiết Kế Framework Minimalist Tối Giản</h1>
+        <p>
+          Mô hình chuẩn hóa trình bày minh bạch vị trí các **khối cấu trúc HTML**: Thanh điều hướng (Nav), Khối nội dung chính (Content), Khối phụ (Sidebar / Aside), Các ô tính năng (Blocks) và Chân trang (Footer).
+        </p>
+        <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+          <a href="#layout-demo" class="btn btn-primary">Khám Phá Bố Cục</a>
+          <a href="README.md" target="_blank" class="btn btn-outline">Xem README.md</a>
+        </div>
+      </section>
+
+      <!-- MAIN LAYOUT SPLIT: CONTENT & SIDEBAR -->
+      <div class="layout-split" id="layout-demo">
+
+        <!-- PRIMARY CONTENT COLUMN -->
+        <article class="content-primary">
+
+          <!-- CONTENT BLOCK 1 -->
+          <div class="block">
+            <span class="block-tag">&lt;main&gt; -&gt; &lt;article class="content-primary"&gt;</span>
+            <h2>Khối Nội Dung Chính (Main Content Block)</h2>
+            <p>
+              Đây là khu vực truyền tải thông điệp cốt lõi của website Landing Page. Được bao bọc bởi thẻ ngữ nghĩa <code>&lt;main&gt;</code> và phân chia các bài viết bằng <code>&lt;article&gt;</code> hoặc <code>&lt;section&gt;</code>.
+            </p>
+            <p>
+              Phong cách Minimalist chú trọng vào sự thông thoáng của khoảng cách (Spacious Padding), tỷ lệ phông chữ chuẩn xác (Typography Scale) và màu sắc trung tính tịnh tiến.
+            </p>
+          </div>
+
+          <!-- CONTENT BLOCK 2: FEATURE GRID -->
+          <div class="block" id="content-blocks">
+            <span class="block-tag">&lt;section class="grid-2"&gt;</span>
+            <h2>Khối Tính Năng Dạng Lưới (Grid Blocks)</h2>
+            <p style="margin-bottom: 1.5rem;">Phân chia nội dung thành các ô thẻ (Blocks) đồng đều nhờ <code>display: grid</code>.</p>
+
+            <div class="grid-2">
+              <div class="block" style="margin-bottom: 0; padding: 1.25rem;">
+                <span class="block-tag" style="font-size: 0.65rem;">BLOCK A: NAV &amp; HEADER</span>
+                <h4>Thanh Điều Hướng Nav</h4>
+                <p style="font-size: 0.875rem; margin-bottom: 0;">Định vị sticky ở đỉnh trang, chứa Mode Switcher để chuyển đổi giữa Landing và Admin Mode.</p>
+              </div>
+
+              <div class="block" style="margin-bottom: 0; padding: 1.25rem;">
+                <span class="block-tag" style="font-size: 0.65rem;">BLOCK B: CONTENT &amp; ARTICLE</span>
+                <h4>Khối Nội Dung Content</h4>
+                <p style="font-size: 0.875rem; margin-bottom: 0;">Hiển thị bài viết, sản phẩm hoặc thông tin chi tiết với sự phân cấp tiêu đề H1-H6 rõ ràng.</p>
+              </div>
+            </div>
+          </div>
+
+        </article>
+
+        <!-- SIDEBAR COLUMN -->
+        <aside class="content-sidebar">
+
+          <!-- SIDEBAR BLOCK 1 -->
+          <div class="block">
+            <span class="block-tag">&lt;aside class="content-sidebar"&gt;</span>
+            <h3>Khối Sidebar (Aside)</h3>
+            <p style="font-size: 0.875rem;">
+              Chứa các thông tin phụ bổ trợ cho nội dung chính, danh mục bài viết, tác giả hoặc tiện ích nhanh.
+            </p>
+            <ul style="font-size: 0.875rem; border-top: 1px solid var(--color-border); padding-top: 0.75rem; margin-top: 0.75rem; display: flex; flex-direction: column; gap: 0.5rem;">
+              <li>📌 <strong>Khối Nav:</strong> Định vị điều hướng</li>
+              <li>📝 <strong>Khối Content:</strong> Nội dung trọng tâm</li>
+              <li>📐 <strong>Khối Grid:</strong> Bố cục đa cột</li>
+              <li>🏁 <strong>Khối Footer:</strong> Thông tin bản quyền</li>
+            </ul>
+          </div>
+
+          <!-- SIDEBAR BLOCK 2 -->
+          <div class="block">
+            <span class="block-tag">WIDGET: SYSTEM INFO</span>
+            <h4>Thông Số Framework</h4>
+            <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.8;">
+              <div>• Modes: Landing &amp; Admin</div>
+              <div>• Style: Minimalist 2026</div>
+              <div>• Layout: Grid + Flexbox</div>
+              <div>• Theme: Light / Dark Mode</div>
+            </div>
+          </div>
+
+        </aside>
       </div>
-    </section>
 
-    <!-- ==========================================
-         MAIN LAYOUT SPLIT: CONTENT & SIDEBAR
-         ========================================== -->
-    <main class="layout-split" id="layout-demo">
+    </div>
 
-      <!-- PRIMARY CONTENT COLUMN -->
-      <article class="content-primary">
+    <!-- ====================================================================
+         VIEW 2: ADMIN DASHBOARD TEMPLATE
+         ==================================================================== -->
+    <div id="adminView" class="page-view">
 
-        <!-- CONTENT BLOCK 1: ARTICLE INTRO -->
-        <div class="block">
-          <span class="block-tag">&lt;main&gt; -&gt; &lt;article class="content-primary"&gt;</span>
-          <h2>Khối Nội Dung Chính (Main Content Block)</h2>
-          <p>
-            Đây là khu vực truyền tải thông điệp cốt lõi của website. Được bao bọc bởi thẻ ngữ nghĩa <code>&lt;main&gt;</code> và phân chia các bài viết bằng <code>&lt;article&gt;</code> hoặc <code>&lt;section&gt;</code>.
-          </p>
-          <p>
-            Phong cách Minimalist chú trọng vào sự thông thoáng của khoảng cách (Spacious Padding), tỷ lệ phông chữ chuẩn xác (Typography Scale) và màu sắc trung tính tịnh tiến.
-          </p>
-        </div>
-
-        <!-- CONTENT BLOCK 2: FEATURE GRID BLOCKS -->
-        <div class="block" id="content-blocks">
-          <span class="block-tag">&lt;section class="grid-2"&gt;</span>
-          <h2>Khối Tính Năng Dạng Lưới (Grid Blocks)</h2>
-          <p style="margin-bottom: 1.5rem;">Phân chia nội dung thành các ô thẻ (Blocks) đồng đều nhờ <code>display: grid</code>.</p>
-
-          <div class="grid-2">
-            <div class="block" style="margin-bottom: 0; padding: 1.25rem;">
-              <span class="block-tag" style="font-size: 0.65rem;">BLOCK A: NAV &amp; HEADER</span>
-              <h4>Thanh Điều Hướng Nav</h4>
-              <p style="font-size: 0.875rem; margin-bottom: 0;">Định vị sticky ở đỉnh trang, giúp người dùng dễ dàng di chuyển giữa các phân đoạn nội dung.</p>
-            </div>
-
-            <div class="block" style="margin-bottom: 0; padding: 1.25rem;">
-              <span class="block-tag" style="font-size: 0.65rem;">BLOCK B: CONTENT &amp; ARTICLE</span>
-              <h4>Khối Nội Dung Content</h4>
-              <p style="font-size: 0.875rem; margin-bottom: 0;">Hiển thị bài viết, sản phẩm hoặc thông tin chi tiết với sự phân cấp tiêu đề H1-H6 rõ ràng.</p>
-            </div>
+      <!-- ADMIN HERO BANNER -->
+      <section class="block">
+        <span class="block-tag">&lt;section class="admin-header"&gt; [ADMIN DASHBOARD MODE]</span>
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <h1>Bảng Điều Khiển Quản Trị (Admin Dashboard)</h1>
+            <p style="margin-bottom: 0;">Quản lý hệ thống, theo dõi chỉ số thống kê và dữ liệu tài khoản người dùng.</p>
+          </div>
+          <div style="display: flex; gap: 0.75rem;">
+            <button class="btn btn-outline">+ Thêm Mới</button>
+            <button class="btn btn-primary">📊 Xuất Báo Cáo</button>
           </div>
         </div>
+      </section>
 
-      </article>
-
-      <!-- SIDEBAR COLUMN -->
-      <aside class="content-sidebar">
-
-        <!-- SIDEBAR BLOCK 1 -->
-        <div class="block">
-          <span class="block-tag">&lt;aside class="content-sidebar"&gt;</span>
-          <h3>Khối Sidebar (Aside)</h3>
-          <p style="font-size: 0.875rem;">
-            Chứa các thông tin phụ bổ trợ cho nội dung chính, danh mục bài viết, tác giả hoặc tiện ích nhanh.
-          </p>
-          <ul style="font-size: 0.875rem; border-top: 1px solid var(--color-border); padding-top: 0.75rem; margin-top: 0.75rem; display: flex; flex-direction: column; gap: 0.5rem;">
-            <li>📌 <strong>Khối Nav:</strong> Định vị điều hướng</li>
-            <li>📝 <strong>Khối Content:</strong> Nội dung trọng tâm</li>
-            <li>📐 <strong>Khối Grid:</strong> Bố cục đa cột</li>
-            <li>🏁 <strong>Khối Footer:</strong> Thông tin bản quyền</li>
-          </ul>
+      <!-- ADMIN STATS CARDS GRID -->
+      <div class="grid grid-4 admin-stats-grid">
+        <div class="stat-card">
+          <span class="block-tag" style="font-size: 0.6rem; margin-bottom: 0.25rem;">METRIC 1</span>
+          <div style="font-size: 0.85rem; color: var(--color-text-muted);">Tổng Người Dùng</div>
+          <div class="stat-value">12,480</div>
+          <div class="stat-change up">↑ +14.2% tháng này</div>
         </div>
 
-        <!-- SIDEBAR BLOCK 2 -->
-        <div class="block">
-          <span class="block-tag">WIDGET: SYSTEM INFO</span>
-          <h4>Thông Số Framework</h4>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.8;">
-            <div>• Style: Minimalist 2026</div>
-            <div>• Layout: Grid + Flexbox</div>
-            <div>• Theme: Light / Dark Mode</div>
-            <div>• Standard: HTML5 Semantic</div>
+        <div class="stat-card">
+          <span class="block-tag" style="font-size: 0.6rem; margin-bottom: 0.25rem;">METRIC 2</span>
+          <div style="font-size: 0.85rem; color: var(--color-text-muted);">Doanh Thu Hệ Thống</div>
+          <div class="stat-value">$48,250</div>
+          <div class="stat-change up">↑ +8.6% so với tuần trước</div>
+        </div>
+
+        <div class="stat-card">
+          <span class="block-tag" style="font-size: 0.6rem; margin-bottom: 0.25rem;">METRIC 3</span>
+          <div style="font-size: 0.85rem; color: var(--color-text-muted);">Giao Dịch Đang Xử Lý</div>
+          <div class="stat-value">142</div>
+          <div class="stat-change down">↓ -3.1% phản hồi</div>
+        </div>
+
+        <div class="stat-card">
+          <span class="block-tag" style="font-size: 0.6rem; margin-bottom: 0.25rem;">METRIC 4</span>
+          <div style="font-size: 0.85rem; color: var(--color-text-muted);">Tải Máy Chủ Server</div>
+          <div class="stat-value">99.98%</div>
+          <div class="stat-change up">✓ Trạng thái ổn định</div>
+        </div>
+      </div>
+
+      <!-- ADMIN MAIN CONTENT & SIDEBAR SPLIT -->
+      <div class="layout-split">
+
+        <!-- PRIMARY DATA TABLE -->
+        <article class="content-primary">
+          <div class="block">
+            <span class="block-tag">&lt;div class="data-table-block"&gt;</span>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem;">
+              <h3>Danh Sách Người Dùng Gần Đây</h3>
+              <span style="font-size: 0.8rem; color: var(--color-text-muted);">Hiển thị 5 / 120 tài khoản</span>
+            </div>
+
+            <div class="data-table-wrapper">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Họ &amp; Tên</th>
+                    <th>Email</th>
+                    <th>Vai Trò</th>
+                    <th>Trạng Thái</th>
+                    <th>Thao Tác</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>#1001</td>
+                    <td><strong>Trần Tiến Phát</strong></td>
+                    <td>ptrantien05@gmail.com</td>
+                    <td>Administrator</td>
+                    <td><span class="status-badge active">Hoạt động</span></td>
+                    <td><button class="btn btn-outline" style="padding: 0.2rem 0.5rem; font-size: 0.7rem;">Sửa</button></td>
+                  </tr>
+                  <tr>
+                    <td>#1002</td>
+                    <td>Nguyễn Văn A</td>
+                    <td>nguyenvana@gmail.com</td>
+                    <td>Editor</td>
+                    <td><span class="status-badge active">Hoạt động</span></td>
+                    <td><button class="btn btn-outline" style="padding: 0.2rem 0.5rem; font-size: 0.7rem;">Sửa</button></td>
+                  </tr>
+                  <tr>
+                    <td>#1003</td>
+                    <td>Lê Thị B</td>
+                    <td>lethib@gmail.com</td>
+                    <td>Subscriber</td>
+                    <td><span class="status-badge pending">Đang chờ</span></td>
+                    <td><button class="btn btn-outline" style="padding: 0.2rem 0.5rem; font-size: 0.7rem;">Sửa</button></td>
+                  </tr>
+                  <tr>
+                    <td>#1004</td>
+                    <td>Phạm Hoàng C</td>
+                    <td>hoangc@gmail.com</td>
+                    <td>Subscriber</td>
+                    <td><span class="status-badge inactive">Tạm khóa</span></td>
+                    <td><button class="btn btn-outline" style="padding: 0.2rem 0.5rem; font-size: 0.7rem;">Sửa</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
-        </div>
+        </article>
 
-      </aside>
-    </main>
+        <!-- ADMIN SIDEBAR WIDGETS -->
+        <aside class="content-sidebar">
+          <!-- ADMIN QUICK ACTIONS -->
+          <div class="block">
+            <span class="block-tag">&lt;aside class="admin-quick-actions"&gt;</span>
+            <h4>Tác Vụ Quản Trị Nhanh</h4>
+            <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.75rem;">
+              <button class="btn btn-outline" style="justify-content: flex-start;">👤 Thêm Người Dùng Mới</button>
+              <button class="btn btn-outline" style="justify-content: flex-start;">⚙️ Cấu Hình Hệ Thống</button>
+              <button class="btn btn-outline" style="justify-content: flex-start;">📦 Sao Lưu Dữ Liệu</button>
+              <button class="btn btn-outline" style="justify-content: flex-start;">🔒 Kiểm Tra Bảo Mật</button>
+            </div>
+          </div>
+
+          <!-- SYSTEM ACTIVITY LOG -->
+          <div class="block">
+            <span class="block-tag">WIDGET: RECENT ACTIVITY</span>
+            <h4>Nhật Ký Hoạt Động</h4>
+            <div style="font-size: 0.8rem; display: flex; flex-direction: column; gap: 0.75rem; margin-top: 0.75rem;">
+              <div>• <strong>System:</strong> Đã sao lưu database thành công <span style="opacity: 0.6;">(10 phút trước)</span></div>
+              <div>• <strong>Admin:</strong> Cập nhật thông tin phân quyền <span style="opacity: 0.6;">(1 giờ trước)</span></div>
+              <div>• <strong>User #1003:</strong> Gửi yêu cầu hỗ trợ tài khoản <span style="opacity: 0.6;">(3 giờ trước)</span></div>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+
+    </div>
 
     <!-- ==========================================
          BLOCK: CODE ARCHITECTURE DEMO
          ========================================== -->
     <section class="block" id="code-demo">
       <span class="block-tag">&lt;section class="code-architecture"&gt;</span>
-      <h2>Sơ Đồ Bố Cục HTML Minimalist</h2>
+      <h2>Sơ Đồ Bố Cục HTML Minimalist (Dual Mode)</h2>
       <p>Cấu trúc tổng quan các khối được định nghĩa minh bạch trong <code>index.html</code>:</p>
 
       <div class="code-box">
         <div class="code-box-header">
-          <span>HTML Layout Structure</span>
+          <span>HTML Layout Structure &amp; Mode Switcher</span>
           <button class="btn btn-outline" id="copyCodeBtn" style="padding: 0.15rem 0.5rem; font-size: 0.7rem;">📋 Copy Sơ Đồ</button>
         </div>
         <div class="code-box-body" id="codeSnippetText">
 &lt;<span style="color: var(--color-accent);">header</span> class="site-header"&gt;
-  &lt;<span style="color: var(--color-accent);">nav</span> class="navbar"&gt; [1. KHỐI ĐIỀU HƯỚNG NAV] &lt;/<span style="color: var(--color-accent);">nav</span>&gt;
+  &lt;<span style="color: var(--color-accent);">div</span> class="mode-switcher"&gt; [NÚT CHUYỂN LANDING / ADMIN MODE] &lt;/<span style="color: var(--color-accent);">div</span>&gt;
+  &lt;<span style="color: var(--color-accent);">nav</span> class="navbar"&gt; [KHỐI ĐIỀU HƯỚNG NAV] &lt;/<span style="color: var(--color-accent);">nav</span>&gt;
 &lt;/<span style="color: var(--color-accent);">header</span>&gt;
 
-&lt;<span style="color: var(--color-accent);">main</span> class="layout-split"&gt;
-  &lt;<span style="color: var(--color-accent);">article</span> class="content-primary"&gt;
-    &lt;<span style="color: var(--color-accent);">div</span> class="block"&gt; [2. KHỐI NỘI DUNG CHÍNH CONTENT] &lt;/<span style="color: var(--color-accent);">div</span>&gt;
-    &lt;<span style="color: var(--color-accent);">div</span> class="grid-2"&gt; [3. KHỐI TÍNH NĂNG BLOCK GRID] &lt;/<span style="color: var(--color-accent);">div</span>&gt;
-  &lt;/<span style="color: var(--color-accent);">article</span>&gt;
-
-  &lt;<span style="color: var(--color-accent);">aside</span> class="content-sidebar"&gt;
-    &lt;<span style="color: var(--color-accent);">div</span> class="block"&gt; [4. KHỐI PHỤ SIDEBAR / ASIDE] &lt;/<span style="color: var(--color-accent);">div</span>&gt;
-  &lt;/<span style="color: var(--color-accent);">aside</span>&gt;
+&lt;<span style="color: var(--color-accent);">main</span> class="container"&gt;
+  &lt;<span style="color: var(--color-accent);">div</span> id="landingView" class="page-view active"&gt; [1. GIAO DIỆN LANDING PAGE] &lt;/<span style="color: var(--color-accent);">div</span>&gt;
+  &lt;<span style="color: var(--color-accent);">div</span> id="adminView" class="page-view"&gt; [2. GIAO DIỆN ADMIN DASHBOARD] &lt;/<span style="color: var(--color-accent);">div</span>&gt;
 &lt;/<span style="color: var(--color-accent);">main</span>&gt;
 
-&lt;<span style="color: var(--color-accent);">footer</span> class="site-footer"&gt; [5. KHỐI CHÂN TRANG FOOTER] &lt;/<span style="color: var(--color-accent);">footer</span>&gt;
+&lt;<span style="color: var(--color-accent);">footer</span> class="site-footer"&gt; [KHỐI CHÂN TRANG FOOTER] &lt;/<span style="color: var(--color-accent);">footer</span>&gt;
         </div>
       </div>
     </section>
 
-  </div>
+  </main>
 
   <!-- ==========================================
        BLOCK: FOOTER
@@ -200,16 +352,16 @@
             <span class="logo-badge">2026</span>
           </a>
           <p style="font-size: 0.875rem; max-width: 360px;">
-            Khung dựng Website phong cách Minimalist tối giản. Trình bày rõ ràng cấu trúc các khối Nav, Content, Block, Sidebar và Footer.
+            Khung dựng Website phong cách Minimalist tối giản. Trình bày rõ ràng cấu trúc các khối Nav, Content, Block, Sidebar, Admin Dashboard và Footer.
           </p>
         </div>
 
         <div>
           <h4 style="font-size: 0.875rem; margin-bottom: 0.75rem;">CẤU TRÚC KHỐI</h4>
           <ul style="font-size: 0.85rem; display: flex; flex-direction: column; gap: 0.4rem;">
-            <li><a href="#layout-demo" class="nav-link">Bố cục Nav &amp; Content</a></li>
-            <li><a href="#content-blocks" class="nav-link">Khối Grid Blocks</a></li>
-            <li><a href="#code-demo" class="nav-link">Sơ đồ HTML</a></li>
+            <li><a href="#layout-demo" class="nav-link">Landing Page View</a></li>
+            <li><a href="#adminView" class="nav-link">Admin Dashboard View</a></li>
+            <li><a href="#code-demo" class="nav-link">Sơ đồ HTML Dual-Mode</a></li>
           </ul>
         </div>
 
