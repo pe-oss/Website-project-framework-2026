@@ -1,0 +1,84 @@
+/* ==========================================
+   RESET.CSS - Modern CSS Reset 2026
+   Chuẩn hóa style trình duyệt về cùng 1 chuẩn
+   ========================================== */
+
+/* 1. Box Sizing cho tất cả phần tử */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 2. Cài đặt chuẩn cho thẻ Root và Body */
+html {
+  font-size: 100%; /* 1rem = 16px */
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.6;
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 3. Đưa danh sách về dạng không ký tự đầu dòng */
+ul,
+ol {
+  list-style: none;
+}
+
+/* 4. Đảm bảo hình ảnh và media responsive */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 5. Kế thừa font chữ cho Form & Buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* 6. Bỏ gạch chân đường dẫn và kế thừa màu */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 7. Xóa viền mảng bảng */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 8. Ẩn phần tử có thuộc tính hidden */
+[hidden] {
+  display: none !important;
+}
+
+/* 9. Tối ưu hóa focus ring phục vụ Accessibility */
+:focus-visible {
+  outline: 2px solid var(--color-accent, #6366f1);
+  outline-offset: 3px;
+}

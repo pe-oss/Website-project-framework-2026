@@ -1,0 +1,117 @@
+/* ==========================================
+   VARIABLES.CSS - Design Tokens & System Theme
+   Quản lý toàn bộ thông số màu sắc, typography,
+   khoảng cách và hiệu ứng tại một nơi duy nhất.
+   ========================================== */
+
+:root {
+  /* -----------------------------------
+     1. Bảng Màu Theme Light (Mặc định)
+     ----------------------------------- */
+  /* Colors HSL Format */
+  --hsl-primary: 224, 71%, 12%;      /* Deep Blue/Navy */
+  --hsl-accent: 250, 84%, 64%;       /* Indigo Accent */
+  --hsl-accent-hover: 250, 84%, 58%;
+  --hsl-secondary: 199, 89%, 48%;    /* Vibrant Cyan */
+  --hsl-bg: 220, 20%, 98%;           /* Light Cool Gray */
+  --hsl-card-bg: 0, 0%, 100%;        /* Pure White */
+  --hsl-text: 224, 71%, 12%;         /* Primary Text */
+  --hsl-text-muted: 220, 15%, 45%;   /* Muted Gray Text */
+  --hsl-border: 220, 15%, 90%;       /* Subtle Border */
+
+  /* Applied Colors */
+  --color-primary: hsl(var(--hsl-primary));
+  --color-accent: hsl(var(--hsl-accent));
+  --color-accent-hover: hsl(var(--hsl-accent-hover));
+  --color-secondary: hsl(var(--hsl-secondary));
+  --color-bg: hsl(var(--hsl-bg));
+  --color-card-bg: hsl(var(--hsl-card-bg));
+  --color-text: hsl(var(--hsl-text));
+  --color-text-muted: hsl(var(--hsl-text-muted));
+  --color-border: hsl(var(--hsl-border));
+
+  /* Gradient Accents */
+  --gradient-primary: linear-gradient(135deg, hsl(250, 84%, 64%), hsl(199, 89%, 48%));
+  --gradient-card: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.6));
+
+  /* Glassmorphism Light */
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.4);
+  --glass-blur: blur(12px);
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.12);
+  --shadow-glow: 0 0 30px rgba(99, 102, 241, 0.25);
+
+  /* -----------------------------------
+     2. Typography (Phông Chữ & Kích Thước)
+     ----------------------------------- */
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Outfit', var(--font-sans);
+
+  --font-size-xs: 0.75rem;   /* 12px */
+  --font-size-sm: 0.875rem;  /* 14px */
+  --font-size-base: 1rem;    /* 16px */
+  --font-size-lg: 1.125rem;  /* 18px */
+  --font-size-xl: 1.25rem;   /* 20px */
+  --font-size-2xl: 1.75rem;  /* 28px */
+  --font-size-3xl: 2.5rem;   /* 40px */
+  --font-size-4xl: 3.5rem;   /* 56px */
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* -----------------------------------
+     3. Spacing Scale (Thang Khoảng Cách)
+     ----------------------------------- */
+  --space-1: 0.25rem;  /* 4px */
+  --space-2: 0.5rem;   /* 8px */
+  --space-3: 0.75rem;  /* 12px */
+  --space-4: 1rem;     /* 16px */
+  --space-6: 1.5rem;   /* 24px */
+  --space-8: 2rem;     /* 32px */
+  --space-12: 3rem;    /* 48px */
+  --space-16: 4rem;    /* 64px */
+
+  /* -----------------------------------
+     4. Border Radius (Bo Góc)
+     ----------------------------------- */
+  --radius-sm: 0.375rem;  /* 6px */
+  --radius-md: 0.75rem;   /* 12px */
+  --radius-lg: 1.25rem;   /* 20px */
+  --radius-full: 9999px;
+
+  /* -----------------------------------
+     5. Layout & Transition Settings
+     ----------------------------------- */
+  --container-max-width: 1200px;
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.5s ease;
+}
+
+/* -----------------------------------
+   6. Bảng Màu Theme Dark (Giao Diện Tối)
+   ----------------------------------- */
+[data-theme="dark"] {
+  --hsl-primary: 224, 71%, 95%;
+  --hsl-bg: 224, 30%, 8%;            /* Dark Navy/Charcoal background */
+  --hsl-card-bg: 224, 25%, 12%;       /* Dark Card Container */
+  --hsl-text: 220, 20%, 96%;
+  --hsl-text-muted: 220, 15%, 65%;
+  --hsl-border: 224, 20%, 20%;
+
+  --gradient-card: linear-gradient(180deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.8));
+
+  /* Glassmorphism Dark */
+  --glass-bg: rgba(15, 23, 42, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.6);
+  --shadow-glow: 0 0 35px rgba(129, 140, 248, 0.3);
+}

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Website Project Framework 2026 | Khung Dựng Website Frontend Chuẩn Hóa</title>
+  <meta name="description" content="Khung dựng website Frontend cơ bản chuẩn hóa HTML5, Modern CSS3 và Vanilla JS. Hệ thống hóa kiến thức, quy trình thiết kế và tối ưu SEO cho mọi dự án.">
+  <meta name="keywords" content="website framework, HTML5, CSS3, JavaScript, web design, frontend starter template, responsive web">
+  <meta name="author" content="Antigravity Web Team">
+
+  <!-- Open Graph Meta Tags (Social Media Sharing) -->
+  <meta property="og:title" content="Website Project Framework 2026">
+  <meta property="og:description" content="Khung dựng website chuẩn hóa cho mọi dự án với HTML5, Modern CSS và Vanilla JS.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Framework Stylesheets -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Main JavaScript File -->
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+
+  <!-- ==========================================
+       SITE HEADER / NAVIGATION
+       ========================================== -->
+  <header class="site-header">
+    <div class="container navbar flex-between">
+      <a href="#" class="logo">
+        <div class="logo-icon">WF</div>
+        <span>WebFramework<span class="text-gradient">2026</span></span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="#features" class="nav-link active">Tính Năng Framework</a>
+        <a href="#concepts" class="nav-link">Kiến Thức Cốt Lõi</a>
+        <a href="#quickstart" class="nav-link">Hướng Dẫn Nhanh</a>
+        <a href="README.md" target="_blank" class="nav-link">Tài Liệu README</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Dark/Light Theme Switcher -->
+        <button class="theme-toggle-btn" id="themeToggle" aria-label="Đổi giao diện sáng/tối">
+          <span id="themeIcon">🌙</span>
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Mở Menu Điều Hướng">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================
+         HERO SECTION
+         ========================================== -->
+    <section class="section hero">
+      <div class="container">
+        <div class="hero-badge">
+          <span>✨</span> Standard Website Starter Framework
+        </div>
+
+        <h1 class="hero-title">
+          Khung Dựng Website Chuẩn Hóa & <span class="text-gradient">Hệ Thống Kiến Thức Frontend</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          Bộ khung hoàn chỉnh cho mọi dự án Website cơ bản. Xây dựng bằng **HTML5 Semantic**, **Modern Vanilla CSS** (CSS Variables, Flexbox/Grid, Dark Mode) và **JavaScript Clean Architecture**.
+        </p>
+
+        <div class="hero-cta">
+          <a href="#quickstart" class="btn btn-primary">
+            🚀 Khám Phá Framework
+          </a>
+          <a href="#concepts" class="btn btn-secondary">
+            📖 Nắm Vững Kiến Thức
+          </a>
+        </div>
+
+        <!-- Interactive Visual Code Window -->
+        <div class="code-window">
+          <div class="code-header flex-between">
+            <div style="display: flex; gap: 8px;">
+              <span class="code-dot dot-red"></span>
+              <span class="code-dot dot-yellow"></span>
+              <span class="code-dot dot-green"></span>
+            </div>
+            <span style="font-size: 0.8rem; opacity: 0.7;">variables.css & index.html</span>
+            <button class="btn btn-secondary" id="copyCodeBtn" style="padding: 0.25rem 0.75rem; font-size: 0.75rem;">📋 Copy Code</button>
+          </div>
+          <div class="code-body" id="codeSnippetText">
+<span style="color: var(--color-accent); font-weight: bold;">:root</span> {
+  <span style="color: var(--color-text-muted);">/* Design Tokens System 2026 */</span>
+  --gradient-primary: <span style="color: #38bdf8;">linear-gradient(135deg, #6366f1, #06b6d4)</span>;
+  --glass-bg: <span style="color: #38bdf8;">rgba(255, 255, 255, 0.7)</span>;
+  --font-sans: <span style="color: #38bdf8;">'Inter', system-ui, sans-serif</span>;
+}
+
+<span style="color: var(--color-accent); font-weight: bold;">&lt;!-- HTML5 Semantic Structure --&gt;</span>
+&lt;<span style="color: #ec4899;">header</span> <span style="color: #a855f7;">class</span>=<span style="color: #22c55e;">"site-header"</span>&gt;
+  &lt;<span style="color: #ec4899;">nav</span> <span style="color: #a855f7;">class</span>=<span style="color: #22c55e;">"container flex-between"</span>&gt; ... &lt;/<span style="color: #ec4899;">nav</span>&gt;
+&lt;/<span style="color: #ec4899;">header</span>&gt;
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         FEATURES SECTION
+         ========================================== -->
+    <section id="features" class="section">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 3rem;">
+          <h2>Ưu Điểm Của Bộ Framework</h2>
+          <p>Thiết kế tinh gọn, hiệu năng cao và dễ dàng tùy biến cho mọi loại dự án.</p>
+        </div>
+
+        <div class="grid grid-3">
+          <div class="card">
+            <div class="card-icon">🎨</div>
+            <h3 class="card-title">Modern Design Tokens</h3>
+            <p>Hệ thống biến CSS (Variables) quản lý màu sắc HSL, font chữ, khoảng cách và hiệu ứng tại một nơi duy nhất. Đổi màu giao diện tức thì!</p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">🌗</div>
+            <h3 class="card-title">Dark & Light Mode</h3>
+            <p>Hỗ trợ chuyển đổi giao diện Sáng/Tối linh hoạt, tự động nhận diện hệ điều hành và lưu trạng thái người dùng vào LocalStorage.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">📐</div>
+            <h3 class="card-title">Responsive & Grid System</h3>
+            <p>Xây dựng theo tư duy Mobile-First kết hợp Flexbox và CSS Grid, đảm bảo website của bạn hiển thị sắc nét trên mọi thiết bị.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         CONCEPTS SECTION
+         ========================================== -->
+    <section id="concepts" class="section" style="background: rgba(99, 102, 241, 0.03);">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 3rem;">
+          <h2>Các Khái Niệm Cần Nắm Rõ</h2>
+          <p>Chi tiết đầy đủ được hệ thống hóa trong tài liệu README.md đi kèm.</p>
+        </div>
+
+        <div class="grid grid-2">
+          <div class="card">
+            <h3>1. CSS Box Model & Positioning</h3>
+            <p>Nắm rõ cách tính toán thể tích phần tử với <code>box-sizing: border-box</code> và điều khiển vị trí chính xác bằng <code>relative</code>, <code>absolute</code>, <code>fixed</code>, <code>sticky</code>.</p>
+          </div>
+
+          <div class="card">
+            <h3>2. HTML5 Semantic & SEO</h3>
+            <p>Sử dụng đúng các thẻ ngữ nghĩa <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code> kết hợp meta tags OpenGraph để tối ưu điểm SEO trên Google Search.</p>
+          </div>
+
+          <div class="card">
+            <h3>3. Modern Visual Aesthetics</h3>
+            <p>Áp dụng hiệu ứng Glassmorphism (làm mờ nền), gradients hiện đại, bo góc đồng bộ và hiệu ứng micro-animations tăng trải nghiệm người dùng.</p>
+          </div>
+
+          <div class="card">
+            <h3>4. Quy Trình Phát Triển Web</h3>
+            <p>Từ ý tưởng Wireframe, thiết kế UI/UX trên Figma, viết mã HTML/CSS/JS cho đến kiểm thử đa trình duyệt và deploy lên hosting.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         QUICKSTART SECTION
+         ========================================== -->
+    <section id="quickstart" class="section">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 3rem;">
+          <h2>Hướng Dẫn Khởi Tạo Dự Án Mới</h2>
+          <p>Tái sử dụng bộ Framework này chỉ trong 3 bước đơn giản.</p>
+        </div>
+
+        <div class="grid grid-3">
+          <div class="card">
+            <h4 style="color: var(--color-accent); margin-bottom: 0.5rem;">Bước 1</h4>
+            <h3>Copy Thư Mục</h3>
+            <p>Sao chép toàn bộ thư mục framework này và đổi tên thành tên dự án mới của bạn.</p>
+          </div>
+
+          <div class="card">
+            <h4 style="color: var(--color-accent); margin-bottom: 0.5rem;">Bước 2</h4>
+            <h3>Chỉnh `variables.css`</h3>
+            <p>Chỉnh sửa các giá trị màu sắc, phông chữ trong file <code>css/variables.css</code> phù hợp với thương hiệu mới.</p>
+          </div>
+
+          <div class="card">
+            <h4 style="color: var(--color-accent); margin-bottom: 0.5rem;">Bước 3</h4>
+            <h3>Viết Code & Run</h3>
+            <p>Thêm nội dung HTML vào <code>index.html</code>, mở với Live Server và sẵn sàng trình diễn!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================
+       SITE FOOTER
+       ========================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="flex-between" style="flex-wrap: wrap; gap: 2rem;">
+        <div>
+          <a href="#" class="logo" style="margin-bottom: 1rem;">
+            <div class="logo-icon">WF</div>
+            <span>WebFramework<span class="text-gradient">2026</span></span>
+          </a>
+          <p style="max-width: 400px;">Bộ khung dự án Website mẫu chuẩn hóa kiến thức Frontend HTML5, Modern CSS & Vanilla JS.</p>
+        </div>
+
+        <div style="display: flex; gap: 3rem;">
+          <div>
+            <h4 style="margin-bottom: 1rem; font-size: 1rem;">Liên Kết</h4>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem;">
+              <li><a href="#features" class="nav-link">Tính Năng</a></li>
+              <li><a href="#concepts" class="nav-link">Kiến Thức</a></li>
+              <li><a href="#quickstart" class="nav-link">Hướng Dẫn</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 style="margin-bottom: 1rem; font-size: 1rem;">Tài Liệu</h4>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem;">
+              <li><a href="README.md" target="_blank" class="nav-link">File README.md</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Website Project Framework. Phát triển chuẩn hóa cho mọi dự án Website về sau.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
