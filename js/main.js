@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (landingView) landingView.classList.remove('active');
       if (btnAdminMode) btnAdminMode.classList.add('active');
       if (btnLandingMode) btnLandingMode.classList.remove('active');
-      
+
       adminNavLinks.forEach(link => link.classList.add('active'));
       landingNavLinks.forEach(link => link.classList.remove('active'));
 
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* -----------------------------------
      2. Xử lý Dark / Light Theme Switcher (Cài Đặt Giao Diện)
      ----------------------------------- */
-  const savedTheme = localStorage.getItem('theme') || 
+  const savedTheme = localStorage.getItem('theme') ||
     (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 
   setTheme(savedTheme);
@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (targetElement) {
           const headerHeight = document.querySelector('.site-header').offsetHeight;
           const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-          
+
           window.scrollTo({
             top: targetPosition,
             behavior: 'smooth'
@@ -240,10 +240,26 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // 4. Hiển thị khối nội dung giao diện tương ứng với loại cửa hàng
+    // 4. Cập nhật trạng thái Active trên danh sách các Thẻ Phong Cách Thiết Kế (Style Catalog Cards)
+    const styleCatalogCards = document.querySelectorAll('.style-catalog-card');
+    styleCatalogCards.forEach(card => {
+      if (card.getAttribute('data-style-preset') === store) {
+        card.classList.add('active-style');
+      } else {
+        card.classList.remove('active-style');
+      }
+    });
+
+    // 5. Hiển thị khối nội dung giao diện tương ứng với loại cửa hàng & Animation GSAP
     storePresetContainers.forEach(container => {
       if (container.getAttribute('data-store-preset') === store) {
         container.classList.add('active');
+        if (typeof gsap !== 'undefined') {
+          gsap.fromTo(container, 
+            { opacity: 0, y: 15 },
+            { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' }
+          );
+        }
       } else {
         container.classList.remove('active');
       }

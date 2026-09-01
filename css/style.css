@@ -87,6 +87,24 @@ p {
 /* -----------------------------------
    2. Structural Layout & Container
    ----------------------------------- */
+/* -----------------------------------
+   1c. Design Styles Catalog List Cards
+   ----------------------------------- */
+.style-catalog-card {
+  transition: border-color var(--transition-normal), box-shadow var(--transition-normal), transform var(--transition-normal);
+}
+
+.style-catalog-card:hover {
+  border-color: var(--color-accent) !important;
+  box-shadow: var(--shadow-subtle);
+  transform: translateY(-3px);
+}
+
+.style-catalog-card.active-style {
+  border-color: var(--color-accent) !important;
+  background-color: var(--color-block-badge) !important;
+}
+
 .container {
   width: 100%;
   max-width: var(--container-max-width);
