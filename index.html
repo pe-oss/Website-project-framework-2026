@@ -1435,6 +1435,59 @@
     </div>
   </footer>
 
+  <!-- ==========================================
+       FLOATING INTERACTIVE STYLE CUSTOMIZER WIDGET
+       ========================================== -->
+  <div class="floating-customizer-wrapper" id="floatingCustomizerWrapper">
+    <button class="floating-customizer-btn" id="floatingCustomizerBtn" title="Tùy Biến Giao Diện Trực Tiếp">
+      <span class="customizer-icon">🎨</span>
+      <span class="customizer-label">Tùy Biến Style</span>
+    </button>
+
+    <div class="floating-customizer-panel" id="floatingCustomizerPanel">
+      <div class="customizer-panel-header">
+        <h4>🎨 Bộ Tùy Biến Giao Diện Live</h4>
+        <button class="customizer-close-btn" id="customizerCloseBtn">&times;</button>
+      </div>
+
+      <div class="customizer-panel-body">
+        <!-- 1. Accent Color Swatches -->
+        <div class="customizer-group">
+          <label class="customizer-label">Màu Chủ Đạo (Accent Color):</label>
+          <div class="color-swatches-grid">
+            <button class="color-swatch active" data-color="#2563eb" style="background: #2563eb;" title="Xanh Indigo"></button>
+            <button class="color-swatch" data-color="#6f4e37" style="background: #6f4e37;" title="Nâu Espresso"></button>
+            <button class="color-swatch" data-color="#d97706" style="background: #d97706;" title="Vàng Bơ"></button>
+            <button class="color-swatch" data-color="#059669" style="background: #059669;" title="Xanh Emerald"></button>
+            <button class="color-swatch" data-color="#7c3aed" style="background: #7c3aed;" title="Tím Cyber"></button>
+            <button class="color-swatch" data-color="#e11d48" style="background: #e11d48;" title="Đỏ Crimson"></button>
+          </div>
+        </div>
+
+        <!-- 2. Border Radius Customizer -->
+        <div class="customizer-group">
+          <label class="customizer-label">Bo Góc Khối (Border Radius):</label>
+          <div class="radius-options-grid">
+            <button class="radius-opt-btn" data-radius="2px">Sắc Cạnh (0px)</button>
+            <button class="radius-opt-btn active" data-radius="8px">Vừa Phải (8px)</button>
+            <button class="radius-opt-btn" data-radius="18px">Bo Tròn (18px)</button>
+          </div>
+        </div>
+
+        <!-- 3. Store Presets Quick Selector -->
+        <div class="customizer-group">
+          <label class="customizer-label">Phong Cách Cửa Hàng:</label>
+          <div class="store-grid-setting">
+            <button class="store-setting-btn active" data-store="coffee">Cà Phê</button>
+            <button class="store-setting-btn" data-store="bakery">Tiệm Bánh</button>
+            <button class="store-setting-btn" data-store="grocery">Thực Phẩm</button>
+            <button class="store-setting-btn" data-store="general">Tổng Hợp</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </body>
 
 </html>
