@@ -145,6 +145,20 @@ p {
   margin-top: 0 !important;
 }
 
+/* -----------------------------------
+   2c. Dual-Mode View Switcher (Landing View vs Admin View)
+   ----------------------------------- */
+.page-view {
+  display: none;
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.page-view.active {
+  display: block !important;
+  opacity: 1;
+}
+
 .site-flank {
   display: none;
   position: sticky;
