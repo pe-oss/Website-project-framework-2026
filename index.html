@@ -20,6 +20,10 @@
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/style.css">
 
+  <!-- GSAP (GreenSock Animation Platform) & ScrollTrigger CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
   <!-- Main JavaScript File -->
   <script src="js/main.js" defer></script>
 </head>
@@ -1075,6 +1079,73 @@
 &lt;<span style="color: var(--color-accent);">footer</span> class="site-footer"&gt; [KHỐI CHÂN TRANG FOOTER] &lt;/<span style="color: var(--color-accent);">footer</span>&gt;
         </div>
       </div>
+    </section>
+
+    <!-- ==========================================
+         BLOCK: GSAP ANIMATION INTEGRATION & GUIDE
+         ========================================== -->
+    <section class="block" id="gsap-guide">
+      <span class="block-tag block-type-feature">KHỐI CHỨC NĂNG: &lt;section class="gsap-guide"&gt; [HƯỚNG DẪN TÍCH HỢP GSAP]</span>
+      <h2>Tích Hợp &amp; Hướng Dẫn Sử Dụng GSAP (GreenSock Animation)</h2>
+      <p>GSAP là thư viện tạo hiệu ứng chuyển động chuyên nghiệp hàng đầu thế giới. Hệ thống đã được tích hợp sẵn <strong>GSAP v3</strong> &amp; <strong>ScrollTrigger</strong>.</p>
+
+      <!-- LIVE GSAP INTERACTIVE DEMO CARDS -->
+      <div class="grid grid-3" style="margin-bottom: 1.5rem;">
+        <div class="product-card gsap-demo-card" id="gsapCard1" style="padding: 1.25rem;">
+          <h4 style="margin-bottom: 0.4rem;">1. gsap.to() / gsap.from()</h4>
+          <p style="font-size: 0.85rem; margin-bottom: 0.75rem;">Dịch chuyển, xoay, biến đổi opacity mượt mà.</p>
+          <button class="btn btn-outline" id="btnTestGsap1" style="width: 100%; font-size: 0.8rem;">Thử gsap.from()</button>
+        </div>
+
+        <div class="product-card gsap-demo-card" id="gsapCard2" style="padding: 1.25rem;">
+          <h4 style="margin-bottom: 0.4rem;">2. gsap.timeline()</h4>
+          <p style="font-size: 0.85rem; margin-bottom: 0.75rem;">Chuỗi chuyển động nối tiếp theo thứ tự không cần callback.</p>
+          <button class="btn btn-outline" id="btnTestGsap2" style="width: 100%; font-size: 0.8rem;">Chạy Timeline</button>
+        </div>
+
+        <div class="product-card gsap-demo-card" id="gsapCard3" style="padding: 1.25rem;">
+          <h4 style="margin-bottom: 0.4rem;">3. ScrollTrigger Plugin</h4>
+          <p style="font-size: 0.85rem; margin-bottom: 0.75rem;">Kích hoạt animation khi lướt chuột đến đúng vị trí khối.</p>
+          <button class="btn btn-outline" id="btnTestGsap3" style="width: 100%; font-size: 0.8rem;">Re-trigger Scroll</button>
+        </div>
+      </div>
+
+      <!-- GSAP CODE EXAMPLES & CHEATSHEET -->
+      <div class="code-box">
+        <div class="code-box-header">
+          <span>GSAP 3 Quick Reference &amp; Code Usage Guide</span>
+        </div>
+        <div class="code-box-body">
+<span style="color: var(--color-text-muted);">// 1. Khai báo GSAP trong mã JavaScript (đã tích hợp trong js/main.js):</span>
+<span style="color: var(--color-accent);">gsap</span>.registerPlugin(ScrollTrigger);
+
+<span style="color: var(--color-text-muted);">// 2. Chuyển động cơ bản đến trạng thái đích (gsap.to):</span>
+<span style="color: var(--color-accent);">gsap</span>.to(".element", { x: 100, opacity: 1, duration: 1, ease: "power2.out" });
+
+<span style="color: var(--color-text-muted);">// 3. Chuyển động bắt đầu từ trạng thái ẩn (gsap.from):</span>
+<span style="color: var(--color-accent);">gsap</span>.from(".block", { y: 50, opacity: 0, duration: 0.8, stagger: 0.15 });
+
+<span style="color: var(--color-text-muted);">// 4. Chuỗi chuyển động Timeline nối tiếp:</span>
+<span style="color: var(--color-accent);">const</span> tl = <span style="color: var(--color-accent);">gsap</span>.timeline({ defaults: { ease: "power3.out" } });
+tl.from(".hero-title", { y: -30, opacity: 0, duration: 0.6 })
+  .from(".hero-desc", { y: 20, opacity: 0, duration: 0.5 }, "-=0.3")
+  .from(".hero-btn", { scale: 0.8, opacity: 0, duration: 0.4 });
+
+<span style="color: var(--color-text-muted);">// 5. Hiệu ứng cuộn lướt trang (ScrollTrigger):</span>
+<span style="color: var(--color-accent);">gsap</span>.from(".scroll-target", {
+  scrollTrigger: {
+    trigger: ".scroll-target",
+    start: "top 80%",
+    toggleActions: "play none none none"
+  },
+  y: 40,
+  opacity: 0,
+  duration: 0.8
+});
+        </div>
+      </div>
+    </section>
+
     </main>
 
     <!-- FLANK RIGHT (SƯỜN PHẢI TRANG WEB) -->
