@@ -13,6 +13,56 @@ body {
   color: var(--color-text);
   transition: background-color var(--transition-normal), color var(--transition-normal);
   overflow-x: hidden;
+  position: relative;
+}
+
+/* -----------------------------------
+   1b. Global Ambient Background (Ảnh Nền Web Blur 20%)
+   ----------------------------------- */
+.bg-ambient-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+  overflow: hidden;
+  pointer-events: none;
+  display: flex;
+}
+
+.bg-ambient-layer {
+  flex: 1;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(20px) brightness(0.85); /* Tăng độ blur 20% làm ảnh nền nghệ thuật */
+  transform: scale(1.18); /* Mở rộng nhẹ để triệt tiêu viền trắng do hiệu ứng blur */
+  transition: all var(--transition-normal);
+}
+
+.bg-ambient-left {
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bg-ambient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-bg);
+  opacity: 0.78; /* Cho phép sắc thái ảnh nền chiếu nhẹ qua cực sang trọng */
+  transition: background-color var(--transition-normal), opacity var(--transition-normal);
+}
+
+[data-theme="dark"] .bg-ambient-layer {
+  filter: blur(20px) brightness(0.55);
+}
+
+[data-theme="dark"] .bg-ambient-overlay {
+  opacity: 0.85;
 }
 
 h1, h2, h3, h4, h5, h6 {
