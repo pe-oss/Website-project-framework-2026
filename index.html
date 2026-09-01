@@ -47,19 +47,18 @@
 
       <!-- 2. CÁC KEY GỢI Ý CHO MỘT TRANG WEB CHUẨN & CHUYỂN CHẾ ĐỘ -->
       <nav class="nav-menu" id="navMenu">
-        <a href="#landingView" class="nav-link active" title="Giao diện chuẩn Landing Page">🚀 Landing Page</a>
-        <a href="#adminView" class="nav-link" title="Giao diện Bảng điều khiển Quản trị">📊 Admin Dashboard</a>
-        <a href="#storeSwitcherNav" class="nav-link" title="Gợi ý phong cách thiết kế cửa hàng">🏬 Phong Cách Cửa Hàng</a>
-        <a href="#layoutFrameworkBar" class="nav-link" title="Các khối chuẩn: Hero, Menu, Proof, Location">🧱 Khối Chức Năng</a>
-        <a href="#codeSnippetText" class="nav-link" title="Chuẩn cấu trúc mã nguồn HTML5/CSS3">💻 Cấu Trúc Code</a>
-        <a href="README.md" target="_blank" class="nav-link" title="Xem tài liệu tiêu chuẩn kỹ thuật">📚 Tiêu Chuẩn Web</a>
+        <a href="#landingView" class="nav-link active" title="Giao diện chuẩn Landing Page">Landing Page</a>
+        <a href="#adminView" class="nav-link" title="Giao diện Bảng điều khiển Quản trị">Admin Dashboard</a>
+        <a href="#storeSwitcherNav" class="nav-link" title="Gợi ý phong cách thiết kế cửa hàng">Phong Cách Cửa Hàng</a>
+        <a href="#layoutFrameworkBar" class="nav-link" title="Các khối chuẩn: Hero, Menu, Proof, Location">Khối Chức Năng</a>
+        <a href="#codeSnippetText" class="nav-link" title="Chuẩn cấu trúc mã nguồn HTML5/CSS3">Cấu Trúc Code</a>
+        <a href="README.md" target="_blank" class="nav-link" title="Xem tài liệu tiêu chuẩn kỹ thuật">Tiêu Chuẩn Web</a>
       </nav>
 
       <!-- 3. GỘP TẤT CẢ TÍNH NĂNG VÀO FUNCTION SETTING (CÀI ĐẶT) -->
       <div class="nav-actions">
         <div class="settings-dropdown-wrapper" id="settingsDropdownWrapper">
           <button class="settings-toggle-btn" id="settingsToggleBtn" aria-label="Mở Menu Cài Đặt Function Setting" aria-expanded="false" title="Mở bảng điều khiển Cài Đặt Hệ Thống">
-            <span class="settings-btn-icon">⚙️</span>
             <span class="settings-btn-label">Cài Đặt</span>
             <span class="settings-btn-arrow">▾</span>
           </button>
@@ -68,7 +67,6 @@
           <div class="settings-dropdown-menu" id="settingsDropdownMenu">
             <div class="settings-menu-header">
               <div class="settings-menu-title">
-                <span>⚙️</span>
                 <span>Cài Đặt Hệ Thống</span>
               </div>
               <button class="settings-close-btn" id="settingsCloseBtn" title="Đóng cài đặt">&times;</button>
@@ -78,14 +76,14 @@
               <!-- Chức năng 1: Chế độ hiển thị (View Mode) -->
               <div class="settings-section">
                 <div class="settings-section-title">
-                  <span>🖥️</span> Chế Độ Giao Diện (View Mode)
+                  Chế Độ Giao Diện (View Mode)
                 </div>
                 <div class="mode-switcher-setting">
                   <button class="mode-btn active" id="btnLandingMode" title="Chuyển sang giao diện Landing Page">
-                    🚀 Landing Page
+                    Landing Page
                   </button>
                   <button class="mode-btn" id="btnAdminMode" title="Chuyển sang giao diện Website Quản Trị">
-                    📊 Admin Dashboard
+                    Admin Dashboard
                   </button>
                 </div>
               </div>
@@ -93,14 +91,14 @@
               <!-- Chức năng 2: Giao diện Sáng / Tối (Theme Mode) -->
               <div class="settings-section">
                 <div class="settings-section-title">
-                  <span>🎨</span> Giao Diện Màu Sắc (Theme Mode)
+                  Giao Diện Màu Sắc (Theme Mode)
                 </div>
                 <div class="theme-switcher-setting">
                   <button class="theme-opt-btn" id="themeLightBtn">
-                    ☀️ Giao Diện Sáng
+                    Giao Diện Sáng
                   </button>
                   <button class="theme-opt-btn" id="themeDarkBtn">
-                    🌙 Giao Diện Tối
+                    Giao Diện Tối
                   </button>
                 </div>
               </div>
@@ -108,23 +106,23 @@
               <!-- Chức năng 3: Nhãn Tâm Lý Khách Hàng (Customer Psychology) -->
               <div class="settings-section">
                 <div class="settings-section-title">
-                  <span>🧠</span> Phân Tích Tâm Lý Khách Hàng
+                  Phân Tích Tâm Lý Khách Hàng
                 </div>
                 <button class="psych-setting-btn" id="psychToggleBtn">
-                  <span>🧠</span> <span id="psychToggleText">Bật Phân Tích Tâm Lý</span>
+                  <span id="psychToggleText">Bật Phân Tích Tâm Lý</span>
                 </button>
               </div>
 
               <!-- Chức năng 4: Phong cách cửa hàng nhanh (Store Presets) -->
               <div class="settings-section">
                 <div class="settings-section-title">
-                  <span>🏬</span> Phong Cách Cửa Hàng (Store Presets)
+                  Phong Cách Cửa Hàng (Store Presets)
                 </div>
                 <div class="store-grid-setting" id="storeSettingGrid">
-                  <button class="store-setting-btn active" data-store="coffee">☕ Cà Phê</button>
-                  <button class="store-setting-btn" data-store="bakery">🍰 Tiệm Bánh</button>
-                  <button class="store-setting-btn" data-store="grocery">🥬 Thực Phẩm</button>
-                  <button class="store-setting-btn" data-store="general">🛍️ Tổng Hợp</button>
+                  <button class="store-setting-btn active" data-store="coffee">Cà Phê</button>
+                  <button class="store-setting-btn" data-store="bakery">Tiệm Bánh</button>
+                  <button class="store-setting-btn" data-store="grocery">Thực Phẩm</button>
+                  <button class="store-setting-btn" data-store="general">Tổng Hợp</button>
                 </div>
               </div>
             </div>
@@ -150,7 +148,7 @@
         <div class="flank-img-box">
           <img src="images/flank_left.jpg" alt="Không gian Cửa hàng Minimalist" class="flank-img">
           <div class="flank-overlay">
-            <span class="flank-badge">🖼️ SƯỜN TRÁI</span>
+            <span class="flank-badge">SƯỜN TRÁI</span>
             <h4>Không Gian &amp; Kiến Trúc 2026</h4>
             <p>Tận dụng không gian 2 bên sườn màn hình lớn Desktop</p>
           </div>
@@ -170,26 +168,26 @@
       <div class="store-selector-wrapper">
         <div class="store-selector-header">
           <div class="store-selector-title">
-            <span>🏬</span> Phong Cách Cửa Hàng &amp; Khung Bố Cục Block 2026
+            Phong Cách Cửa Hàng &amp; Khung Bố Cục Block 2026
           </div>
           <button class="psych-toggle-btn" id="psychToggleBtn" title="Bật/Tắt nhãn phân tích tâm lý khách hàng">
-            <span>🧠</span> <span id="psychToggleText">Bật Phân Tích Tâm Lý Khách Hàng</span>
+            <span id="psychToggleText">Bật Phân Tích Tâm Lý Khách Hàng</span>
           </button>
         </div>
 
         <!-- STORE PRESET BUTTONS -->
         <div class="store-switcher-nav" id="storeSwitcherNav">
           <button class="store-btn active" data-store="coffee" title="Phong cách Quán Cà phê & Thức uống">
-            ☕ Cà Phê (Coffee)
+            Cà Phê (Coffee)
           </button>
           <button class="store-btn" data-store="bakery" title="Phong cách Tiệm Bánh & Tráng miệng">
-            🍰 Tiệm Bánh (Bakery)
+            Tiệm Bánh (Bakery)
           </button>
           <button class="store-btn" data-store="grocery" title="Phong cách Cửa hàng Thực phẩm Clean Food">
-            🥬 Thực Phẩm (Grocery)
+            Thực Phẩm (Grocery)
           </button>
           <button class="store-btn" data-store="general" title="Phong cách Cửa hàng Tổng hợp E-Commerce">
-            🛍️ Cửa Hàng (General)
+            Cửa Hàng (General)
           </button>
         </div>
 
@@ -206,21 +204,21 @@
 
         <!-- BLOCK CLASSIFICATION LEGEND BAR -->
         <div class="block-legend-bar" style="margin-top: 0.75rem; margin-bottom: 0;">
-          <span style="font-weight: bold; color: var(--color-text);">📌 Chú Giải Phân Loại Khối Project:</span>
-          <span class="block-tag block-type-framework" style="margin-bottom: 0;">🏗️ KHỐI FRAMEWORK (CẤU TRÚC LAYOUT)</span>
-          <span class="block-tag block-type-feature" style="margin-bottom: 0;">⚡ KHỐI CHỨC NĂNG (NGHIỆP VỤ / TÍNH NĂNG)</span>
+          <span style="font-weight: bold; color: var(--color-text);">Chú Giải Phân Loại Khối Project:</span>
+          <span class="block-tag block-type-framework" style="margin-bottom: 0;">KHỐI FRAMEWORK (CẤU TRÚC LAYOUT)</span>
+          <span class="block-tag block-type-feature" style="margin-bottom: 0;">KHỐI CHỨC NĂNG (NGHIỆP VỤ / TÍNH NĂNG)</span>
         </div>
       </div>
 
       <!-- ==========================================
-           STORE PRESET 1: COFFEE SHOP (☕ CÀ PHÊ)
+           STORE PRESET 1: COFFEE SHOP (CÀ PHÊ)
            ========================================== -->
       <div class="store-preset-container active" id="presetCoffee" data-store-preset="coffee">
 
         <!-- BLOCK 1: SPLIT HERO & STORY (COFFEE) -->
         <section class="block hero-block layout-block" data-layout-type="split-hero">
-          <span class="block-tag block-type-feature">⚡ KHỐI CHỨC NĂNG: &lt;section class="hero-split"&gt; [CÀ PHÊ PRESET]</span>
-          <span class="psych-badge">🧠 Priming &amp; Sensory Trigger</span>
+          <span class="block-tag block-type-feature">KHỐI CHỨC NĂNG: &lt;section class="hero-split"&gt; [CÀ PHÊ PRESET]</span>
+          <span class="psych-badge">Tâm Lý: Priming &amp; Sensory Trigger</span>
 
           <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 2rem; align-items: center;">
             <div>

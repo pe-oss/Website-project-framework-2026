@@ -207,10 +207,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const savedStoreStyle = localStorage.getItem('storeStyle') || 'coffee';
 
   const storeBrandingMap = {
-    coffee: '☕ COFFEE STORE',
-    bakery: '🍰 BAKERY SHOP',
-    grocery: '🥬 FRESH FOOD',
-    general: '🛍️ GENERAL STORE'
+    coffee: 'COFFEE STORE',
+    bakery: 'BAKERY SHOP',
+    grocery: 'FRESH FOOD',
+    general: 'GENERAL STORE'
   };
 
   setStoreStyle(savedStoreStyle);
