@@ -213,13 +213,13 @@ document.addEventListener('DOMContentLoaded', () => {
     general: 'GENERAL STORE'
   };
 
-  setStoreStyle(savedStoreStyle);
+  setStoreStyle(savedStoreStyle, false);
 
   storeBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
       const selectedStore = btn.getAttribute('data-store');
-      setStoreStyle(selectedStore);
+      setStoreStyle(selectedStore, true);
     });
   });
 
@@ -228,17 +228,11 @@ document.addEventListener('DOMContentLoaded', () => {
   styleCatalogCards.forEach(card => {
     card.addEventListener('click', () => {
       const selectedStore = card.getAttribute('data-style-preset');
-      setStoreStyle(selectedStore);
-
-      // Cuộn mượt đến preset đang chọn
-      const targetPreset = document.getElementById(`preset${selectedStore.charAt(0).toUpperCase() + selectedStore.slice(1)}`);
-      if (targetPreset) {
-        targetPreset.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+      setStoreStyle(selectedStore, true);
     });
   });
 
-  function setStoreStyle(store) {
+  function setStoreStyle(store, shouldScroll = false) {
     // 1. Chuyển đổi theme màu sắc toàn trang (Full-page global theme)
     document.documentElement.setAttribute('data-store-style', store);
 
@@ -265,15 +259,18 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // 5. Hiển thị khối nội dung giao diện tương ứng với loại cửa hàng & Animation GSAP
+    // 5. Hiển thị DUY NHẤT khối nội dung giao diện tương ứng với loại cửa hàng chọn & Animation GSAP
     storePresetContainers.forEach(container => {
       if (container.getAttribute('data-store-preset') === store) {
         container.classList.add('active');
         if (typeof gsap !== 'undefined') {
           gsap.fromTo(container, 
-            { opacity: 0, y: 15 },
-            { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' }
+            { opacity: 0, y: 20 },
+            { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }
           );
+        }
+        if (shouldScroll) {
+          container.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       } else {
         container.classList.remove('active');

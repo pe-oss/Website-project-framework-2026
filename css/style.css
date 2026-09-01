@@ -610,6 +610,17 @@ p {
 }
 
 /* -----------------------------------
+   Store Preset Container Display Toggle
+   ----------------------------------- */
+.store-preset-container {
+  display: none;
+}
+
+.store-preset-container.active {
+  display: block !important;
+}
+
+/* -----------------------------------
    5. Buttons & Minimalist Controls
    ----------------------------------- */
 .btn {
