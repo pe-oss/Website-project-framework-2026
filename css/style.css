@@ -46,6 +46,123 @@ p {
   padding-right: var(--space-6);
 }
 
+/* -----------------------------------
+   2b. Side Flanks (Tận dụng sườn trái & sườn phải màn hình)
+   ----------------------------------- */
+.site-layout-wrapper {
+  width: 100%;
+  max-width: 1720px;
+  margin: 1.5rem auto 0 auto;
+  padding: 0 var(--space-4);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+}
+
+@media (min-width: 1200px) {
+  .site-layout-wrapper {
+    grid-template-columns: 240px 1fr 240px;
+    align-items: start;
+  }
+}
+
+@media (min-width: 1500px) {
+  .site-layout-wrapper {
+    grid-template-columns: 280px 1fr 280px;
+  }
+}
+
+.site-main-content {
+  min-width: 0;
+  margin-top: 0 !important;
+}
+
+.site-flank {
+  display: none;
+  position: sticky;
+  top: 90px;
+}
+
+@media (min-width: 1200px) {
+  .site-flank {
+    display: block;
+  }
+}
+
+.flank-card {
+  border: 1px solid var(--color-border);
+  background-color: var(--color-card-bg);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-subtle);
+  transition: all var(--transition-normal);
+}
+
+.flank-card:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.flank-img-box {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  overflow: hidden;
+}
+
+.flank-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-normal);
+}
+
+.flank-card:hover .flank-img {
+  transform: scale(1.04);
+}
+
+.flank-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-4);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.25), transparent);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.flank-badge {
+  display: inline-block;
+  align-self: flex-start;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: var(--font-weight-bold);
+  padding: 0.15rem 0.45rem;
+  background-color: var(--color-accent);
+  color: #fff;
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+}
+
+.flank-overlay h4 {
+  color: #ffffff;
+  font-size: var(--font-size-sm);
+  margin-bottom: 0;
+  font-weight: var(--font-weight-semibold);
+}
+
+.flank-overlay p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: var(--font-size-xs);
+  margin-bottom: 0;
+  line-height: 1.35;
+}
+
 /* Page Views Toggle Container */
 .page-view {
   display: none;

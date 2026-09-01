@@ -36,9 +36,10 @@
         <span class="logo-badge">FRAMEWORK</span>
       </a>
 
-      <!-- 2. CÁC KEY GỢI Ý CHO MỘT TRANG WEB CHUẨN (NAV MENU) -->
+      <!-- 2. CÁC KEY GỢI Ý CHO MỘT TRANG WEB CHUẨN & CHUYỂN CHẾ ĐỘ -->
       <nav class="nav-menu" id="navMenu">
-        <a href="#landingView" class="nav-link active" title="Bố cục chuẩn Landing Page">🎯 Bố Cục Layout</a>
+        <a href="#landingView" class="nav-link active" title="Giao diện chuẩn Landing Page">🚀 Landing Page</a>
+        <a href="#adminView" class="nav-link" title="Giao diện Bảng điều khiển Quản trị">📊 Admin Dashboard</a>
         <a href="#storeSwitcherNav" class="nav-link" title="Gợi ý phong cách thiết kế cửa hàng">🏬 Phong Cách Cửa Hàng</a>
         <a href="#layoutFrameworkBar" class="nav-link" title="Các khối chuẩn: Hero, Menu, Proof, Location">🧱 Khối Chức Năng</a>
         <a href="#codeSnippetText" class="nav-link" title="Chuẩn cấu trúc mã nguồn HTML5/CSS3">💻 Cấu Trúc Code</a>
@@ -129,7 +130,27 @@
     </div>
   </header>
 
-  <main class="container" style="margin-top: 2rem;">
+  <!-- ==========================================
+       SITE LAYOUT WRAPPER (TẬN DỤNG SƯỜN TRÁI & PHẢI TẠO ẢNH BANNER)
+       ========================================== -->
+  <div class="site-layout-wrapper">
+
+    <!-- FLANK LEFT (SƯỜN TRÁI TRANG WEB) -->
+    <aside class="site-flank flank-left">
+      <div class="flank-card">
+        <div class="flank-img-box">
+          <img src="images/flank_left.jpg" alt="Không gian Cửa hàng Minimalist" class="flank-img">
+          <div class="flank-overlay">
+            <span class="flank-badge">🖼️ SƯỜN TRÁI</span>
+            <h4>Không Gian &amp; Kiến Trúc 2026</h4>
+            <p>Tận dụng không gian 2 bên sườn màn hình lớn Desktop</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN CENTRAL CONTENT CONTAINER (KHUNG NỘI DUNG CHÍNH) -->
+    <main class="container site-main-content">
 
     <!-- ====================================================================
          VIEW 1: LANDING PAGE TEMPLATE (MULTI-STORE & PSYCHOLOGY FRAMEWORK)
@@ -1047,9 +1068,23 @@
 &lt;<span style="color: var(--color-accent);">footer</span> class="site-footer"&gt; [KHỐI CHÂN TRANG FOOTER] &lt;/<span style="color: var(--color-accent);">footer</span>&gt;
         </div>
       </div>
-    </section>
+    </main>
 
-  </main>
+    <!-- FLANK RIGHT (SƯỜN PHẢI TRANG WEB) -->
+    <aside class="site-flank flank-right">
+      <div class="flank-card">
+        <div class="flank-img-box">
+          <img src="images/flank_right.jpg" alt="Sản phẩm đặc trưng Minimalist" class="flank-img">
+          <div class="flank-overlay">
+            <span class="flank-badge">🖼️ SƯỜN PHẢI</span>
+            <h4>Sản Phẩm &amp; Nghệ Thuật 2026</h4>
+            <p>Tăng ấn tượng thị giác cho không gian thương hiệu</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+  </div>
 
   <!-- ==========================================
        BLOCK: FOOTER

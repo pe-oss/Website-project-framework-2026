@@ -62,17 +62,28 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function setViewMode(mode) {
+    const landingNavLinks = document.querySelectorAll('a[href="#landingView"]');
+    const adminNavLinks = document.querySelectorAll('a[href="#adminView"]');
+
     if (mode === 'admin') {
       if (adminView) adminView.classList.add('active');
       if (landingView) landingView.classList.remove('active');
       if (btnAdminMode) btnAdminMode.classList.add('active');
       if (btnLandingMode) btnLandingMode.classList.remove('active');
+      
+      adminNavLinks.forEach(link => link.classList.add('active'));
+      landingNavLinks.forEach(link => link.classList.remove('active'));
+
       localStorage.setItem('viewMode', 'admin');
     } else {
       if (landingView) landingView.classList.add('active');
       if (adminView) adminView.classList.remove('active');
       if (btnLandingMode) btnLandingMode.classList.add('active');
       if (btnAdminMode) btnAdminMode.classList.remove('active');
+
+      landingNavLinks.forEach(link => link.classList.add('active'));
+      adminNavLinks.forEach(link => link.classList.remove('active'));
+
       localStorage.setItem('viewMode', 'landing');
     }
   }
@@ -136,13 +147,21 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* -----------------------------------
-     4. Smooth Scrolling & Active State
+     4. Smooth Scrolling & Active State with View Mode Handling
      ----------------------------------- */
   navLinks.forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       const targetId = this.getAttribute('href');
       if (targetId.startsWith('#') && targetId.length > 1) {
         e.preventDefault();
+
+        // Tự động kích hoạt View Mode tương ứng khi bấm trên Nav Header
+        if (targetId === '#adminView') {
+          setViewMode('admin');
+        } else if (targetId === '#landingView' || document.querySelector(`#landingView ${targetId}`)) {
+          setViewMode('landing');
+        }
+
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
           const headerHeight = document.querySelector('.site-header').offsetHeight;
