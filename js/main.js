@@ -5,17 +5,47 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   // Kho lưu trữ DOM elements
-  const themeToggleBtn = document.getElementById('themeToggle');
-  const themeIcon = document.getElementById('themeIcon');
-  const menuToggleBtn = document.getElementById('menuToggle');
-  const navMenu = document.getElementById('navMenu');
-  const navLinks = document.querySelectorAll('.nav-link');
+  // Settings Dropdown Elements
+  const settingsToggleBtn = document.getElementById('settingsToggleBtn');
+  const settingsDropdownMenu = document.getElementById('settingsDropdownMenu');
+  const settingsCloseBtn = document.getElementById('settingsCloseBtn');
+  const themeLightBtn = document.getElementById('themeLightBtn');
+  const themeDarkBtn = document.getElementById('themeDarkBtn');
 
   // Mode Switcher Elements (Landing Page vs Admin Dashboard)
   const btnLandingMode = document.getElementById('btnLandingMode');
   const btnAdminMode = document.getElementById('btnAdminMode');
   const landingView = document.getElementById('landingView');
   const adminView = document.getElementById('adminView');
+
+  /* -----------------------------------
+     0. Xử lý Bảng Cài Đặt (Function Setting Dropdown)
+     ----------------------------------- */
+  if (settingsToggleBtn && settingsDropdownMenu) {
+    settingsToggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = settingsDropdownMenu.classList.toggle('show');
+      settingsToggleBtn.classList.toggle('active', isOpen);
+      settingsToggleBtn.setAttribute('aria-expanded', isOpen);
+    });
+
+    if (settingsCloseBtn) {
+      settingsCloseBtn.addEventListener('click', () => {
+        settingsDropdownMenu.classList.remove('show');
+        settingsToggleBtn.classList.remove('active');
+        settingsToggleBtn.setAttribute('aria-expanded', 'false');
+      });
+    }
+
+    // Đóng dropdown khi click ra ngoài
+    document.addEventListener('click', (e) => {
+      if (!settingsDropdownMenu.contains(e.target) && !settingsToggleBtn.contains(e.target)) {
+        settingsDropdownMenu.classList.remove('show');
+        settingsToggleBtn.classList.remove('active');
+        settingsToggleBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
 
   /* -----------------------------------
      1. Xử lý Chế Độ Hiển Thị (Landing Page vs Admin Dashboard)
@@ -48,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* -----------------------------------
-     2. Xử lý Dark / Light Theme Switcher
+     2. Xử lý Dark / Light Theme Switcher (Cài Đặt Giao Diện)
      ----------------------------------- */
   const savedTheme = localStorage.getItem('theme') || 
     (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
@@ -63,14 +93,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  if (themeLightBtn) {
+    themeLightBtn.addEventListener('click', () => setTheme('light'));
+  }
+
+  if (themeDarkBtn) {
+    themeDarkBtn.addEventListener('click', () => setTheme('dark'));
+  }
+
   function setTheme(theme) {
     if (theme === 'dark') {
       document.documentElement.setAttribute('data-theme', 'dark');
       if (themeIcon) themeIcon.textContent = '☀️';
+      if (themeDarkBtn) themeDarkBtn.classList.add('active');
+      if (themeLightBtn) themeLightBtn.classList.remove('active');
       localStorage.setItem('theme', 'dark');
     } else {
       document.documentElement.setAttribute('data-theme', 'light');
       if (themeIcon) themeIcon.textContent = '🌙';
+      if (themeLightBtn) themeLightBtn.classList.add('active');
+      if (themeDarkBtn) themeDarkBtn.classList.remove('active');
       localStorage.setItem('theme', 'light');
     }
   }
@@ -140,7 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* -----------------------------------
      6. Store Style Switcher (Thay Đổi Toàn Trang: Cà phê, Tiệm Bánh, Thực Phẩm, General Store)
      ----------------------------------- */
-  const storeBtns = document.querySelectorAll('.store-btn');
+  const storeBtns = document.querySelectorAll('.store-btn, .store-setting-btn');
   const storePresetContainers = document.querySelectorAll('.store-preset-container');
   const logoBadge = document.querySelector('.logo-badge');
   const savedStoreStyle = localStorage.getItem('storeStyle') || 'coffee';
@@ -170,7 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
       logoBadge.textContent = storeBrandingMap[store];
     }
 
-    // 3. Cập nhật trạng thái Active trên nút chọn phong cách
+    // 3. Cập nhật trạng thái Active trên nút chọn phong cách (Cả Body và Menu Cài Đặt)
     storeBtns.forEach(btn => {
       if (btn.getAttribute('data-store') === store) {
         btn.classList.add('active');
@@ -221,18 +263,18 @@ document.addEventListener('DOMContentLoaded', () => {
   /* -----------------------------------
      8. Customer Psychology Insights Toggle
      ----------------------------------- */
-  const psychToggleBtn = document.getElementById('psychToggleBtn');
-  const psychToggleText = document.getElementById('psychToggleText');
+  const psychToggleBtns = document.querySelectorAll('#psychToggleBtn, .psych-setting-btn');
+  const psychToggleTexts = document.querySelectorAll('#psychToggleText');
   let isPsychologyActive = localStorage.getItem('showPsychology') === 'true';
 
   updatePsychologyState(isPsychologyActive);
 
-  if (psychToggleBtn) {
-    psychToggleBtn.addEventListener('click', () => {
+  psychToggleBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
       isPsychologyActive = !isPsychologyActive;
       updatePsychologyState(isPsychologyActive);
     });
-  }
+  });
 
   function updatePsychologyState(show) {
     const psychCards = document.querySelectorAll('.psych-note-card');
@@ -244,21 +286,21 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    if (psychToggleText) {
-      psychToggleText.textContent = show
+    psychToggleTexts.forEach(textElem => {
+      textElem.textContent = show
         ? 'Ẩn Phân Tích Tâm Lý Khách Hàng'
         : 'Bật Phân Tích Tâm Lý Khách Hàng';
-    }
+    });
 
-    if (psychToggleBtn) {
+    psychToggleBtns.forEach(btn => {
       if (show) {
-        psychToggleBtn.style.backgroundColor = 'var(--psych-purple)';
-        psychToggleBtn.style.color = '#fff';
+        btn.style.backgroundColor = 'var(--psych-purple)';
+        btn.style.color = '#fff';
       } else {
-        psychToggleBtn.style.backgroundColor = 'var(--psych-bg-soft)';
-        psychToggleBtn.style.color = 'var(--psych-purple)';
+        btn.style.backgroundColor = 'var(--psych-bg-soft)';
+        btn.style.color = 'var(--psych-purple)';
       }
-    }
+    });
 
     localStorage.setItem('showPsychology', show ? 'true' : 'false');
   }

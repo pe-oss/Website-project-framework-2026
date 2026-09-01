@@ -133,6 +133,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: var(--space-4);
 }
 
 .logo {
@@ -143,6 +144,7 @@ p {
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
   color: var(--color-text);
+  flex-shrink: 0;
 }
 
 .logo-badge {
@@ -154,18 +156,50 @@ p {
   border-radius: var(--radius-sm);
 }
 
-/* Mode Switcher Segmented Button Group */
-.mode-switcher {
+.nav-menu {
   display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.nav-link {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-muted);
+  transition: all var(--transition-fast);
+  padding: 0.35rem 0.65rem;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--color-text);
+  font-weight: var(--font-weight-semibold);
   background-color: var(--color-block-badge);
-  border: 1px solid var(--color-border);
-  padding: 0.2rem;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* Mode Switcher Buttons (Common Style inside Settings & Floating) */
+.mode-switcher-setting {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.35rem;
+  background-color: var(--color-block-badge);
+  padding: 0.25rem;
   border-radius: var(--radius-md);
-  gap: 0.2rem;
+  border: 1px solid var(--color-border);
 }
 
 .mode-btn {
-  padding: 0.35rem 0.85rem;
+  padding: 0.4rem 0.6rem;
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-medium);
   border-radius: var(--radius-sm);
@@ -176,7 +210,9 @@ p {
   transition: all var(--transition-fast);
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.35rem;
+  width: 100%;
 }
 
 .mode-btn:hover {
@@ -191,29 +227,201 @@ p {
   border: 1px solid var(--color-border);
 }
 
-.nav-menu {
-  display: flex;
-  align-items: center;
-  gap: var(--space-6);
+/* -----------------------------------
+   Function Setting Dropdown Panel
+   ----------------------------------- */
+.settings-dropdown-wrapper {
+  position: relative;
 }
 
-.nav-link {
+.settings-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.85rem;
+  font-family: var(--font-sans);
   font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  background-color: var(--color-block-badge);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.settings-toggle-btn:hover,
+.settings-toggle-btn.active {
+  background-color: var(--color-card-bg);
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-subtle);
+}
+
+.settings-btn-arrow {
+  font-size: 0.7rem;
+  transition: transform var(--transition-fast);
+}
+
+.settings-toggle-btn.active .settings-btn-arrow {
+  transform: rotate(180deg);
+}
+
+/* Settings Dropdown Card */
+.settings-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: 320px;
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-4);
+  z-index: 1100;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: all var(--transition-normal);
+  pointer-events: none;
+}
+
+.settings-dropdown-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.settings-menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: var(--space-2);
+  margin-bottom: var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.settings-menu-title {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+}
+
+.settings-close-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.25rem;
   color: var(--color-text-muted);
+  cursor: pointer;
+  line-height: 1;
+  padding: 0.1rem 0.3rem;
+  border-radius: var(--radius-sm);
   transition: color var(--transition-fast);
 }
 
-.nav-link:hover,
-.nav-link.active {
+.settings-close-btn:hover {
   color: var(--color-text);
-  font-weight: var(--font-weight-semibold);
 }
 
-.nav-actions {
+.settings-section {
+  margin-bottom: var(--space-3);
+}
+
+.settings-section:last-child {
+  margin-bottom: 0;
+}
+
+.settings-section-title {
+  font-size: 0.72rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: var(--space-2);
   display: flex;
   align-items: center;
-  gap: var(--space-3);
+  gap: 0.35rem;
+}
+
+/* Theme Switcher Options */
+.theme-switcher-setting {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.35rem;
+  background-color: var(--color-block-badge);
+  padding: 0.25rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+
+.theme-opt-btn {
+  padding: 0.4rem 0.5rem;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-muted);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: center;
+}
+
+.theme-opt-btn.active {
+  background-color: var(--color-card-bg);
+  color: var(--color-text);
+  font-weight: var(--font-weight-semibold);
+  box-shadow: var(--shadow-subtle);
+  border: 1px solid var(--color-border);
+}
+
+/* Psych Button Inside Settings */
+.psych-setting-btn {
+  width: 100%;
+  padding: 0.45rem 0.65rem;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  transition: all var(--transition-fast);
+  background-color: var(--psych-bg-soft);
+  color: var(--psych-purple);
+}
+
+/* Store Grid Inside Settings */
+.store-grid-setting {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.35rem;
+}
+
+.store-setting-btn {
+  padding: 0.4rem;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--radius-sm);
+  background: var(--color-block-badge);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: center;
+}
+
+.store-setting-btn:hover,
+.store-setting-btn.active {
+  background: var(--color-card-bg);
+  color: var(--color-text);
+  font-weight: var(--font-weight-semibold);
+  border-color: var(--color-accent);
 }
 
 /* -----------------------------------

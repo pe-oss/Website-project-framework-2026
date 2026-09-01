@@ -30,36 +30,98 @@
        ========================================== -->
   <header class="site-header">
     <div class="container navbar">
+      <!-- 1. LOGO (PHÍA BÊN TRÁI) -->
       <a href="#" class="logo">
         <span>MINIMAL</span>
         <span class="logo-badge">FRAMEWORK</span>
       </a>
 
-      <!-- MODE SWITCHER SEGMENTED CONTROL IN HEADER -->
-      <div class="mode-switcher" id="modeSwitcher">
-        <button class="mode-btn active" id="btnLandingMode" title="Chuyển sang giao diện Landing Page">
-          🚀 Landing Page
-        </button>
-        <button class="mode-btn" id="btnAdminMode" title="Chuyển sang giao diện Website Quản Trị">
-          📊 Admin Dashboard
-        </button>
-      </div>
-
-      <!-- NAV MENU LINKS -->
+      <!-- 2. CÁC KEY GỢI Ý CHO MỘT TRANG WEB CHUẨN (NAV MENU) -->
       <nav class="nav-menu" id="navMenu">
-        <a href="#layout-demo" class="nav-link active">Bố Cục Layout</a>
-        <a href="#content-blocks" class="nav-link">Khối Chức Năng</a>
-        <a href="#code-demo" class="nav-link">Cấu Trúc Code</a>
-        <a href="README.md" target="_blank" class="nav-link">README.md</a>
+        <a href="#landingView" class="nav-link active" title="Bố cục chuẩn Landing Page">🎯 Bố Cục Layout</a>
+        <a href="#storeSwitcherNav" class="nav-link" title="Gợi ý phong cách thiết kế cửa hàng">🏬 Phong Cách Cửa Hàng</a>
+        <a href="#layoutFrameworkBar" class="nav-link" title="Các khối chuẩn: Hero, Menu, Proof, Location">🧱 Khối Chức Năng</a>
+        <a href="#codeSnippetText" class="nav-link" title="Chuẩn cấu trúc mã nguồn HTML5/CSS3">💻 Cấu Trúc Code</a>
+        <a href="README.md" target="_blank" class="nav-link" title="Xem tài liệu tiêu chuẩn kỹ thuật">📚 Tiêu Chuẩn Web</a>
       </nav>
 
+      <!-- 3. GỘP TẤT CẢ TÍNH NĂNG VÀO FUNCTION SETTING (CÀI ĐẶT) -->
       <div class="nav-actions">
-        <!-- Theme Toggle Button -->
-        <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle Light/Dark Theme">
-          <span id="themeIcon">🌙</span>
-        </button>
+        <div class="settings-dropdown-wrapper" id="settingsDropdownWrapper">
+          <button class="settings-toggle-btn" id="settingsToggleBtn" aria-label="Mở Menu Cài Đặt Function Setting" aria-expanded="false" title="Mở bảng điều khiển Cài Đặt Hệ Thống">
+            <span class="settings-btn-icon">⚙️</span>
+            <span class="settings-btn-label">Cài Đặt</span>
+            <span class="settings-btn-arrow">▾</span>
+          </button>
 
-        <!-- Mobile Nav Toggle -->
+          <!-- FUNCTION SETTING DROPDOWN MENU -->
+          <div class="settings-dropdown-menu" id="settingsDropdownMenu">
+            <div class="settings-menu-header">
+              <div class="settings-menu-title">
+                <span>⚙️</span>
+                <span>Cài Đặt Hệ Thống</span>
+              </div>
+              <button class="settings-close-btn" id="settingsCloseBtn" title="Đóng cài đặt">&times;</button>
+            </div>
+
+            <div class="settings-menu-body">
+              <!-- Chức năng 1: Chế độ hiển thị (View Mode) -->
+              <div class="settings-section">
+                <div class="settings-section-title">
+                  <span>🖥️</span> Chế Độ Giao Diện (View Mode)
+                </div>
+                <div class="mode-switcher-setting">
+                  <button class="mode-btn active" id="btnLandingMode" title="Chuyển sang giao diện Landing Page">
+                    🚀 Landing Page
+                  </button>
+                  <button class="mode-btn" id="btnAdminMode" title="Chuyển sang giao diện Website Quản Trị">
+                    📊 Admin Dashboard
+                  </button>
+                </div>
+              </div>
+
+              <!-- Chức năng 2: Giao diện Sáng / Tối (Theme Mode) -->
+              <div class="settings-section">
+                <div class="settings-section-title">
+                  <span>🎨</span> Giao Diện Màu Sắc (Theme Mode)
+                </div>
+                <div class="theme-switcher-setting">
+                  <button class="theme-opt-btn" id="themeLightBtn">
+                    ☀️ Giao Diện Sáng
+                  </button>
+                  <button class="theme-opt-btn" id="themeDarkBtn">
+                    🌙 Giao Diện Tối
+                  </button>
+                </div>
+              </div>
+
+              <!-- Chức năng 3: Nhãn Tâm Lý Khách Hàng (Customer Psychology) -->
+              <div class="settings-section">
+                <div class="settings-section-title">
+                  <span>🧠</span> Phân Tích Tâm Lý Khách Hàng
+                </div>
+                <button class="psych-setting-btn" id="psychToggleBtn">
+                  <span>🧠</span> <span id="psychToggleText">Bật Phân Tích Tâm Lý</span>
+                </button>
+              </div>
+
+              <!-- Chức năng 4: Phong cách cửa hàng nhanh (Store Presets) -->
+              <div class="settings-section">
+                <div class="settings-section-title">
+                  <span>🏬</span> Phong Cách Cửa Hàng (Store Presets)
+                </div>
+                <div class="store-grid-setting" id="storeSettingGrid">
+                  <button class="store-setting-btn active" data-store="coffee">☕ Cà Phê</button>
+                  <button class="store-setting-btn" data-store="bakery">🍰 Tiệm Bánh</button>
+                  <button class="store-setting-btn" data-store="grocery">🥬 Thực Phẩm</button>
+                  <button class="store-setting-btn" data-store="general">🛍️ Tổng Hợp</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
         <button class="menu-toggle" id="menuToggle" aria-label="Toggle Mobile Menu">
           ☰
         </button>
