@@ -1,94 +1,120 @@
 <!-- ==========================================
-     REUSABLE COMPONENT: HEADER & NAV WITH DUAL-MODE SWITCHER
+     REUSABLE COMPONENT: HEADER & NAV WITH FULL CONSOLIDATED SETTINGS
      ========================================== -->
 <header class="site-header">
   <div class="container navbar">
-    <!-- 1. LOGO (PHÍA BÊN TRÁI) -->
+    <!-- 1. LOGO (GIỮ NGUYÊN TẤT CẢ THEO YÊU CẦU) -->
     <a href="index.html" class="logo">
       <span>MINIMAL</span>
       <span class="logo-badge">FRAMEWORK</span>
     </a>
 
-    <!-- 2. CÁC KEY GỢI Ý CHO MỘT TRANG WEB CHUẨN & CHUYỂN CHẾ ĐỘ -->
+    <!-- 2. THANH ĐIỀU HƯỚNG NAV THEO PHONG CÁCH NOTE GROUP -->
     <nav class="nav-menu" id="navMenu">
-      <a href="index.html#landingView" class="nav-link active" title="Giao diện chuẩn Landing Page">Landing Page</a>
-      <a href="admin.html" class="nav-link" title="Giao diện Bảng điều khiển Quản trị">Admin Dashboard</a>
-      <a href="about.html" class="nav-link" title="Trang Giới Thiệu Framework">Giới Thiệu</a>
-      <a href="contact.html" class="nav-link" title="Trang Liên Hệ & Hỗ Trợ">Liên Hệ</a>
-      <a href="README.md" target="_blank" class="nav-link" title="Xem tài liệu tiêu chuẩn kỹ thuật">Tiêu Chuẩn Web</a>
+      <a href="index.html" class="nav-link active" title="Trang chủ Framework">Trang chủ</a>
+      <a href="about.html" class="nav-link" title="Trang Giới Thiệu">Giới thiệu</a>
+      
+      <!-- SUBMENU DROPDOWN: SẢN PHẨM ▾ -->
+      <div class="nav-dropdown-item">
+        <a href="index.html#storeSwitcherNav" class="nav-link nav-dropdown-trigger" title="Xem danh mục sản phẩm cửa hàng">
+          Sản phẩm <span class="dropdown-arrow">▾</span>
+        </a>
+        <div class="nav-dropdown-menu">
+          <a href="index.html#coffee" class="dropdown-link store-setting-btn" data-store="coffee">☕ Cửa Hàng Cà Phê</a>
+          <a href="index.html#bakery" class="dropdown-link store-setting-btn" data-store="bakery">🥐 Tiệm Bánh Tươi</a>
+          <a href="index.html#grocery" class="dropdown-link store-setting-btn" data-store="grocery">🍎 Thực Phẩm Fresh</a>
+          <a href="index.html#general" class="dropdown-link store-setting-btn" data-store="general">🛒 Cửa Hàng Tổng Hợp</a>
+        </div>
+      </div>
+
+      <a href="admin.html" class="nav-link" title="Giao diện Quản trị Admin Dashboard">Admin Dashboard</a>
+      <a href="contact.html" class="nav-link" title="Trang Liên Hệ & Hỗ Trợ">Liên hệ</a>
     </nav>
 
-    <!-- 3. GỘP TẤT CẢ TÍNH NĂNG VÀO FUNCTION SETTING (CÀI ĐẶT) -->
+    <!-- 3. BẢNG CÀI ĐẶT TỔNG HỢP GOM TOÀN BỘ LỰA CHỌN TÙY BIẾN -->
     <div class="nav-actions">
       <div class="settings-dropdown-wrapper" id="settingsDropdownWrapper">
-        <button class="settings-toggle-btn" id="settingsToggleBtn" aria-label="Mở Menu Cài Đặt Function Setting"
-          aria-expanded="false" title="Mở bảng điều khiển Cài Đặt Hệ Thống">
+        <button class="settings-toggle-btn" id="settingsToggleBtn" aria-label="Mở Menu Cài Đặt Hệ Thống"
+          aria-expanded="false" title="Mở toàn bộ bộ chọn tùy biến giao diện">
+          <span class="settings-btn-icon">⚙️</span>
           <span class="settings-btn-label">Cài Đặt</span>
           <span class="settings-btn-arrow">▾</span>
         </button>
 
-        <!-- FUNCTION SETTING DROPDOWN MENU -->
+        <!-- FUNCTION SETTING DROPDOWN MENU (CONSOLIDATED CUSTOMIZER) -->
         <div class="settings-dropdown-menu" id="settingsDropdownMenu">
           <div class="settings-menu-header">
             <div class="settings-menu-title">
-              <span>Cài Đặt Hệ Thống</span>
+              <span>⚙️ Bộ Cài Đặt &amp; Tùy Biến Giao Diện</span>
             </div>
             <button class="settings-close-btn" id="settingsCloseBtn" title="Đóng cài đặt">&times;</button>
           </div>
 
           <div class="settings-menu-body">
-            <!-- Chức năng 1: Chế độ hiển thị (View Mode) -->
+            <!-- 1. Chế độ hiển thị (View Mode) -->
             <div class="settings-section">
-              <div class="settings-section-title">
-                Chế Độ Giao Diện (View Mode)
-              </div>
+              <div class="settings-section-title">1. Chế Độ Giao Diện (View Mode)</div>
               <div class="mode-switcher-setting">
-                <button class="mode-btn active" id="btnLandingMode" title="Chuyển sang giao diện Landing Page">
+                <button class="mode-btn active" id="btnLandingMode" data-mode="landing" title="Chuyển sang Landing Page">
                   Landing Page
                 </button>
-                <button class="mode-btn" id="btnAdminMode" title="Chuyển sang giao diện Website Quản Trị">
+                <button class="mode-btn" id="btnAdminMode" data-mode="admin" title="Chuyển sang Admin Dashboard">
                   Admin Dashboard
                 </button>
               </div>
             </div>
 
-            <!-- Chức năng 2: Giao diện Sáng / Tối (Theme Mode) -->
+            <!-- 2. Giao diện Sáng / Tối (Theme Mode) -->
             <div class="settings-section">
-              <div class="settings-section-title">
-                Giao Diện Màu Sắc (Theme Mode)
-              </div>
+              <div class="settings-section-title">2. Giao Diện Màu Sắc (Theme Mode)</div>
               <div class="theme-switcher-setting">
-                <button class="theme-opt-btn" id="themeLightBtn">
-                  Giao Diện Sáng
-                </button>
-                <button class="theme-opt-btn" id="themeDarkBtn">
-                  Giao Diện Tối
-                </button>
+                <button class="theme-opt-btn" id="themeLightBtn">☀️ Giao Diện Sáng</button>
+                <button class="theme-opt-btn" id="themeDarkBtn">🌙 Giao Diện Tối</button>
               </div>
             </div>
 
-            <!-- Chức năng 3: Nhãn Tâm Lý Khách Hàng (Customer Psychology) -->
+            <!-- 3. Màu Chủ Đạo (Accent Color Swatches) -->
             <div class="settings-section">
-              <div class="settings-section-title">
-                Phân Tích Tâm Lý Khách Hàng
+              <div class="settings-section-title">3. Màu Chủ Đạo (Accent Color)</div>
+              <div class="color-swatches-grid">
+                <button class="color-swatch active" data-color="#2563eb" style="background: #2563eb;" title="Xanh Indigo"></button>
+                <button class="color-swatch" data-color="#6f4e37" style="background: #6f4e37;" title="Nâu Espresso"></button>
+                <button class="color-swatch" data-color="#d97706" style="background: #d97706;" title="Vàng Bơ"></button>
+                <button class="color-swatch" data-color="#059669" style="background: #059669;" title="Xanh Emerald"></button>
+                <button class="color-swatch" data-color="#7c3aed" style="background: #7c3aed;" title="Tím Cyber"></button>
+                <button class="color-swatch" data-color="#e11d48" style="background: #e11d48;" title="Đỏ Crimson"></button>
               </div>
+            </div>
+
+            <!-- 4. Bo Góc Khối (Border Radius) -->
+            <div class="settings-section">
+              <div class="settings-section-title">4. Bo Góc Khối (Border Radius)</div>
+              <div class="radius-options-grid">
+                <button class="radius-opt-btn" data-radius="0px">Sắc Cạnh (0px)</button>
+                <button class="radius-opt-btn active" data-radius="8px">Vừa Phải (8px)</button>
+                <button class="radius-opt-btn" data-radius="18px">Bo Tròn (18px)</button>
+              </div>
+            </div>
+
+            <!-- 5. Phong cách cửa hàng (Store Presets) -->
+            <div class="settings-section">
+              <div class="settings-section-title">5. Phong Cách Cửa Hàng (Store Presets)</div>
+              <div class="store-grid-setting" id="storeSettingGrid">
+                <button class="store-setting-btn active" data-store="coffee">☕ Cà Phê</button>
+                <button class="store-setting-btn" data-store="bakery">🥐 Tiệm Bánh</button>
+                <button class="store-setting-btn" data-store="grocery">🍎 Thực Phẩm</button>
+                <button class="store-setting-btn" data-store="general">🛒 Tổng Hợp</button>
+              </div>
+            </div>
+
+            <!-- 6. Nhãn Tâm Lý Khách Hàng (Customer Psychology) -->
+            <div class="settings-section">
+              <div class="settings-section-title">6. Phân Tích Tâm Lý Khách Hàng</div>
               <button class="psych-setting-btn" id="psychToggleBtn">
                 <span id="psychToggleText">Bật Phân Tích Tâm Lý</span>
               </button>
             </div>
 
-            <!-- Chức năng 4: Phong cách cửa hàng nhanh (Store Presets) -->
-            <div class="settings-section">
-              <div class="settings-section-title">
-                Phong Cách Cửa Hàng (Store Presets)
-              </div>
-              <div class="store-grid-setting" id="storeSettingGrid">
-                <button class="store-setting-btn active" data-store="coffee">Cà Phê</button>
-                <button class="store-setting-btn" data-store="bakery">Tiệm Bánh</button>
-                <button class="store-setting-btn" data-store="grocery">Thực Phẩm</button>
-                <button class="store-setting-btn" data-store="general">Tổng Hợp</button>
-              </div>
-            </div>
           </div>
         </div>
       </div>

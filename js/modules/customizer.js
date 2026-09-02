@@ -1,37 +1,18 @@
 /* ==========================================
-   FLOATING INTERACTIVE STYLE CUSTOMIZER MODULE
+   CONSOLIDATED INTERACTIVE STYLE CUSTOMIZER MODULE
+   Lắng nghe toàn bộ tùy chỉnh trong Menu Cài Đặt ở Header
    ========================================== */
 
 export function initCustomizer() {
   const floatingCustomizerBtn = document.getElementById('floatingCustomizerBtn');
-  const floatingCustomizerPanel = document.getElementById('floatingCustomizerPanel');
-  const customizerCloseBtn = document.getElementById('customizerCloseBtn');
+  const settingsToggleBtn = document.getElementById('settingsToggleBtn');
 
-  if (floatingCustomizerBtn && floatingCustomizerPanel) {
+  // Bấm vào nút floating ở góc phải sẽ mở Menu Cài Đặt trên Header
+  if (floatingCustomizerBtn && settingsToggleBtn) {
     floatingCustomizerBtn.addEventListener('click', (e) => {
       e.stopPropagation();
-      floatingCustomizerPanel.classList.toggle('show');
-      if (typeof gsap !== 'undefined' && floatingCustomizerPanel.classList.contains('show')) {
-        gsap.from('.customizer-group', {
-          y: 15,
-          opacity: 0,
-          duration: 0.3,
-          stagger: 0.08,
-          ease: 'power2.out'
-        });
-      }
-    });
-
-    if (customizerCloseBtn) {
-      customizerCloseBtn.addEventListener('click', () => {
-        floatingCustomizerPanel.classList.remove('show');
-      });
-    }
-
-    document.addEventListener('click', (e) => {
-      if (!floatingCustomizerPanel.contains(e.target) && !floatingCustomizerBtn.contains(e.target)) {
-        floatingCustomizerPanel.classList.remove('show');
-      }
+      settingsToggleBtn.click();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
 
