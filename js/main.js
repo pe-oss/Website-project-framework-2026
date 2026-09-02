@@ -5,12 +5,19 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   // Kho lưu trữ DOM elements
-  // Settings Dropdown Elements
+  // Settings Dropdown & Theme Elements
   const settingsToggleBtn = document.getElementById('settingsToggleBtn');
   const settingsDropdownMenu = document.getElementById('settingsDropdownMenu');
   const settingsCloseBtn = document.getElementById('settingsCloseBtn');
   const themeLightBtn = document.getElementById('themeLightBtn');
   const themeDarkBtn = document.getElementById('themeDarkBtn');
+  const themeToggleBtn = document.getElementById('themeToggleBtn');
+  const themeIcon = document.querySelector('.theme-icon') || document.getElementById('themeIcon');
+
+  // Navigation & Mobile Menu Elements
+  const menuToggleBtn = document.getElementById('menuToggle');
+  const navMenu = document.getElementById('navMenu');
+  const navLinks = document.querySelectorAll('.nav-link');
 
   // Mode Switcher Elements (Landing Page vs Admin Dashboard)
   const btnLandingMode = document.getElementById('btnLandingMode');
@@ -154,15 +161,16 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function setTheme(theme) {
+    const activeThemeIcon = document.querySelector('.theme-icon') || document.getElementById('themeIcon');
     if (theme === 'dark') {
       document.documentElement.setAttribute('data-theme', 'dark');
-      if (themeIcon) themeIcon.textContent = '☀️';
+      if (activeThemeIcon) activeThemeIcon.textContent = '☀️';
       if (themeDarkBtn) themeDarkBtn.classList.add('active');
       if (themeLightBtn) themeLightBtn.classList.remove('active');
       localStorage.setItem('theme', 'dark');
     } else {
       document.documentElement.setAttribute('data-theme', 'light');
-      if (themeIcon) themeIcon.textContent = '🌙';
+      if (activeThemeIcon) activeThemeIcon.textContent = '🌙';
       if (themeLightBtn) themeLightBtn.classList.add('active');
       if (themeDarkBtn) themeDarkBtn.classList.remove('active');
       localStorage.setItem('theme', 'light');
@@ -244,6 +252,7 @@ document.addEventListener('DOMContentLoaded', () => {
      ----------------------------------- */
   const storeBtns = document.querySelectorAll('.store-btn, .store-setting-btn');
   const storePresetContainers = document.querySelectorAll('.store-preset-container');
+  const styleCatalogCards = document.querySelectorAll('.style-catalog-card');
   const logoBadge = document.querySelector('.logo-badge');
   const savedStoreStyle = localStorage.getItem('storeStyle') || 'coffee';
 
@@ -265,7 +274,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Kích hoạt click trực tiếp trên TOÀN BỘ BỀ MẶT THẺ phong cách thiết kế
-  const styleCatalogCards = document.querySelectorAll('.style-catalog-card');
   styleCatalogCards.forEach(card => {
     card.addEventListener('click', () => {
       const selectedStore = card.getAttribute('data-style-preset');
@@ -276,13 +284,14 @@ document.addEventListener('DOMContentLoaded', () => {
   function setStoreStyle(store, shouldScroll = false) {
     // 1. Chuyển đổi theme màu sắc toàn trang (Full-page global theme)
     document.documentElement.setAttribute('data-store-style', store);
+    document.documentElement.style.removeProperty('--color-accent');
 
     // 2. Cập nhật nhãn Logo Branding toàn hệ thống ở Header
     if (logoBadge && storeBrandingMap[store]) {
       logoBadge.textContent = storeBrandingMap[store];
     }
 
-    // 3. Cập nhật trạng thái Active trên nút chọn phong cách (Cả Body và Menu Cài Đặt)
+    // 3. Cập nhật trạng thái Active trên nút chọn phong cách (Cả Body, Floating Customizer và Menu Cài Đặt)
     storeBtns.forEach(btn => {
       if (btn.getAttribute('data-store') === store) {
         btn.classList.add('active');
@@ -359,7 +368,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Live Accent Color Swatches Selection
   const colorSwatches = document.querySelectorAll('.color-swatch');
   colorSwatches.forEach(swatch => {
-    swatch.addEventListener('click', () => {
+    swatch.addEventListener('click', (e) => {
+      e.stopPropagation();
       const color = swatch.getAttribute('data-color');
       document.documentElement.style.setProperty('--color-accent', color);
 
@@ -375,7 +385,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Live Border Radius Selection
   const radiusOptBtns = document.querySelectorAll('.radius-opt-btn');
   radiusOptBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
       const radius = btn.getAttribute('data-radius');
       document.documentElement.style.setProperty('--radius-md', radius);
       document.documentElement.style.setProperty('--radius-lg', `calc(${radius} * 1.5)`);
