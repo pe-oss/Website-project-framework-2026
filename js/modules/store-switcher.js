@@ -1,18 +1,33 @@
 /* ==========================================
-   STORE STYLE SWITCHER MODULE (Coffee, Bakery, Grocery, General Store)
+   FRAMEWORK STYLE SWITCHER MODULE (Style 1 - Style 4)
    ========================================== */
 
 const storeBrandingMap = {
-  coffee: 'COFFEE STORE',
-  bakery: 'BAKERY SHOP',
-  grocery: 'FRESH FOOD',
-  general: 'GENERAL STORE'
+  style1: 'STYLE 1 (CORPORATE)',
+  style2: 'STYLE 2 (PORTFOLIO)',
+  style3: 'STYLE 3 (SAAS TECH)',
+  style4: 'STYLE 4 (E-COMMERCE)',
+  coffee: 'STYLE 1 (CORPORATE)',
+  bakery: 'STYLE 2 (PORTFOLIO)',
+  grocery: 'STYLE 3 (SAAS TECH)',
+  general: 'STYLE 4 (E-COMMERCE)'
+};
+
+const storeAliasMap = {
+  coffee: 'style1',
+  bakery: 'style2',
+  grocery: 'style3',
+  general: 'style4',
+  style1: 'coffee',
+  style2: 'bakery',
+  style3: 'grocery',
+  style4: 'general'
 };
 
 export function initStoreSwitcher() {
   const storeBtns = document.querySelectorAll('.store-btn, .store-setting-btn');
   const styleCatalogCards = document.querySelectorAll('.style-catalog-card');
-  const savedStoreStyle = localStorage.getItem('storeStyle') || 'coffee';
+  const savedStoreStyle = localStorage.getItem('storeStyle') || 'style1';
 
   setStoreStyle(savedStoreStyle, false);
 
@@ -38,15 +53,19 @@ export function setStoreStyle(store, shouldScroll = false) {
   const styleCatalogCards = document.querySelectorAll('.style-catalog-card');
   const logoBadge = document.querySelector('.logo-badge');
 
-  document.documentElement.setAttribute('data-store-style', store);
+  const normalizedStore = store;
+  const aliasStore = storeAliasMap[store] || store;
+
+  document.documentElement.setAttribute('data-store-style', normalizedStore);
   document.documentElement.style.removeProperty('--color-accent');
 
-  if (logoBadge && storeBrandingMap[store]) {
-    logoBadge.textContent = storeBrandingMap[store];
+  if (logoBadge && storeBrandingMap[normalizedStore]) {
+    logoBadge.textContent = storeBrandingMap[normalizedStore];
   }
 
   storeBtns.forEach(btn => {
-    if (btn.getAttribute('data-store') === store) {
+    const val = btn.getAttribute('data-store');
+    if (val === normalizedStore || val === aliasStore) {
       btn.classList.add('active');
     } else {
       btn.classList.remove('active');
@@ -54,7 +73,8 @@ export function setStoreStyle(store, shouldScroll = false) {
   });
 
   styleCatalogCards.forEach(card => {
-    if (card.getAttribute('data-style-preset') === store) {
+    const val = card.getAttribute('data-style-preset');
+    if (val === normalizedStore || val === aliasStore) {
       card.classList.add('active-style');
     } else {
       card.classList.remove('active-style');
@@ -62,7 +82,8 @@ export function setStoreStyle(store, shouldScroll = false) {
   });
 
   storePresetContainers.forEach(container => {
-    if (container.getAttribute('data-store-preset') === store) {
+    const val = container.getAttribute('data-store-preset');
+    if (val === normalizedStore || val === aliasStore) {
       container.classList.add('active');
       if (typeof gsap !== 'undefined') {
         gsap.fromTo(container, 
@@ -78,5 +99,5 @@ export function setStoreStyle(store, shouldScroll = false) {
     }
   });
 
-  localStorage.setItem('storeStyle', store);
+  localStorage.setItem('storeStyle', normalizedStore);
 }

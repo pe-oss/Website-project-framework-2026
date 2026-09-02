@@ -172,15 +172,17 @@
 /* -----------------------------------
    8. Global Store Style Full-Page Theme Overrides
    ----------------------------------- */
-[data-store-style="coffee"] {
+[data-store-style="coffee"],
+[data-store-style="style1"] {
   --color-accent: var(--coffee-accent);
   --color-accent-hover: var(--coffee-accent-hover);
-  --color-bg: #fdfbf7;
+  --color-bg: #faf7f2;
   --color-border: var(--coffee-border);
   --color-block-badge: var(--coffee-tag-bg);
 }
 
-[data-store-style="bakery"] {
+[data-store-style="bakery"],
+[data-store-style="style2"] {
   --color-accent: var(--bakery-accent);
   --color-accent-hover: var(--bakery-accent-hover);
   --color-bg: #fffdf5;
@@ -188,7 +190,8 @@
   --color-block-badge: var(--bakery-tag-bg);
 }
 
-[data-store-style="grocery"] {
+[data-store-style="grocery"],
+[data-store-style="style3"] {
   --color-accent: var(--grocery-accent);
   --color-accent-hover: var(--grocery-accent-hover);
   --color-bg: #f4fbf7;
@@ -196,7 +199,8 @@
   --color-block-badge: var(--grocery-tag-bg);
 }
 
-[data-store-style="general"] {
+[data-store-style="general"],
+[data-store-style="style4"] {
   --color-accent: var(--general-accent);
   --color-accent-hover: var(--general-accent-hover);
   --color-bg: #f8fafc;
@@ -205,28 +209,30 @@
 }
 
 /* Dark Mode Store Style Global Overrides */
-[data-theme="dark"][data-store-style="coffee"] {
+[data-theme="dark"][data-store-style="coffee"],
+[data-theme="dark"][data-store-style="style1"] {
   --color-bg: #1a1410;
   --color-border: var(--coffee-border);
   --color-block-badge: var(--coffee-tag-bg);
 }
 
-[data-theme="dark"][data-store-style="bakery"] {
+[data-theme="dark"][data-store-style="bakery"],
+[data-theme="dark"][data-store-style="style2"] {
   --color-bg: #1c160e;
   --color-border: var(--bakery-border);
   --color-block-badge: var(--bakery-tag-bg);
 }
 
-[data-theme="dark"][data-store-style="grocery"] {
+[data-theme="dark"][data-store-style="grocery"],
+[data-theme="dark"][data-store-style="style3"] {
   --color-bg: #091712;
   --color-border: var(--grocery-border);
   --color-block-badge: var(--grocery-tag-bg);
 }
 
-[data-theme="dark"][data-store-style="general"] {
+[data-theme="dark"][data-store-style="general"],
+[data-theme="dark"][data-store-style="style4"] {
   --color-bg: #101222;
   --color-border: var(--general-border);
   --color-block-badge: var(--general-tag-bg);
 }
-
-
