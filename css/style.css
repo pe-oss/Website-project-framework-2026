@@ -1,8 +1,15 @@
 /* ==========================================
-   STYLE.CSS - Minimalist Framework Layout
-   Thiết kế giao diện phong cách Tối giản (Minimalist)
-   Hỗ trợ 2 chế độ: Landing Page & Admin Dashboard
+   STYLE.CSS - Minimalist Framework Layout Master Bundle
    ========================================== */
+
+/* Component & Page Module Imports */
+@import url('components/buttons.css');
+@import url('components/header.css');
+@import url('components/footer.css');
+@import url('components/cards.css');
+@import url('components/customizer.css');
+@import url('pages/landing.css');
+@import url('pages/admin.css');
 
 /* -----------------------------------
    1. Base & Minimalist Typography
@@ -17,7 +24,7 @@ body {
 }
 
 /* -----------------------------------
-   1b. Global Ambient Background (Ảnh Nền Web Blur 20%)
+   1b. Global Ambient Background
    ----------------------------------- */
 .bg-ambient-backdrop {
   position: fixed;
@@ -37,8 +44,8 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  filter: blur(20px) brightness(0.85); /* Tăng độ blur 20% làm ảnh nền nghệ thuật */
-  transform: scale(1.18); /* Mở rộng nhẹ để triệt tiêu viền trắng do hiệu ứng blur */
+  filter: blur(20px) brightness(0.85);
+  transform: scale(1.18);
   transition: all var(--transition-normal);
 }
 
@@ -53,7 +60,7 @@ body {
   right: 0;
   bottom: 0;
   background-color: var(--color-bg);
-  opacity: 0.78; /* Cho phép sắc thái ảnh nền chiếu nhẹ qua cực sang trọng */
+  opacity: 0.78;
   transition: background-color var(--transition-normal), opacity var(--transition-normal);
 }
 
@@ -87,24 +94,6 @@ p {
 /* -----------------------------------
    2. Structural Layout & Container
    ----------------------------------- */
-/* -----------------------------------
-   1c. Design Styles Catalog List Cards
-   ----------------------------------- */
-.style-catalog-card {
-  transition: border-color var(--transition-normal), box-shadow var(--transition-normal), transform var(--transition-normal);
-}
-
-.style-catalog-card:hover {
-  border-color: var(--color-accent) !important;
-  box-shadow: var(--shadow-subtle);
-  transform: translateY(-3px);
-}
-
-.style-catalog-card.active-style {
-  border-color: var(--color-accent) !important;
-  background-color: var(--color-block-badge) !important;
-}
-
 .container {
   width: 100%;
   max-width: var(--container-max-width);
@@ -114,9 +103,6 @@ p {
   padding-right: var(--space-6);
 }
 
-/* -----------------------------------
-   2b. Side Flanks (Tận dụng sườn trái & sườn phải màn hình)
-   ----------------------------------- */
 .site-layout-wrapper {
   width: 100%;
   max-width: 1720px;
@@ -145,9 +131,6 @@ p {
   margin-top: 0 !important;
 }
 
-/* -----------------------------------
-   2c. Dual-Mode View Switcher (Landing View vs Admin View)
-   ----------------------------------- */
 .page-view {
   display: none;
   opacity: 0;
@@ -171,91 +154,8 @@ p {
   }
 }
 
-.flank-card {
-  border: 1px solid var(--color-border);
-  background-color: var(--color-card-bg);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-subtle);
-  transition: all var(--transition-normal);
-}
-
-.flank-card:hover {
-  border-color: var(--color-accent);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-}
-
-.flank-img-box {
-  position: relative;
-  width: 100%;
-  height: 520px;
-  overflow: hidden;
-}
-
-.flank-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform var(--transition-normal);
-}
-
-.flank-card:hover .flank-img {
-  transform: scale(1.04);
-}
-
-.flank-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: var(--space-4);
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.25), transparent);
-  color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-
-.flank-badge {
-  display: inline-block;
-  align-self: flex-start;
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  font-weight: var(--font-weight-bold);
-  padding: 0.15rem 0.45rem;
-  background-color: var(--color-accent);
-  color: #fff;
-  border-radius: var(--radius-sm);
-  text-transform: uppercase;
-}
-
-.flank-overlay h4 {
-  color: #ffffff;
-  font-size: var(--font-size-sm);
-  margin-bottom: 0;
-  font-weight: var(--font-weight-semibold);
-}
-
-.flank-overlay p {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: var(--font-size-xs);
-  margin-bottom: 0;
-  line-height: 1.35;
-}
-
-/* Page Views Toggle Container */
-.page-view {
-  display: none;
-}
-
-.page-view.active {
-  display: block;
-}
-
 /* -----------------------------------
-   3. Block Component Architecture & Badges
+   3. Block Component Architecture
    ----------------------------------- */
 .block {
   border: 1px solid var(--color-border);
@@ -272,35 +172,6 @@ p {
   box-shadow: var(--shadow-subtle);
 }
 
-/* Label mô tả cấu trúc khối HTML */
-.block-tag {
-  display: inline-block;
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  font-weight: var(--font-weight-semibold);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 0.2rem 0.6rem;
-  background-color: var(--color-block-badge);
-  color: var(--color-text-muted);
-  border-radius: var(--radius-sm);
-  margin-bottom: var(--space-4);
-  border: 1px solid var(--color-border);
-}
-
-/* Phân loại khối: Framework (Xanh dương) vs Chức năng (Xanh lá) */
-.block-tag.block-type-framework {
-  background-color: var(--tag-framework-bg);
-  color: var(--tag-framework-color);
-  border-color: var(--tag-framework-border);
-}
-
-.block-tag.block-type-feature {
-  background-color: var(--tag-feature-bg);
-  color: var(--tag-feature-color);
-  border-color: var(--tag-feature-border);
-}
-
 .block-legend-bar {
   display: flex;
   align-items: center;
@@ -314,79 +185,9 @@ p {
   flex-wrap: wrap;
 }
 
-
 /* -----------------------------------
-   4. Minimalist Header & Navigation
+   4. Mode Switcher & Settings Layout Controls
    ----------------------------------- */
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background-color: var(--color-bg);
-  border-bottom: 1px solid var(--color-border);
-  backdrop-filter: blur(8px);
-}
-
-.navbar {
-  height: 72px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-4);
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  font-family: var(--font-heading);
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-text);
-  flex-shrink: 0;
-}
-
-.logo-badge {
-  font-family: var(--font-mono);
-  font-size: var(--font-size-xs);
-  padding: 0.15rem 0.4rem;
-  background: var(--color-accent);
-  color: #fff;
-  border-radius: var(--radius-sm);
-}
-
-.nav-menu {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-}
-
-.nav-link {
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-medium);
-  color: var(--color-text-muted);
-  transition: all var(--transition-fast);
-  padding: 0.35rem 0.65rem;
-  border-radius: var(--radius-sm);
-  white-space: nowrap;
-}
-
-.nav-link:hover,
-.nav-link.active {
-  color: var(--color-text);
-  font-weight: var(--font-weight-semibold);
-  background-color: var(--color-block-badge);
-}
-
-.nav-actions {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-  position: relative;
-  flex-shrink: 0;
-}
-
-/* Mode Switcher Buttons (Common Style inside Settings & Floating) */
 .mode-switcher-setting {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -426,126 +227,6 @@ p {
   border: 1px solid var(--color-border);
 }
 
-/* -----------------------------------
-   Function Setting Dropdown Panel
-   ----------------------------------- */
-.settings-dropdown-wrapper {
-  position: relative;
-}
-
-.settings-toggle-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.45rem 0.85rem;
-  font-family: var(--font-sans);
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-text);
-  background-color: var(--color-block-badge);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  cursor: pointer;
-  transition: all var(--transition-fast);
-}
-
-.settings-toggle-btn:hover,
-.settings-toggle-btn.active {
-  background-color: var(--color-card-bg);
-  border-color: var(--color-accent);
-  box-shadow: var(--shadow-subtle);
-}
-
-.settings-btn-arrow {
-  font-size: 0.7rem;
-  transition: transform var(--transition-fast);
-}
-
-.settings-toggle-btn.active .settings-btn-arrow {
-  transform: rotate(180deg);
-}
-
-/* Settings Dropdown Card */
-.settings-dropdown-menu {
-  position: absolute;
-  top: calc(100% + 10px);
-  right: 0;
-  width: 320px;
-  background-color: var(--color-card-bg);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
-  padding: var(--space-4);
-  z-index: 1100;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-8px);
-  transition: all var(--transition-normal);
-  pointer-events: none;
-}
-
-.settings-dropdown-menu.show {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-.settings-menu-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-bottom: var(--space-2);
-  margin-bottom: var(--space-3);
-  border-bottom: 1px solid var(--color-border);
-}
-
-.settings-menu-title {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-weight: var(--font-weight-bold);
-  font-size: var(--font-size-sm);
-  color: var(--color-text);
-}
-
-.settings-close-btn {
-  background: transparent;
-  border: none;
-  font-size: 1.25rem;
-  color: var(--color-text-muted);
-  cursor: pointer;
-  line-height: 1;
-  padding: 0.1rem 0.3rem;
-  border-radius: var(--radius-sm);
-  transition: color var(--transition-fast);
-}
-
-.settings-close-btn:hover {
-  color: var(--color-text);
-}
-
-.settings-section {
-  margin-bottom: var(--space-3);
-}
-
-.settings-section:last-child {
-  margin-bottom: 0;
-}
-
-.settings-section-title {
-  font-size: 0.72rem;
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  margin-bottom: var(--space-2);
-  display: flex;
-  align-items: center;
-  gap: 0.35rem;
-}
-
-/* Theme Switcher Options */
 .theme-switcher-setting {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -577,7 +258,6 @@ p {
   border: 1px solid var(--color-border);
 }
 
-/* Psych Button Inside Settings */
 .psych-setting-btn {
   width: 100%;
   padding: 0.45rem 0.65rem;
@@ -595,7 +275,6 @@ p {
   color: var(--psych-purple);
 }
 
-/* Store Grid Inside Settings */
 .store-grid-setting {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -623,9 +302,6 @@ p {
   border-color: var(--color-accent);
 }
 
-/* -----------------------------------
-   Store Preset Container Display Toggle
-   ----------------------------------- */
 .store-preset-container {
   display: none;
 }
@@ -635,63 +311,7 @@ p {
 }
 
 /* -----------------------------------
-   5. Buttons & Minimalist Controls
-   ----------------------------------- */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-2);
-  padding: 0.6rem 1.4rem;
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-medium);
-  border-radius: var(--radius-md);
-  transition: all var(--transition-fast);
-  cursor: pointer;
-}
-
-.btn-primary {
-  background-color: var(--color-primary);
-  color: var(--color-bg);
-  border: 1px solid var(--color-primary);
-}
-
-.btn-primary:hover {
-  opacity: 0.9;
-  transform: translateY(-1px);
-}
-
-.btn-outline {
-  background-color: transparent;
-  color: var(--color-text);
-  border: 1px solid var(--color-border);
-}
-
-.btn-outline:hover {
-  border-color: var(--color-text);
-}
-
-.theme-toggle-btn {
-  width: 38px;
-  height: 38px;
-  border-radius: var(--radius-md);
-  background-color: var(--color-card-bg);
-  border: 1px solid var(--color-border);
-  color: var(--color-text);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: border-color var(--transition-fast);
-}
-
-.theme-toggle-btn:hover {
-  border-color: var(--color-text);
-}
-
-/* -----------------------------------
-   6. Main Content & Sidebar Layout Split
+   5. Main Content Layout Split & Grid
    ----------------------------------- */
 .layout-split {
   display: grid;
@@ -711,9 +331,6 @@ p {
   flex-direction: column;
 }
 
-/* -----------------------------------
-   7. Grid & Block Layouts
-   ----------------------------------- */
 .grid-2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -733,147 +350,8 @@ p {
 }
 
 /* -----------------------------------
-   8. Admin Dashboard Specific Styles
+   6. Responsive Layout Adjustments
    ----------------------------------- */
-.admin-stats-grid {
-  margin-bottom: var(--space-8);
-}
-
-.stat-card {
-  background-color: var(--color-card-bg);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: var(--space-6);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
-}
-
-.stat-value {
-  font-family: var(--font-heading);
-  font-size: var(--font-size-3xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-text);
-}
-
-.stat-change {
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-semibold);
-}
-
-.stat-change.up { color: #16a34a; }
-.stat-change.down { color: #dc2626; }
-
-/* Admin Data Table */
-.data-table-wrapper {
-  width: 100%;
-  overflow-x: auto;
-}
-
-.data-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: var(--font-size-sm);
-  text-align: left;
-}
-
-.data-table th,
-.data-table td {
-  padding: var(--space-3) var(--space-4);
-  border-bottom: 1px solid var(--color-border);
-}
-
-.data-table th {
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-text-muted);
-  background-color: var(--color-block-badge);
-  text-transform: uppercase;
-  font-size: 0.7rem;
-  letter-spacing: 0.05em;
-}
-
-.status-badge {
-  display: inline-block;
-  padding: 0.15rem 0.5rem;
-  border-radius: var(--radius-full);
-  font-size: 0.75rem;
-  font-weight: var(--font-weight-medium);
-}
-
-.status-badge.active { background-color: rgba(22, 163, 74, 0.1); color: #16a34a; }
-.status-badge.pending { background-color: rgba(234, 179, 8, 0.1); color: #ca8a04; }
-.status-badge.inactive { background-color: rgba(220, 38, 38, 0.1); color: #dc2626; }
-
-/* -----------------------------------
-   9. Minimalist Code Box
-   ----------------------------------- */
-.code-box {
-  background-color: var(--color-card-bg);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  font-family: var(--font-mono);
-  font-size: var(--font-size-xs);
-  margin-top: var(--space-4);
-}
-
-.code-box-header {
-  padding: var(--space-2) var(--space-4);
-  background-color: var(--color-block-badge);
-  border-bottom: 1px solid var(--color-border);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.75rem;
-  color: var(--color-text-muted);
-}
-
-.code-box-body {
-  padding: var(--space-4);
-  line-height: 1.6;
-  overflow-x: auto;
-}
-
-/* -----------------------------------
-   10. Footer Architecture
-   ----------------------------------- */
-.site-footer {
-  border-top: 1px solid var(--color-border);
-  padding-top: var(--space-12);
-  padding-bottom: var(--space-12);
-  background-color: var(--color-card-bg);
-  margin-top: var(--space-16);
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: var(--space-8);
-}
-
-.footer-bottom {
-  margin-top: var(--space-8);
-  padding-top: var(--space-6);
-  border-top: 1px solid var(--color-border);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: var(--font-size-xs);
-  color: var(--color-text-muted);
-}
-
-/* -----------------------------------
-   11. Responsive Adjustments
-   ----------------------------------- */
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 1.25rem;
-  color: var(--color-text);
-  cursor: pointer;
-}
-
 @media (max-width: 868px) {
   .layout-split {
     grid-template-columns: 1fr;
@@ -906,507 +384,4 @@ p {
   .grid-2 {
     grid-template-columns: 1fr;
   }
-
-  .mode-switcher {
-    margin-right: auto;
-  }
 }
-
-/* ==========================================
-   12. STORE STYLES & LAYOUT FRAMEWORKS 2026
-   ========================================== */
-
-/* Store Style Selector Bar */
-.store-selector-wrapper {
-  background: var(--color-card-bg);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  padding: var(--space-4) var(--space-6);
-  margin-bottom: var(--space-8);
-  box-shadow: var(--shadow-subtle);
-}
-
-.store-selector-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: var(--space-4);
-  margin-bottom: var(--space-4);
-}
-
-.store-selector-title {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  font-size: var(--font-size-base);
-  font-weight: var(--font-weight-bold);
-}
-
-.store-switcher-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2);
-}
-
-.store-btn {
-  padding: 0.5rem 1rem;
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-medium);
-  border-radius: var(--radius-md);
-  border: 1px solid var(--color-border);
-  background-color: var(--color-bg);
-  color: var(--color-text);
-  cursor: pointer;
-  transition: all var(--transition-fast);
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-
-.store-btn:hover {
-  border-color: var(--color-text);
-  transform: translateY(-1px);
-}
-
-/* Active States per Store Theme */
-.store-btn[data-store="coffee"].active {
-  background-color: var(--coffee-accent);
-  color: #fff;
-  border-color: var(--coffee-accent);
-}
-
-.store-btn[data-store="bakery"].active {
-  background-color: var(--bakery-accent);
-  color: #fff;
-  border-color: var(--bakery-accent);
-}
-
-.store-btn[data-store="grocery"].active {
-  background-color: var(--grocery-accent);
-  color: #fff;
-  border-color: var(--grocery-accent);
-}
-
-.store-btn[data-store="general"].active {
-  background-color: var(--general-accent);
-  color: #fff;
-  border-color: var(--general-accent);
-}
-
-/* Layout Framework Selector Filter */
-.layout-framework-bar {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  flex-wrap: wrap;
-  border-top: 1px dashed var(--color-border);
-  padding-top: var(--space-3);
-  margin-top: var(--space-3);
-}
-
-.layout-framework-title {
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-right: var(--space-2);
-}
-
-.layout-btn {
-  padding: 0.3rem 0.75rem;
-  font-size: 0.8rem;
-  font-weight: var(--font-weight-medium);
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--color-border);
-  background-color: transparent;
-  color: var(--color-text-muted);
-  cursor: pointer;
-  transition: all var(--transition-fast);
-}
-
-.layout-btn:hover,
-.layout-btn.active {
-  color: var(--color-text);
-  border-color: var(--color-text);
-  background-color: var(--color-block-badge);
-}
-
-/* ==========================================
-   13. CUSTOMER PSYCHOLOGY BADGES & INSIGHTS
-   ========================================== */
-.psych-toggle-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.45rem 0.9rem;
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-semibold);
-  background-color: var(--psych-bg-soft);
-  color: var(--psych-purple);
-  border: 1px solid var(--psych-border);
-  border-radius: var(--radius-full);
-  cursor: pointer;
-  transition: all var(--transition-fast);
-}
-
-.psych-toggle-btn:hover {
-  background-color: var(--psych-purple);
-  color: #fff;
-}
-
-.psych-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-  font-family: var(--font-sans);
-  font-size: 0.7rem;
-  font-weight: var(--font-weight-semibold);
-  padding: 0.2rem 0.55rem;
-  background-color: var(--psych-bg-soft);
-  color: var(--psych-purple);
-  border: 1px solid var(--psych-border);
-  border-radius: var(--radius-sm);
-  margin-left: 0.4rem;
-  vertical-align: middle;
-}
-
-.psych-note-card {
-  margin-top: var(--space-4);
-  padding: var(--space-4);
-  background-color: var(--psych-bg-soft);
-  border-left: 3px solid var(--psych-purple);
-  border-radius: var(--radius-sm);
-  font-size: 0.85rem;
-  color: var(--color-text);
-  display: none;
-}
-
-.psych-note-card.show {
-  display: block;
-  animation: fadeIn 0.2s ease-in-out;
-}
-
-.psych-note-card h5 {
-  font-size: 0.85rem;
-  color: var(--psych-purple);
-  margin-bottom: 0.25rem;
-  display: flex;
-  align-items: center;
-  gap: 0.35rem;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-4px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* ==========================================
-   14. STORE DYNAMIC PRESETS & PRODUCT CARDS
-   ========================================== */
-
-/* Coffee Theme Dynamic Styling */
-[data-store-style="coffee"] .hero-block {
-  background-color: var(--coffee-bg-soft);
-  border-color: var(--coffee-border);
-}
-[data-store-style="coffee"] .btn-primary {
-  background-color: var(--coffee-accent);
-  border-color: var(--coffee-accent);
-  color: #fff;
-}
-[data-store-style="coffee"] .block-tag {
-  background-color: var(--coffee-tag-bg);
-  color: var(--coffee-accent);
-  border-color: var(--coffee-border);
-}
-
-/* Bakery Theme Dynamic Styling */
-[data-store-style="bakery"] .hero-block {
-  background-color: var(--bakery-bg-soft);
-  border-color: var(--bakery-border);
-}
-[data-store-style="bakery"] .btn-primary {
-  background-color: var(--bakery-accent);
-  border-color: var(--bakery-accent);
-  color: #fff;
-}
-[data-store-style="bakery"] .block-tag {
-  background-color: var(--bakery-tag-bg);
-  color: var(--bakery-accent);
-  border-color: var(--bakery-border);
-}
-
-/* Grocery Theme Dynamic Styling */
-[data-store-style="grocery"] .hero-block {
-  background-color: var(--grocery-bg-soft);
-  border-color: var(--grocery-border);
-}
-[data-store-style="grocery"] .btn-primary {
-  background-color: var(--grocery-accent);
-  border-color: var(--grocery-accent);
-  color: #fff;
-}
-[data-store-style="grocery"] .block-tag {
-  background-color: var(--grocery-tag-bg);
-  color: var(--grocery-accent);
-  border-color: var(--grocery-border);
-}
-
-/* General Store Theme Dynamic Styling */
-[data-store-style="general"] .hero-block {
-  background-color: var(--general-bg-soft);
-  border-color: var(--general-border);
-}
-[data-store-style="general"] .btn-primary {
-  background-color: var(--general-accent);
-  border-color: var(--general-accent);
-  color: #fff;
-}
-[data-store-style="general"] .block-tag {
-  background-color: var(--general-tag-bg);
-  color: var(--general-accent);
-  border-color: var(--general-border);
-}
-
-/* Product & Item Cards UI */
-.product-card {
-  background-color: var(--color-card-bg);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: var(--space-4);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: all var(--transition-normal);
-  position: relative;
-}
-
-.product-card:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-hover);
-  border-color: var(--color-accent);
-}
-
-.product-thumb {
-  width: 100%;
-  height: 140px;
-  background-color: var(--color-block-badge);
-  border-radius: var(--radius-sm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.5rem;
-  margin-bottom: var(--space-3);
-  position: relative;
-  overflow: hidden;
-}
-
-.product-badge-urgent {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  background-color: #ef4444;
-  color: #fff;
-  font-size: 0.65rem;
-  font-weight: var(--font-weight-bold);
-  padding: 0.15rem 0.4rem;
-  border-radius: var(--radius-sm);
-  text-transform: uppercase;
-}
-
-.product-badge-bestseller {
-  position: absolute;
-  top: 8px;
-  left: 8px;
-  background-color: #f59e0b;
-  color: #fff;
-  font-size: 0.65rem;
-  font-weight: var(--font-weight-bold);
-  padding: 0.15rem 0.4rem;
-  border-radius: var(--radius-sm);
-}
-
-.product-title {
-  font-size: var(--font-size-base);
-  font-weight: var(--font-weight-bold);
-  margin-bottom: var(--space-1);
-}
-
-.product-desc {
-  font-size: var(--font-size-xs);
-  color: var(--color-text-muted);
-  margin-bottom: var(--space-3);
-}
-
-.product-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: auto;
-  padding-top: var(--space-2);
-  border-top: 1px solid var(--color-border);
-}
-
-.product-price {
-  font-weight: var(--font-weight-bold);
-  font-size: var(--font-size-base);
-  color: var(--color-text);
-}
-
-.product-price-old {
-  font-size: var(--font-size-xs);
-  color: var(--color-text-muted);
-  text-decoration: line-through;
-  margin-right: 0.3rem;
-}
-
-/* Open Source Roadmap Notice Box */
-.roadmap-box {
-  background: linear-gradient(135deg, var(--color-block-badge) 0%, var(--color-card-bg) 100%);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  padding: var(--space-6);
-  margin-top: var(--space-8);
-}
-
-/* -----------------------------------
-   Floating Interactive Style Customizer Widget
-   ----------------------------------- */
-.floating-customizer-wrapper {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  z-index: 1200;
-}
-
-.floating-customizer-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.65rem 1.1rem;
-  background-color: var(--color-accent);
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 50px;
-  font-family: var(--font-sans);
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-semibold);
-  box-shadow: var(--shadow-md);
-  cursor: pointer;
-  transition: all var(--transition-normal);
-}
-
-.floating-customizer-btn:hover {
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-}
-
-.floating-customizer-panel {
-  position: absolute;
-  bottom: calc(100% + 14px);
-  right: 0;
-  width: 310px;
-  background-color: var(--color-card-bg);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
-  padding: var(--space-4);
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(10px) scale(0.95);
-  transition: all var(--transition-normal);
-  pointer-events: none;
-}
-
-.floating-customizer-panel.show {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0) scale(1);
-  pointer-events: auto;
-}
-
-.customizer-panel-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-bottom: var(--space-2);
-  margin-bottom: var(--space-3);
-  border-bottom: 1px solid var(--color-border);
-}
-
-.customizer-panel-header h4 {
-  font-size: var(--font-size-sm);
-  margin-bottom: 0;
-}
-
-.customizer-close-btn {
-  background: transparent;
-  border: none;
-  font-size: 1.2rem;
-  color: var(--color-text-muted);
-  cursor: pointer;
-}
-
-.customizer-group {
-  margin-bottom: var(--space-3);
-}
-
-.customizer-label {
-  font-size: 0.72rem;
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-text-muted);
-  display: block;
-  margin-bottom: var(--space-2);
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-}
-
-.color-swatches-grid {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.color-swatch {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  border: 2px solid transparent;
-  cursor: pointer;
-  transition: all var(--transition-fast);
-}
-
-.color-swatch:hover,
-.color-swatch.active {
-  transform: scale(1.2);
-  border-color: var(--color-text);
-  box-shadow: var(--shadow-subtle);
-}
-
-.radius-options-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 0.35rem;
-}
-
-.radius-opt-btn {
-  padding: 0.35rem;
-  font-size: var(--font-size-xs);
-  border-radius: var(--radius-sm);
-  background: var(--color-block-badge);
-  border: 1px solid var(--color-border);
-  color: var(--color-text-muted);
-  cursor: pointer;
-  transition: all var(--transition-fast);
-}
-
-.radius-opt-btn.active {
-  background: var(--color-card-bg);
-  color: var(--color-text);
-  font-weight: var(--font-weight-semibold);
-  border-color: var(--color-accent);
-}
-
-

@@ -28,8 +28,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
-  <!-- Main JavaScript File -->
-  <script src="js/main.js?v=2" defer></script>
+  <!-- Main JavaScript File (ES6 Module) -->
+  <script type="module" src="js/main.js"></script>
 </head>
 
 <body>
@@ -38,115 +38,13 @@
        GLOBAL AMBIENT BACKGROUND (ẢNH NỀN WEB BLUR 20%)
        ========================================== -->
   <div class="bg-ambient-backdrop" id="bgAmbientBackdrop">
-    <div class="bg-ambient-layer bg-ambient-left" style="background-image: url('images/flank_left.jpg');"></div>
-    <div class="bg-ambient-layer bg-ambient-right" style="background-image: url('images/flank_right.jpg');"></div>
+    <div class="bg-ambient-layer bg-ambient-left" style="background-image: url('assets/images/flank_left.jpg');"></div>
+    <div class="bg-ambient-layer bg-ambient-right" style="background-image: url('assets/images/flank_right.jpg');"></div>
     <div class="bg-ambient-overlay"></div>
   </div>
 
-  <!-- ==========================================
-       BLOCK: HEADER & NAV WITH DUAL-MODE SWITCHER
-       ========================================== -->
-  <header class="site-header">
-    <div class="container navbar">
-      <!-- 1. LOGO (PHÍA BÊN TRÁI) -->
-      <a href="#" class="logo">
-        <span>MINIMAL</span>
-        <span class="logo-badge">FRAMEWORK</span>
-      </a>
-
-      <!-- 2. CÁC KEY GỢI Ý CHO MỘT TRANG WEB CHUẨN & CHUYỂN CHẾ ĐỘ -->
-      <nav class="nav-menu" id="navMenu">
-        <a href="#landingView" class="nav-link active" title="Giao diện chuẩn Landing Page">Landing Page</a>
-        <a href="#adminView" class="nav-link" title="Giao diện Bảng điều khiển Quản trị">Admin Dashboard</a>
-        <a href="#storeSwitcherNav" class="nav-link" title="Gợi ý phong cách thiết kế cửa hàng">Phong Cách Cửa Hàng</a>
-        <a href="#layoutFrameworkBar" class="nav-link" title="Các khối chuẩn: Hero, Menu, Proof, Location">Khối Chức
-          Năng</a>
-        <a href="#codeSnippetText" class="nav-link" title="Chuẩn cấu trúc mã nguồn HTML5/CSS3">Cấu Trúc Code</a>
-        <a href="README.md" target="_blank" class="nav-link" title="Xem tài liệu tiêu chuẩn kỹ thuật">Tiêu Chuẩn Web</a>
-      </nav>
-
-      <!-- 3. GỘP TẤT CẢ TÍNH NĂNG VÀO FUNCTION SETTING (CÀI ĐẶT) -->
-      <div class="nav-actions">
-        <div class="settings-dropdown-wrapper" id="settingsDropdownWrapper">
-          <button class="settings-toggle-btn" id="settingsToggleBtn" aria-label="Mở Menu Cài Đặt Function Setting"
-            aria-expanded="false" title="Mở bảng điều khiển Cài Đặt Hệ Thống">
-            <span class="settings-btn-label">Cài Đặt</span>
-            <span class="settings-btn-arrow">▾</span>
-          </button>
-
-          <!-- FUNCTION SETTING DROPDOWN MENU -->
-          <div class="settings-dropdown-menu" id="settingsDropdownMenu">
-            <div class="settings-menu-header">
-              <div class="settings-menu-title">
-                <span>Cài Đặt Hệ Thống</span>
-              </div>
-              <button class="settings-close-btn" id="settingsCloseBtn" title="Đóng cài đặt">&times;</button>
-            </div>
-
-            <div class="settings-menu-body">
-              <!-- Chức năng 1: Chế độ hiển thị (View Mode) -->
-              <div class="settings-section">
-                <div class="settings-section-title">
-                  Chế Độ Giao Diện (View Mode)
-                </div>
-                <div class="mode-switcher-setting">
-                  <button class="mode-btn active" id="btnLandingMode" title="Chuyển sang giao diện Landing Page">
-                    Landing Page
-                  </button>
-                  <button class="mode-btn" id="btnAdminMode" title="Chuyển sang giao diện Website Quản Trị">
-                    Admin Dashboard
-                  </button>
-                </div>
-              </div>
-
-              <!-- Chức năng 2: Giao diện Sáng / Tối (Theme Mode) -->
-              <div class="settings-section">
-                <div class="settings-section-title">
-                  Giao Diện Màu Sắc (Theme Mode)
-                </div>
-                <div class="theme-switcher-setting">
-                  <button class="theme-opt-btn" id="themeLightBtn">
-                    Giao Diện Sáng
-                  </button>
-                  <button class="theme-opt-btn" id="themeDarkBtn">
-                    Giao Diện Tối
-                  </button>
-                </div>
-              </div>
-
-              <!-- Chức năng 3: Nhãn Tâm Lý Khách Hàng (Customer Psychology) -->
-              <div class="settings-section">
-                <div class="settings-section-title">
-                  Phân Tích Tâm Lý Khách Hàng
-                </div>
-                <button class="psych-setting-btn" id="psychToggleBtn">
-                  <span id="psychToggleText">Bật Phân Tích Tâm Lý</span>
-                </button>
-              </div>
-
-              <!-- Chức năng 4: Phong cách cửa hàng nhanh (Store Presets) -->
-              <div class="settings-section">
-                <div class="settings-section-title">
-                  Phong Cách Cửa Hàng (Store Presets)
-                </div>
-                <div class="store-grid-setting" id="storeSettingGrid">
-                  <button class="store-setting-btn active" data-store="coffee">Cà Phê</button>
-                  <button class="store-setting-btn" data-store="bakery">Tiệm Bánh</button>
-                  <button class="store-setting-btn" data-store="grocery">Thực Phẩm</button>
-                  <button class="store-setting-btn" data-store="general">Tổng Hợp</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Mobile Menu Toggle Button -->
-        <button class="menu-toggle" id="menuToggle" aria-label="Toggle Mobile Menu">
-          ☰
-        </button>
-      </div>
-    </div>
-  </header>
+  <!-- Component Placeholder: Header & Nav -->
+  <div id="header-component"></div>
 
   <!-- MAIN CENTRAL CONTENT CONTAINER (KHUNG NỘI DUNG CHÍNH) -->
   <main class="container site-main-content">
@@ -1114,164 +1012,7 @@
 
     </div>
 
-    <!-- ====================================================================
-         VIEW 2: ADMIN DASHBOARD TEMPLATE
-         ==================================================================== -->
-    <div id="adminView" class="page-view">
 
-      <!-- ADMIN HERO BANNER -->
-      <section class="block">
-        <span class="block-tag block-type-framework">🏗️ KHỐI FRAMEWORK: &lt;section class="admin-header"&gt; [ADMIN
-          DASHBOARD MODE]</span>
-        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-          <div>
-            <h1>Bảng Điều Khiển Quản Trị (Admin Dashboard)</h1>
-            <p style="margin-bottom: 0;">Quản lý hệ thống, theo dõi chỉ số thống kê và dữ liệu tài khoản người dùng.
-            </p>
-          </div>
-          <div style="display: flex; gap: 0.75rem;">
-            <button class="btn btn-outline">+ Thêm Mới</button>
-            <button class="btn btn-primary">📊 Xuất Báo Cáo</button>
-          </div>
-        </div>
-      </section>
-
-      <!-- ADMIN STATS CARDS GRID -->
-      <div class="grid grid-4 admin-stats-grid">
-        <div class="stat-card">
-          <span class="block-tag block-type-feature" style="font-size: 0.6rem; margin-bottom: 0.25rem;">⚡ METRIC
-            1</span>
-          <div style="font-size: 0.85rem; color: var(--color-text-muted);">Tổng Người Dùng</div>
-          <div class="stat-value">12,480</div>
-          <div class="stat-change up">↑ +14.2% tháng này</div>
-        </div>
-
-        <div class="stat-card">
-          <span class="block-tag block-type-feature" style="font-size: 0.6rem; margin-bottom: 0.25rem;">⚡ METRIC
-            2</span>
-          <div style="font-size: 0.85rem; color: var(--color-text-muted);">Doanh Thu Hệ Thống</div>
-          <div class="stat-value">$48,250</div>
-          <div class="stat-change up">↑ +8.6% so với tuần trước</div>
-        </div>
-
-        <div class="stat-card">
-          <span class="block-tag block-type-feature" style="font-size: 0.6rem; margin-bottom: 0.25rem;">⚡ METRIC
-            3</span>
-          <div style="font-size: 0.85rem; color: var(--color-text-muted);">Giao Dịch Đang Xử Lý</div>
-          <div class="stat-value">142</div>
-          <div class="stat-change down">↓ -3.1% phản hồi</div>
-        </div>
-
-        <div class="stat-card">
-          <span class="block-tag block-type-feature" style="font-size: 0.6rem; margin-bottom: 0.25rem;">⚡ METRIC
-            4</span>
-          <div style="font-size: 0.85rem; color: var(--color-text-muted);">Tải Máy Chủ Server</div>
-          <div class="stat-value">99.98%</div>
-          <div class="stat-change up">✓ Trạng thái ổn định</div>
-        </div>
-      </div>
-
-      <!-- ADMIN MAIN CONTENT & SIDEBAR SPLIT -->
-      <div class="layout-split">
-
-        <!-- PRIMARY DATA TABLE -->
-        <article class="content-primary">
-          <div class="block">
-            <span class="block-tag block-type-feature">⚡ KHỐI CHỨC NĂNG: &lt;div class="data-table-block"&gt; [BẢNG DỮ
-              LIỆU]</span>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem;">
-              <h3>Danh Sách Người Dùng Gần Đây</h3>
-              <span style="font-size: 0.8rem; color: var(--color-text-muted);">Hiển thị 5 / 120 tài khoản</span>
-            </div>
-
-            <div class="data-table-wrapper">
-              <table class="data-table">
-                <thead>
-                  <tr>
-                    <th>ID</th>
-                    <th>Họ &amp; Tên</th>
-                    <th>Email</th>
-                    <th>Vai Trò</th>
-                    <th>Trạng Thái</th>
-                    <th>Thao Tác</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>#1001</td>
-                    <td><strong>Trần Tiến Phát</strong></td>
-                    <td>ptrantien05@gmail.com</td>
-                    <td>Administrator</td>
-                    <td><span class="status-badge active">Hoạt động</span></td>
-                    <td><button class="btn btn-outline" style="padding: 0.2rem 0.5rem; font-size: 0.7rem;">Sửa</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>#1002</td>
-                    <td>Nguyễn Văn A</td>
-                    <td>nguyenvana@gmail.com</td>
-                    <td>Editor</td>
-                    <td><span class="status-badge active">Hoạt động</span></td>
-                    <td><button class="btn btn-outline" style="padding: 0.2rem 0.5rem; font-size: 0.7rem;">Sửa</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>#1003</td>
-                    <td>Lê Thị B</td>
-                    <td>lethib@gmail.com</td>
-                    <td>Subscriber</td>
-                    <td><span class="status-badge pending">Đang chờ</span></td>
-                    <td><button class="btn btn-outline" style="padding: 0.2rem 0.5rem; font-size: 0.7rem;">Sửa</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>#1004</td>
-                    <td>Phạm Hoàng C</td>
-                    <td>hoangc@gmail.com</td>
-                    <td>Subscriber</td>
-                    <td><span class="status-badge inactive">Tạm khóa</span></td>
-                    <td><button class="btn btn-outline" style="padding: 0.2rem 0.5rem; font-size: 0.7rem;">Sửa</button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </article>
-
-        <!-- ADMIN SIDEBAR WIDGETS -->
-        <aside class="content-sidebar">
-          <!-- ADMIN QUICK ACTIONS -->
-          <div class="block">
-            <span class="block-tag block-type-feature">⚡ KHỐI CHỨC NĂNG: &lt;aside class="admin-quick-actions"&gt;
-              [TÁC VỤ KHÓA/SỬA]</span>
-            <h4>Tác Vụ Quản Trị Nhanh</h4>
-            <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.75rem;">
-              <button class="btn btn-outline" style="justify-content: flex-start;">👤 Thêm Người Dùng Mới</button>
-              <button class="btn btn-outline" style="justify-content: flex-start;">⚙️ Cấu Hình Hệ Thống</button>
-              <button class="btn btn-outline" style="justify-content: flex-start;">📦 Sao Lưu Dữ Liệu</button>
-              <button class="btn btn-outline" style="justify-content: flex-start;">🔒 Kiểm Tra Bảo Mật</button>
-            </div>
-          </div>
-
-          <!-- SYSTEM ACTIVITY LOG -->
-          <div class="block">
-            <span class="block-tag">WIDGET: RECENT ACTIVITY</span>
-            <h4>Nhật Ký Hoạt Động</h4>
-            <div style="font-size: 0.8rem; display: flex; flex-direction: column; gap: 0.75rem; margin-top: 0.75rem;">
-              <div>• <strong>System:</strong> Đã sao lưu database thành công <span style="opacity: 0.6;">(10 phút
-                  trước)</span></div>
-              <div>• <strong>Admin:</strong> Cập nhật thông tin phân quyền <span style="opacity: 0.6;">(1 giờ
-                  trước)</span></div>
-              <div>• <strong>User #1003:</strong> Gửi yêu cầu hỗ trợ tài khoản <span style="opacity: 0.6;">(3 giờ
-                  trước)</span></div>
-            </div>
-          </div>
-        </aside>
-
-      </div>
-
-    </div>
 
     <!-- ==========================================
          BLOCK: CODE ARCHITECTURE DEMO
@@ -1391,102 +1132,11 @@
 
   </div>
 
-  <!-- ==========================================
-       BLOCK: FOOTER
-       ========================================== -->
-  <footer class="site-footer">
-    <div class="container">
-      <span class="block-tag block-type-framework">🏗️ KHỐI FRAMEWORK: &lt;footer class="site-footer"&gt; [CHÂN TRANG
-        FOOTER]</span>
+  <!-- Component Placeholder: Footer -->
+  <div id="footer-component"></div>
 
-      <div class="footer-grid">
-        <div>
-          <a href="#" class="logo" style="margin-bottom: 0.75rem;">
-            <span>MINIMAL</span>
-            <span class="logo-badge">2026</span>
-          </a>
-          <p style="font-size: 0.875rem; max-width: 360px;">
-            Khung dựng Website phong cách Minimalist tối giản. Trình bày rõ ràng cấu trúc các khối Nav, Content, Block,
-            Sidebar, Admin Dashboard và Footer.
-          </p>
-        </div>
-
-        <div>
-          <h4 style="font-size: 0.875rem; margin-bottom: 0.75rem;">CẤU TRÚC KHỐI</h4>
-          <ul style="font-size: 0.85rem; display: flex; flex-direction: column; gap: 0.4rem;">
-            <li><a href="#layout-demo" class="nav-link">Landing Page View</a></li>
-            <li><a href="#adminView" class="nav-link">Admin Dashboard View</a></li>
-            <li><a href="#code-demo" class="nav-link">Sơ đồ HTML Dual-Mode</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 style="font-size: 0.875rem; margin-bottom: 0.75rem;">TÀI LIỆU</h4>
-          <ul style="font-size: 0.85rem; display: flex; flex-direction: column; gap: 0.4rem;">
-            <li><a href="README.md" target="_blank" class="nav-link">Tài liệu README.md</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <span>© 2026 Minimalist Web Framework</span>
-        <span>HTML5 • Modern CSS • Vanilla JS</span>
-      </div>
-    </div>
-  </footer>
-
-  <!-- ==========================================
-       FLOATING INTERACTIVE STYLE CUSTOMIZER WIDGET
-       ========================================== -->
-  <div class="floating-customizer-wrapper" id="floatingCustomizerWrapper">
-    <button class="floating-customizer-btn" id="floatingCustomizerBtn" title="Tùy Biến Giao Diện Trực Tiếp">
-      <span class="customizer-icon">🎨</span>
-      <span class="customizer-label">Tùy Biến Style</span>
-    </button>
-
-    <div class="floating-customizer-panel" id="floatingCustomizerPanel">
-      <div class="customizer-panel-header">
-        <h4>🎨 Bộ Tùy Biến Giao Diện Live</h4>
-        <button class="customizer-close-btn" id="customizerCloseBtn">&times;</button>
-      </div>
-
-      <div class="customizer-panel-body">
-        <!-- 1. Accent Color Swatches -->
-        <div class="customizer-group">
-          <label class="customizer-label">Màu Chủ Đạo (Accent Color):</label>
-          <div class="color-swatches-grid">
-            <button class="color-swatch active" data-color="#2563eb" style="background: #2563eb;" title="Xanh Indigo"></button>
-            <button class="color-swatch" data-color="#6f4e37" style="background: #6f4e37;" title="Nâu Espresso"></button>
-            <button class="color-swatch" data-color="#d97706" style="background: #d97706;" title="Vàng Bơ"></button>
-            <button class="color-swatch" data-color="#059669" style="background: #059669;" title="Xanh Emerald"></button>
-            <button class="color-swatch" data-color="#7c3aed" style="background: #7c3aed;" title="Tím Cyber"></button>
-            <button class="color-swatch" data-color="#e11d48" style="background: #e11d48;" title="Đỏ Crimson"></button>
-          </div>
-        </div>
-
-        <!-- 2. Border Radius Customizer -->
-        <div class="customizer-group">
-          <label class="customizer-label">Bo Góc Khối (Border Radius):</label>
-          <div class="radius-options-grid">
-            <button class="radius-opt-btn" data-radius="0px">Sắc Cạnh (0px)</button>
-            <button class="radius-opt-btn active" data-radius="8px">Vừa Phải (8px)</button>
-            <button class="radius-opt-btn" data-radius="18px">Bo Tròn (18px)</button>
-          </div>
-        </div>
-
-        <!-- 3. Store Presets Quick Selector -->
-        <div class="customizer-group">
-          <label class="customizer-label">Phong Cách Cửa Hàng:</label>
-          <div class="store-grid-setting">
-            <button class="store-setting-btn active" data-store="coffee">Cà Phê</button>
-            <button class="store-setting-btn" data-store="bakery">Tiệm Bánh</button>
-            <button class="store-setting-btn" data-store="grocery">Thực Phẩm</button>
-            <button class="store-setting-btn" data-store="general">Tổng Hợp</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <!-- Component Placeholder: Floating Customizer -->
+  <div id="customizer-component"></div>
 
 </body>
 

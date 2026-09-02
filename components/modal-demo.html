@@ -1,0 +1,16 @@
+<!-- ==========================================
+     REUSABLE COMPONENT: MODAL DEMO DIALOG TEMPLATE
+     ========================================== -->
+<div class="modal-backdrop" id="modalDemoBackdrop" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.5); z-index: 2000; align-items: center; justify-content: center;">
+  <div class="modal-card" style="background: var(--color-card-bg); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-6); max-width: 450px; width: 90%; box-shadow: var(--shadow-md);">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-4);">
+      <h3 style="margin-bottom: 0;">💬 Thông Báo Hệ Thống</h3>
+      <button class="btn-close" id="modalCloseBtn" style="background: none; border: none; font-size: 1.25rem; cursor: pointer; color: var(--color-text-muted);">&times;</button>
+    </div>
+    <p style="font-size: var(--font-size-sm); margin-bottom: var(--space-6);">Component Modal mẫu hỗ trợ hiển thị thông báo, xác nhận hành động hoặc xem chi tiết sản phẩm.</p>
+    <div style="display: flex; justify-content: flex-end; gap: var(--space-3);">
+      <button class="btn btn-outline" id="modalCancelBtn">Đóng</button>
+      <button class="btn btn-primary" id="modalConfirmBtn">Xác Nhận</button>
+    </div>
+  </div>
+</div>
