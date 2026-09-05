@@ -116,25 +116,33 @@
   position: absolute;
   top: 8px;
   right: 8px;
+  z-index: 10;
   background-color: #ef4444;
   color: #fff;
-  font-size: 0.65rem;
+  font-size: 0.68rem;
   font-weight: var(--font-weight-bold);
-  padding: 0.15rem 0.4rem;
+  padding: 0.2rem 0.45rem;
   border-radius: var(--radius-sm);
   text-transform: uppercase;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+  line-height: 1.2;
 }
 
 .product-badge-bestseller {
   position: absolute;
   top: 8px;
   left: 8px;
+  z-index: 10;
   background-color: #f59e0b;
   color: #fff;
-  font-size: 0.65rem;
+  font-size: 0.68rem;
   font-weight: var(--font-weight-bold);
-  padding: 0.15rem 0.4rem;
+  padding: 0.2rem 0.45rem;
   border-radius: var(--radius-sm);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+  line-height: 1.2;
 }
 
 .product-title {

@@ -1,208 +1,337 @@
 <!-- ==========================================
-     REUSABLE COMPONENT: HEADER & NAV WITH FRAMEWORK STYLE 1-4
+     REUSABLE COMPONENT: ENTERPRISE 2-TIER HEADER & NAVIGATION
+     Tầng 1: Top Bar (Thanh tiện ích phụ: Hotline, Email, Địa chỉ, Ngôn ngữ, Portal, Cài đặt)
+     Tầng 2: Main Bar (Thanh điều hướng chính: Logo, Menu phân tầng, Tìm kiếm nội bộ, CTA)
      ========================================== -->
-<header class="site-header">
-  <div class="container navbar">
-    <!-- 1. LOGO FRAMEWORK -->
-    <a href="index.html" class="logo">
-      <span>MINIMAL</span>
-      <span class="logo-badge">STYLE 1</span>
-    </a>
+<header class="site-header" id="siteHeader">
 
-    <!-- 2. THANH ĐIỀU HƯỚNG NAV TIÊU CHUẨN FRAMEWORK -->
-    <nav class="nav-menu" id="navMenu">
-      <a href="about.html" class="nav-link" title="Trang Giới Thiệu">Giới thiệu</a>
-      <a href="admin.html" class="nav-link" title="Giao diện Quản trị Admin Dashboard">Admin Dashboard</a>
-      <a href="contact.html" class="nav-link" title="Trang Liên Hệ & Hỗ Trợ">Liên hệ</a>
-    </nav>
-
-    <!-- 3. BẢNG CÀI ĐẶT TỔNG HỢP GOM TOÀN BỘ LỰA CHỌN TÙY BIẾN -->
-    <div class="nav-actions">
-      <div class="settings-dropdown-wrapper" id="settingsDropdownWrapper">
-        <button class="settings-toggle-btn" id="settingsToggleBtn" aria-label="Mở Menu Cài Đặt Hệ Thống"
-          aria-expanded="false" title="Mở toàn bộ bộ chọn tùy biến giao diện">
-          <span class="settings-btn-icon">⚙️</span>
-          <span class="settings-btn-label">Cài Đặt</span>
-          <span class="settings-btn-arrow">▾</span>
-        </button>
-
-        <!-- FUNCTION SETTING DROPDOWN MENU -->
-        <div class="settings-dropdown-menu" id="settingsDropdownMenu">
-          <div class="settings-menu-header">
-            <div class="settings-menu-title">
-              <span>⚙️ Bộ Cài Đặt &amp; Tùy Biến Giao Diện</span>
-            </div>
-            <button class="settings-close-btn" id="settingsCloseBtn" title="Đóng cài đặt">&times;</button>
-          </div>
-
-          <div class="settings-menu-body">
-            <!-- 1. Chế độ hiển thị (View Mode) -->
-            <div class="settings-section">
-              <div class="settings-section-title">1. Chế Độ Giao Diện (View Mode)</div>
-              <div class="mode-switcher-setting">
-                <button class="mode-btn active" id="btnLandingMode" data-mode="landing" title="Chuyển sang Landing Page">
-                  Landing Page
-                </button>
-                <button class="mode-btn" id="btnAdminMode" data-mode="admin" title="Chuyển sang Admin Dashboard">
-                  Admin Dashboard
-                </button>
-              </div>
-            </div>
-
-            <!-- 2. Giao diện Sáng / Tối (Theme Mode) -->
-            <div class="settings-section">
-              <div class="settings-section-title">2. Giao Diện Màu Sắc (Theme Mode)</div>
-              <div class="theme-switcher-setting">
-                <button class="theme-opt-btn" id="themeLightBtn">☀️ Giao Diện Sáng</button>
-                <button class="theme-opt-btn" id="themeDarkBtn">🌙 Giao Diện Tối</button>
-              </div>
-            </div>
-
-            <!-- 3. Màu Chủ Đạo (Accent Color Swatches) -->
-            <div class="settings-section">
-              <div class="settings-section-title">3. Màu Chủ Đạo (Accent Color)</div>
-              <div class="color-swatches-grid">
-                <button class="color-swatch active" data-color="#2563eb" style="background: #2563eb;" title="Xanh Indigo"></button>
-                <button class="color-swatch" data-color="#6f4e37" style="background: #6f4e37;" title="Nâu Espresso"></button>
-                <button class="color-swatch" data-color="#d97706" style="background: #d97706;" title="Vàng Bơ"></button>
-                <button class="color-swatch" data-color="#059669" style="background: #059669;" title="Xanh Emerald"></button>
-                <button class="color-swatch" data-color="#7c3aed" style="background: #7c3aed;" title="Tím Cyber"></button>
-                <button class="color-swatch" data-color="#e11d48" style="background: #e11d48;" title="Đỏ Crimson"></button>
-              </div>
-            </div>
-
-            <!-- 4. Bo Góc Khối (Border Radius) -->
-            <div class="settings-section">
-              <div class="settings-section-title">4. Bo Góc Khối (Border Radius)</div>
-              <div class="radius-options-grid">
-                <button class="radius-opt-btn" data-radius="0px">Sắc Cạnh (0px)</button>
-                <button class="radius-opt-btn active" data-radius="8px">Vừa Phải (8px)</button>
-                <button class="radius-opt-btn" data-radius="18px">Bo Tròn (18px)</button>
-              </div>
-            </div>
-
-            <!-- 5. Phong cách Mẫu Website & Danh Sách Thiết Kế 2026 -->
-            <div class="settings-section">
-              <div class="settings-section-title">5. Mẫu Website &amp; Danh Sách Phong Cách Thiết Kế 2026</div>
-              <div class="store-grid-setting" id="storeSettingGrid">
-                <button class="store-btn store-setting-btn active" data-store="style1">🏢 Style 1 (Doanh Nghiệp)</button>
-                <button class="store-btn store-setting-btn" data-store="style2">🎨 Style 2 (Portfolio)</button>
-                <button class="store-btn store-setting-btn" data-store="style3">⚡ Style 3 (SaaS / Tech)</button>
-                <button class="store-btn store-setting-btn" data-store="style4">🛒 Style 4 (E-Commerce)</button>
-              </div>
-
-              <!-- Danh Sách Chi Tiết 4 Phong Cách Thiết Kế (Style Catalog Cards) -->
-              <div class="settings-style-catalog" id="settingsStyleCatalog">
-                <!-- STYLE 1 -->
-                <div class="style-catalog-card active-style" data-style-preset="style1">
-                  <div class="style-card-top">
-                    <div>
-                      <span class="block-tag block-type-feature" style="font-size: 0.62rem; margin-bottom: 0.2rem;">STYLE 1</span>
-                      <h4 style="font-size: 0.85rem; margin: 0; font-weight: 600;">1. Doanh Nghiệp (Corporate &amp; Brand)</h4>
-                    </div>
-                    <button class="btn btn-outline store-btn" data-store="style1" style="font-size: 0.7rem; padding: 0.2rem 0.5rem;">Khám Phá</button>
-                  </div>
-                  <p style="font-size: 0.75rem; margin: 0.4rem 0; color: var(--color-text-muted); line-height: 1.4;">Gam màu Indigo &amp; Deep Slate chuẩn mực. Định hình thương hiệu doanh nghiệp vững vàng, giải pháp B2B và câu chuyện giá trị cốt lõi.</p>
-                  <div class="style-card-meta">
-                    <span>Tone:</span>
-                    <span class="color-dot" style="background: #2563eb;"></span>
-                    <span class="color-dot" style="background: #0f172a;"></span>
-                    <span class="style-card-fit">• Phù hợp: Website Doanh nghiệp, Tập đoàn, B2B</span>
-                  </div>
-                </div>
-
-                <!-- STYLE 2 -->
-                <div class="style-catalog-card" data-style-preset="style2">
-                  <div class="style-card-top">
-                    <div>
-                      <span class="block-tag block-type-feature" style="font-size: 0.62rem; margin-bottom: 0.2rem;">STYLE 2</span>
-                      <h4 style="font-size: 0.85rem; margin: 0; font-weight: 600;">2. Hồ Sơ Tác Phẩm (Portfolio &amp; Agency)</h4>
-                    </div>
-                    <button class="btn btn-outline store-btn" data-store="style2" style="font-size: 0.7rem; padding: 0.2rem 0.5rem;">Khám Phá</button>
-                  </div>
-                  <p style="font-size: 0.75rem; margin: 0.4rem 0; color: var(--color-text-muted); line-height: 1.4;">Tone màu Vàng Ochre &amp; Amber nghệ thuật. Tôn vinh các dự án tiêu biểu, hồ sơ năng lực và dấu ấn sáng tạo cá nhân/studio.</p>
-                  <div class="style-card-meta">
-                    <span>Tone:</span>
-                    <span class="color-dot" style="background: #d97706;"></span>
-                    <span class="color-dot" style="background: #292524;"></span>
-                    <span class="style-card-fit">• Phù hợp: Agency sáng tạo, Freelancer, Studio</span>
-                  </div>
-                </div>
-
-                <!-- STYLE 3 -->
-                <div class="style-catalog-card" data-style-preset="style3">
-                  <div class="style-card-top">
-                    <div>
-                      <span class="block-tag block-type-feature" style="font-size: 0.62rem; margin-bottom: 0.2rem;">STYLE 3</span>
-                      <h4 style="font-size: 0.85rem; margin: 0; font-weight: 600;">3. Công Nghệ &amp; SaaS (Software Product)</h4>
-                    </div>
-                    <button class="btn btn-outline store-btn" data-store="style3" style="font-size: 0.7rem; padding: 0.2rem 0.5rem;">Khám Phá</button>
-                  </div>
-                  <p style="font-size: 0.75rem; margin: 0.4rem 0; color: var(--color-text-muted); line-height: 1.4;">Tone màu Xanh Emerald &amp; Cyber Mint hiện đại. Trình bày rõ ràng nền tảng SaaS, giải pháp AI và bảo mật chuẩn Enterprise.</p>
-                  <div class="style-card-meta">
-                    <span>Tone:</span>
-                    <span class="color-dot" style="background: #059669;"></span>
-                    <span class="color-dot" style="background: #064e3b;"></span>
-                    <span class="style-card-fit">• Phù hợp: Nền tảng SaaS, AI Tool, Cloud Software</span>
-                  </div>
-                </div>
-
-                <!-- STYLE 4 -->
-                <div class="style-catalog-card" data-style-preset="style4">
-                  <div class="style-card-top">
-                    <div>
-                      <span class="block-tag block-type-feature" style="font-size: 0.62rem; margin-bottom: 0.2rem;">STYLE 4</span>
-                      <h4 style="font-size: 0.85rem; margin: 0; font-weight: 600;">4. Thương Mại Điện Tử (E-Commerce Store)</h4>
-                    </div>
-                    <button class="btn btn-outline store-btn" data-store="style4" style="font-size: 0.7rem; padding: 0.2rem 0.5rem;">Khám Phá</button>
-                  </div>
-                  <p style="font-size: 0.75rem; margin: 0.4rem 0; color: var(--color-text-muted); line-height: 1.4;">Tone màu Tím Cyber &amp; Slate tối ưu tỷ lệ chuyển đổi. Tập trung vào danh mục sản phẩm, đồng hồ FOMO và trải nghiệm showroom.</p>
-                  <div class="style-card-meta">
-                    <span>Tone:</span>
-                    <span class="color-dot" style="background: #4f46e5;"></span>
-                    <span class="color-dot" style="background: #ef4444;"></span>
-                    <span class="style-card-fit">• Phù hợp: Cửa hàng trực tuyến, Đồ công nghệ, Retail</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- 6. Khung Bố Cục Block 2026 (Layout Filter) -->
-            <div class="settings-section">
-              <div class="settings-section-title">6. Khung Bố Cục Block 2026 (Layout Filter)</div>
-              <div class="layout-framework-bar" id="layoutFrameworkBar">
-                <button class="layout-btn active" data-layout="all">Tất Cả Khối Layout</button>
-                <button class="layout-btn" data-layout="split-hero">Split Hero &amp; Story</button>
-                <button class="layout-btn" data-layout="grid-showcase">Grid Showcase &amp; Menu</button>
-                <button class="layout-btn" data-layout="urgency-offer">Urgency Offer (FOMO)</button>
-                <button class="layout-btn" data-layout="trust-proof">Trust &amp; Social Proof</button>
-                <button class="layout-btn" data-layout="space-location">Store Space &amp; Location</button>
-              </div>
-
-              <!-- Chú Giải Khối Project -->
-              <div class="block-legend-bar" style="margin-top: 0.6rem; padding: 0.4rem 0.6rem; background: var(--color-block-badge); border-radius: var(--radius-sm); display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap;">
-                <span style="font-weight: 600; font-size: 0.68rem; color: var(--color-text-muted);">Chú Giải:</span>
-                <span class="block-tag block-type-framework" style="font-size: 0.62rem; margin: 0;">KHỐI FRAMEWORK (LAYOUT)</span>
-                <span class="block-tag block-type-feature" style="font-size: 0.62rem; margin: 0;">KHỐI CHỨC NĂNG</span>
-              </div>
-            </div>
-
-            <!-- 7. Phân Tích Hành Vi Người Dùng (Customer Psychology) -->
-            <div class="settings-section">
-              <div class="settings-section-title">7. Phân Tích Hành Vi Người Dùng (Psychology)</div>
-              <button class="psych-setting-btn" id="psychToggleBtn">
-                <span id="psychToggleText">Bật Phân Tích Tâm Lý Khách Hàng</span>
-              </button>
-            </div>
-
-          </div>
+  <!-- ==========================================
+       TẦNG 1: TOP BAR (THANH TIỆN ÍCH PHỤ)
+       Tăng độ uy tín (Trust factor), phục vụ đối tác/khách hàng quốc tế
+       ========================================== -->
+  <div class="header-topbar" id="headerTopbar">
+    <div class="header-container topbar-inner">
+      <!-- Bên trái: Hotline, Email, Chi nhánh -->
+      <div class="topbar-left">
+        <div class="topbar-item" id="topbarHotlineItem">
+          <span class="topbar-icon">📞</span>
+          <span class="topbar-label">Hotline:</span>
+          <a href="tel:02838229999" class="topbar-link" id="topbarHotlineVal">(028) 3822 9999</a>
+        </div>
+        <div class="topbar-item topbar-item-email" id="topbarEmailItem">
+          <span class="topbar-icon">✉️</span>
+          <a href="mailto:corporate@nexuscorp.vn" class="topbar-link" id="topbarEmailVal">corporate@nexuscorp.vn</a>
+        </div>
+        <div class="topbar-item topbar-item-address" id="topbarAddressItem">
+          <span class="topbar-icon">📍</span>
+          <span class="topbar-text" id="topbarAddressVal">3A Tôn Đức Thắng, Quận 1, TP.HCM</span>
         </div>
       </div>
 
-      <!-- Mobile Menu Toggle Button -->
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle Mobile Menu">
-        ☰
-      </button>
+      <!-- Bên phải: Ngôn ngữ, Portal, Nút Cài đặt Framework -->
+      <div class="topbar-right">
+        <!-- 1. Chuyển đổi ngôn ngữ (VI / EN) -->
+        <div class="topbar-item lang-switch-item" id="langSwitchItem">
+          <div class="lang-switch-wrapper" id="langSwitchWrapper" title="Chuyển đổi ngôn ngữ">
+            <button class="lang-btn active" data-lang="vi">VI</button>
+            <span class="lang-divider">/</span>
+            <button class="lang-btn" data-lang="en">EN</button>
+          </div>
+        </div>
+
+        <!-- 2. Cổng khách hàng / Portal -->
+        <div class="topbar-item portal-item" id="portalItem">
+          <a href="#corp-audit" class="topbar-portal-link" id="topbarPortalLink" title="Cổng dịch vụ & thẩm định đối tác">
+            <span class="portal-icon">🏛️</span>
+            <span class="portal-text" id="topbarPortalText">Cổng Khách Hàng / Portal ↗</span>
+          </a>
+        </div>
+
+        <!-- 3. Nút Cài Đặt Hệ Thống (Đẩy toàn bộ công cụ tùy biến vào dropdown/drawer này) -->
+        <div class="settings-dropdown-wrapper" id="settingsDropdownWrapper">
+          <button class="settings-toggle-btn" id="settingsToggleBtn" aria-label="Mở Bảng Cài Đặt Hệ Thống"
+            aria-expanded="false" title="Mở toàn bộ bộ chọn tùy biến giao diện & phong cách">
+            <span class="settings-btn-icon">⚙️</span>
+            <span class="settings-btn-label">Cài Đặt</span>
+            <span class="settings-btn-arrow">▾</span>
+          </button>
+
+          <!-- FUNCTION SETTING DROPDOWN MENU (Chứa 7 mục tùy biến framework) -->
+          <div class="settings-dropdown-menu" id="settingsDropdownMenu">
+            <div class="settings-menu-header">
+              <div class="settings-menu-title">
+                <span>⚙️ Bộ Cài Đặt &amp; Tùy Biến Giao Diện</span>
+              </div>
+              <button class="settings-close-btn" id="settingsCloseBtn" title="Đóng cài đặt">&times;</button>
+            </div>
+
+            <div class="settings-menu-body">
+              <!-- 1. Chế độ hiển thị (View Mode) -->
+              <div class="settings-section">
+                <div class="settings-section-title">1. Chế Độ Giao Diện (View Mode)</div>
+                <div class="mode-switcher-setting">
+                  <button class="mode-btn active" id="btnLandingMode" data-mode="landing" title="Chuyển sang Landing Page">
+                    Landing Page
+                  </button>
+                  <button class="mode-btn" id="btnAdminMode" data-mode="admin" title="Chuyển sang Admin Dashboard">
+                    Admin Dashboard
+                  </button>
+                </div>
+              </div>
+
+              <!-- 2. Giao diện Sáng / Tối (Theme Mode) -->
+              <div class="settings-section">
+                <div class="settings-section-title">2. Giao Diện Màu Sắc (Theme Mode)</div>
+                <div class="theme-switcher-setting">
+                  <button class="theme-opt-btn" id="themeLightBtn">☀️ Giao Diện Sáng</button>
+                  <button class="theme-opt-btn" id="themeDarkBtn">🌙 Giao Diện Tối</button>
+                </div>
+              </div>
+
+              <!-- 3. Màu Chủ Đạo (Accent Color Swatches) -->
+              <div class="settings-section">
+                <div class="settings-section-title">3. Màu Chủ Đạo (Accent Color)</div>
+                <div class="color-swatches-grid">
+                  <button class="color-swatch active" data-color="#2563eb" style="background: #2563eb;" title="Xanh Indigo"></button>
+                  <button class="color-swatch" data-color="#6f4e37" style="background: #6f4e37;" title="Nâu Espresso"></button>
+                  <button class="color-swatch" data-color="#d97706" style="background: #d97706;" title="Vàng Bơ"></button>
+                  <button class="color-swatch" data-color="#059669" style="background: #059669;" title="Xanh Emerald"></button>
+                  <button class="color-swatch" data-color="#7c3aed" style="background: #7c3aed;" title="Tím Cyber"></button>
+                  <button class="color-swatch" data-color="#e11d48" style="background: #e11d48;" title="Đỏ Crimson"></button>
+                </div>
+              </div>
+
+              <!-- 4. Bo Góc Khối (Border Radius) -->
+              <div class="settings-section">
+                <div class="settings-section-title">4. Bo Góc Khối (Border Radius)</div>
+                <div class="radius-options-grid">
+                  <button class="radius-opt-btn" data-radius="0px">Sắc Cạnh (0px)</button>
+                  <button class="radius-opt-btn active" data-radius="8px">Vừa Phải (8px)</button>
+                  <button class="radius-opt-btn" data-radius="18px">Bo Tròn (18px)</button>
+                </div>
+              </div>
+
+              <!-- 5. Mẫu Website & Danh Sách Phong Cách Thiết Kế 2026 -->
+              <div class="settings-section">
+                <div class="settings-section-title">5. Mẫu Website &amp; Danh Sách Phong Cách Thiết Kế 2026</div>
+                <div class="store-grid-setting" id="storeSettingGrid">
+                  <button class="store-btn store-setting-btn active" data-store="style1">🏢 Style 1 (Doanh Nghiệp)</button>
+                  <button class="store-btn store-setting-btn" data-store="style2">🎨 Style 2 (Portfolio)</button>
+                  <button class="store-btn store-setting-btn" data-store="style3">⚡ Style 3 (SaaS / Tech)</button>
+                  <button class="store-btn store-setting-btn" data-store="style4">🛒 Style 4 (E-Commerce)</button>
+                </div>
+
+                <!-- Danh Sách Chi Tiết 4 Phong Cách Thiết Kế (Style Catalog Cards) -->
+                <div class="settings-style-catalog" id="settingsStyleCatalog">
+                  <!-- STYLE 1 -->
+                  <div class="style-catalog-card active-style" data-style-preset="style1">
+                    <div class="style-card-top">
+                      <div>
+                        <span class="block-tag block-type-feature" style="font-size: 0.62rem; margin-bottom: 0.2rem;">STYLE 1</span>
+                        <h4 style="font-size: 0.85rem; margin: 0; font-weight: 600;">1. Doanh Nghiệp (Corporate &amp; Brand)</h4>
+                      </div>
+                      <button class="btn btn-outline store-btn" data-store="style1" style="font-size: 0.7rem; padding: 0.2rem 0.5rem;">Khám Phá</button>
+                    </div>
+                    <p style="font-size: 0.75rem; margin: 0.4rem 0; color: var(--color-text-muted); line-height: 1.4;">Gam màu Indigo &amp; Deep Slate chuẩn mực. Chiến lược SEO Doanh nghiệp B2B/B2C, 4 trụ cột kỹ thuật và uy tín thương hiệu.</p>
+                    <div class="style-card-meta">
+                      <span>Tone:</span>
+                      <span class="color-dot" style="background: #2563eb;"></span>
+                      <span class="color-dot" style="background: #0f172a;"></span>
+                      <span class="style-card-fit">• Phù hợp: Website Doanh nghiệp, Tập đoàn, B2B</span>
+                    </div>
+                  </div>
+
+                  <!-- STYLE 2 -->
+                  <div class="style-catalog-card" data-style-preset="style2">
+                    <div class="style-card-top">
+                      <div>
+                        <span class="block-tag block-type-feature" style="font-size: 0.62rem; margin-bottom: 0.2rem;">STYLE 2</span>
+                        <h4 style="font-size: 0.85rem; margin: 0; font-weight: 600;">2. Hồ Sơ Tác Phẩm (Portfolio &amp; Agency)</h4>
+                      </div>
+                      <button class="btn btn-outline store-btn" data-store="style2" style="font-size: 0.7rem; padding: 0.2rem 0.5rem;">Khám Phá</button>
+                    </div>
+                    <p style="font-size: 0.75rem; margin: 0.4rem 0; color: var(--color-text-muted); line-height: 1.4;">Tone màu Vàng Ochre &amp; Amber nghệ thuật. Tôn vinh các dự án tiêu biểu, hồ sơ năng lực và dấu ấn sáng tạo cá nhân/studio.</p>
+                    <div class="style-card-meta">
+                      <span>Tone:</span>
+                      <span class="color-dot" style="background: #d97706;"></span>
+                      <span class="color-dot" style="background: #292524;"></span>
+                      <span class="style-card-fit">• Phù hợp: Agency sáng tạo, Freelancer, Studio</span>
+                    </div>
+                  </div>
+
+                  <!-- STYLE 3 -->
+                  <div class="style-catalog-card" data-style-preset="style3">
+                    <div class="style-card-top">
+                      <div>
+                        <span class="block-tag block-type-feature" style="font-size: 0.62rem; margin-bottom: 0.2rem;">STYLE 3</span>
+                        <h4 style="font-size: 0.85rem; margin: 0; font-weight: 600;">3. Công Nghệ &amp; SaaS (Software Product)</h4>
+                      </div>
+                      <button class="btn btn-outline store-btn" data-store="style3" style="font-size: 0.7rem; padding: 0.2rem 0.5rem;">Khám Phá</button>
+                    </div>
+                    <p style="font-size: 0.75rem; margin: 0.4rem 0; color: var(--color-text-muted); line-height: 1.4;">Tone màu Xanh Emerald &amp; Cyber Mint hiện đại. Trình bày rõ ràng nền tảng SaaS, giải pháp AI và bảo mật chuẩn Enterprise.</p>
+                    <div class="style-card-meta">
+                      <span>Tone:</span>
+                      <span class="color-dot" style="background: #059669;"></span>
+                      <span class="color-dot" style="background: #064e3b;"></span>
+                      <span class="style-card-fit">• Phù hợp: Nền tảng SaaS, AI Tool, Cloud Software</span>
+                    </div>
+                  </div>
+
+                  <!-- STYLE 4 -->
+                  <div class="style-catalog-card" data-style-preset="style4">
+                    <div class="style-card-top">
+                      <div>
+                        <span class="block-tag block-type-feature" style="font-size: 0.62rem; margin-bottom: 0.2rem;">STYLE 4</span>
+                        <h4 style="font-size: 0.85rem; margin: 0; font-weight: 600;">4. Thương Mại Điện Tử (E-Commerce Store)</h4>
+                      </div>
+                      <button class="btn btn-outline store-btn" data-store="style4" style="font-size: 0.7rem; padding: 0.2rem 0.5rem;">Khám Phá</button>
+                    </div>
+                    <p style="font-size: 0.75rem; margin: 0.4rem 0; color: var(--color-text-muted); line-height: 1.4;">Tone màu Tím Cyber &amp; Slate tối ưu tỷ lệ chuyển đổi. Tập trung vào danh mục sản phẩm, đồng hồ FOMO và trải nghiệm showroom.</p>
+                    <div class="style-card-meta">
+                      <span>Tone:</span>
+                      <span class="color-dot" style="background: #4f46e5;"></span>
+                      <span class="color-dot" style="background: #ef4444;"></span>
+                      <span class="style-card-fit">• Phù hợp: Cửa hàng trực tuyến, Đồ công nghệ, Retail</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 6. Khung Bố Cục Block 2026 (Layout Filter) -->
+              <div class="settings-section">
+                <div class="settings-section-title">6. Khung Bố Cục Block 2026 (Layout Filter)</div>
+                <div class="layout-framework-bar" id="layoutFrameworkBar">
+                  <button class="layout-btn active" data-layout="all">Tất Cả Khối Layout</button>
+                  <button class="layout-btn" data-layout="split-hero">Split Hero &amp; Story</button>
+                  <button class="layout-btn" data-layout="grid-showcase">Grid Showcase &amp; Menu</button>
+                  <button class="layout-btn" data-layout="urgency-offer">Urgency Offer (FOMO)</button>
+                  <button class="layout-btn" data-layout="trust-proof">Trust &amp; Social Proof</button>
+                  <button class="layout-btn" data-layout="space-location">Store Space &amp; Location</button>
+                </div>
+
+                <!-- Chú Giải Khối Project -->
+                <div class="block-legend-bar" style="margin-top: 0.6rem; padding: 0.4rem 0.6rem; background: var(--color-block-badge); border-radius: var(--radius-sm); display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap;">
+                  <span style="font-weight: 600; font-size: 0.68rem; color: var(--color-text-muted);">Chú Giải:</span>
+                  <span class="block-tag block-type-framework" style="font-size: 0.62rem; margin: 0;">KHỐI FRAMEWORK (LAYOUT)</span>
+                  <span class="block-tag block-type-feature" style="font-size: 0.62rem; margin: 0;">KHỐI CHỨC NĂNG</span>
+                </div>
+              </div>
+
+              <!-- 7. Phân Tích Hành Vi Người Dùng (Customer Psychology) -->
+              <div class="settings-section">
+                <div class="settings-section-title">7. Phân Tích Hành Vi Người Dùng (Psychology)</div>
+                <button class="psych-setting-btn" id="psychToggleBtn">
+                  <span id="psychToggleText">Bật Phân Tích Tâm Lý Khách Hàng</span>
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       TẦNG 2: MAIN NAVIGATION BAR (THANH ĐIỀU HƯỚNG CHÍNH)
+       Logo, Menu phân cấp, Công cụ tìm kiếm nội bộ, Nút Kêu Gọi Hành Động (CTA)
+       ========================================== -->
+  <div class="header-mainbar" id="headerMainbar">
+    <div class="header-container mainbar-inner">
+      <!-- 1. LOGO THƯƠNG HIỆU -->
+      <a href="index.html" class="logo" id="headerMainLogo">
+        <span class="logo-mark" id="logoMark">🏢</span>
+        <div class="logo-brand-meta">
+          <span class="logo-title" id="logoTitle">NEXUS CORP</span>
+          <span class="logo-badge" id="logoBadge">STYLE 1 • DOANH NGHIỆP</span>
+        </div>
+      </a>
+
+      <!-- 2. HỆ THỐNG MENU ĐIỀU HƯỚNG -->
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link" id="navHomeLink">Trang Chủ</a>
+
+        <!-- Menu Dropdown: Giải Pháp / Dịch Vụ Phân Tầng -->
+        <div class="nav-dropdown-item" id="navServicesDropdown">
+          <a href="#corp-seo-pillars" class="nav-link nav-dropdown-trigger" id="navServicesTrigger">
+            <span id="navServicesLabel">Giải Pháp B2B</span>
+            <span class="dropdown-arrow">▾</span>
+          </a>
+          <div class="nav-dropdown-menu" id="navServicesMenu">
+            <a href="#corp-seo-pillars" class="dropdown-link" id="subItem1">
+              <span class="dropdown-link-icon">⚙️</span>
+              <div class="dropdown-link-content">
+                <strong class="dropdown-link-title" id="subItem1Title">1. Technical SEO</strong>
+                <span class="dropdown-link-sub" id="subItem1Desc">Core Web Vitals, Schema &amp; Lập chỉ mục</span>
+              </div>
+            </a>
+            <a href="#corp-seo-pillars" class="dropdown-link" id="subItem2">
+              <span class="dropdown-link-icon">📑</span>
+              <div class="dropdown-link-content">
+                <strong class="dropdown-link-title" id="subItem2Title">2. On-page SEO</strong>
+                <span class="dropdown-link-sub" id="subItem2Desc">Topic Cluster, Thẻ Meta &amp; Search Intent</span>
+              </div>
+            </a>
+            <a href="#corp-seo-pillars" class="dropdown-link" id="subItem3">
+              <span class="dropdown-link-icon">✍️</span>
+              <div class="dropdown-link-content">
+                <strong class="dropdown-link-title" id="subItem3Title">3. Content SEO E-E-A-T</strong>
+                <span class="dropdown-link-sub" id="subItem3Desc">Whitepapers, Case Studies &amp; Phễu B2B</span>
+              </div>
+            </a>
+            <a href="#corp-seo-pillars" class="dropdown-link" id="subItem4">
+              <span class="dropdown-link-icon">🌐</span>
+              <div class="dropdown-link-content">
+                <strong class="dropdown-link-title" id="subItem4Title">4. Off-page &amp; Local</strong>
+                <span class="dropdown-link-sub" id="subItem4Desc">Domain Authority, Báo chí &amp; Bản đồ</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <a href="#corp-profile" class="nav-link" id="navCaseStudiesLink">Hồ Sơ Năng Lực</a>
+        <a href="about.html" class="nav-link" id="navAboutLink">Giới Thiệu</a>
+        <a href="admin.html" class="nav-link" id="navAdminLink">Admin Portal</a>
+        <a href="contact.html" class="nav-link" id="navContactLink">Liên Hệ</a>
+      </nav>
+
+      <!-- 3. CÔNG CỤ TÌM KIẾM NỘI BỘ & NÚT KÊU GỌI HÀNH ĐỘNG (CTA) -->
+      <div class="mainbar-actions">
+        <!-- Công cụ tìm kiếm nội bộ (Internal Search) -->
+        <div class="header-search-container" id="headerSearchContainer">
+          <div class="search-input-box" id="searchInputBox">
+            <span class="search-box-icon">🔍</span>
+            <input type="text" class="header-search-input" id="headerSearchInput" 
+              placeholder="Tìm kiếm giải pháp B2B, SEO..." aria-label="Tìm kiếm nội bộ">
+            <kbd class="search-kbd-hint" title="Phím tắt tìm kiếm">⌘K</kbd>
+          </div>
+
+          <!-- Quick Search Dropdown Results -->
+          <div class="search-dropdown-results" id="searchDropdownResults">
+            <div class="search-results-header">
+              <span class="results-tag">Từ khóa đề xuất nhanh:</span>
+            </div>
+            <div class="search-quick-tags">
+              <button type="button" class="quick-tag-btn" data-search-target="#corp-seo-pillars">Technical SEO</button>
+              <button type="button" class="quick-tag-btn" data-search-target="#corp-seo-pillars">Core Web Vitals</button>
+              <button type="button" class="quick-tag-btn" data-search-target="#corp-seo-pillars">E-E-A-T</button>
+              <button type="button" class="quick-tag-btn" data-search-target="#corp-audit">Audit Kỹ Thuật</button>
+              <button type="button" class="quick-tag-btn" data-search-target="#corp-headquarters">Trụ Sở Q.1</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nút Kêu Gọi Hành Động (CTA Button) -->
+        <a href="#corp-audit" class="btn btn-primary header-cta-btn" id="headerCtaBtn">
+          <span class="cta-icon" id="headerCtaIcon">🏢</span>
+          <span class="cta-text" id="headerCtaText">Đăng Ký Tư Vấn 1:1</span>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle Mobile Menu">
+          ☰
+        </button>
+      </div>
     </div>
   </div>
 </header>
