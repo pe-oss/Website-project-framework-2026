@@ -3,7 +3,7 @@
    Xử lý khởi tạo hệ thống và kết nối các module giao diện
    ========================================== */
 
-import { loadComponents } from './modules/component-loader.js';
+import { loadComponents, updateActiveNav } from './modules/component-loader.js?v=3';
 import { initTheme } from './modules/theme.js';
 import { initViewMode } from './modules/view-mode.js';
 import { initStoreSwitcher } from './modules/store-switcher.js';
@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   await loadComponents();
 
   // 2. Khởi tạo các module tính năng
+  updateActiveNav();
   initSettingsDropdown();
   initTheme();
   initViewMode();

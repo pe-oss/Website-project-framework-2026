@@ -167,8 +167,8 @@
   position: absolute;
   top: calc(100% + 10px);
   right: 0;
-  width: 340px;
-  max-height: 520px;
+  width: min(92vw, 480px);
+  max-height: 85vh;
   background-color: var(--color-card-bg);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
@@ -260,3 +260,92 @@
   color: var(--color-text);
   cursor: pointer;
 }
+
+/* Settings Style Catalog Cards & Layout Filter */
+.settings-style-catalog {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 0.65rem;
+}
+
+.settings-style-catalog .style-catalog-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0.7rem 0.8rem;
+  background: var(--color-card-bg);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.settings-style-catalog .style-catalog-card:hover {
+  border-color: var(--color-accent);
+  background-color: var(--color-block-badge);
+  transform: translateY(-1px);
+}
+
+.settings-style-catalog .style-catalog-card.active-style {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 1.5px var(--color-accent);
+  background-color: var(--color-block-badge);
+}
+
+.style-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.style-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  flex-wrap: wrap;
+  margin-top: 0.35rem;
+}
+
+.color-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.style-card-fit {
+  margin-left: 0.15rem;
+}
+
+.settings-dropdown-menu .layout-framework-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+.settings-dropdown-menu .layout-btn {
+  padding: 0.25rem 0.6rem;
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.settings-dropdown-menu .layout-btn:hover,
+.settings-dropdown-menu .layout-btn.active {
+  color: var(--color-text);
+  border-color: var(--color-accent);
+  background-color: var(--color-block-badge);
+  font-weight: var(--font-weight-semibold);
+}
+

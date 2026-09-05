@@ -10,7 +10,9 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700&display=swap"
+    rel="stylesheet">
 
   <!-- Framework Stylesheets -->
   <link rel="stylesheet" href="css/reset.css">
@@ -22,7 +24,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
   <!-- Main JS Module -->
-  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/main.js?v=3"></script>
 </head>
 
 <body>
@@ -30,7 +32,8 @@
   <!-- Ambient Backdrop -->
   <div class="bg-ambient-backdrop" id="bgAmbientBackdrop">
     <div class="bg-ambient-layer bg-ambient-left" style="background-image: url('assets/images/flank_left.jpg');"></div>
-    <div class="bg-ambient-layer bg-ambient-right" style="background-image: url('assets/images/flank_right.jpg');"></div>
+    <div class="bg-ambient-layer bg-ambient-right" style="background-image: url('assets/images/flank_right.jpg');">
+    </div>
     <div class="bg-ambient-overlay"></div>
   </div>
 
@@ -40,7 +43,7 @@
   <!-- Main Content Area -->
   <main class="container site-main-content" style="margin-top: 2rem;">
     <div id="adminView" class="page-view active">
-      
+
       <!-- Admin Hero & Overview Section -->
       <section class="block">
         <span class="block-tag block-type-framework">🏗️ ADMIN DASHBOARD: OVERVIEW</span>
@@ -75,7 +78,7 @@
           <div class="block">
             <span class="block-tag block-type-feature">⚡ CHỨC NĂNG: BẢNG QUẢN LÝ SẢN PHẨM</span>
             <h3>Danh Sách Sản Phẩm Trong Kho</h3>
-            
+
             <div class="data-table-wrapper" style="margin-top: 1rem;">
               <table class="data-table">
                 <thead>
@@ -138,9 +141,12 @@
             <span class="block-tag">WIDGET: RECENT ACTIVITY</span>
             <h4>Nhật Ký Hoạt Động</h4>
             <div style="font-size: 0.8rem; display: flex; flex-direction: column; gap: 0.75rem; margin-top: 0.75rem;">
-              <div>• <strong>System:</strong> Đã sao lưu database thành công <span style="opacity: 0.6;">(10 phút trước)</span></div>
-              <div>• <strong>Admin:</strong> Cập nhật thông tin phân quyền <span style="opacity: 0.6;">(1 giờ trước)</span></div>
-              <div>• <strong>User #1003:</strong> Gửi yêu cầu hỗ trợ tài khoản <span style="opacity: 0.6;">(3 giờ trước)</span></div>
+              <div>• <strong>System:</strong> Đã sao lưu database thành công <span style="opacity: 0.6;">(10 phút
+                  trước)</span></div>
+              <div>• <strong>Admin:</strong> Cập nhật thông tin phân quyền <span style="opacity: 0.6;">(1 giờ
+                  trước)</span></div>
+              <div>• <strong>User #1003:</strong> Gửi yêu cầu hỗ trợ tài khoản <span style="opacity: 0.6;">(3 giờ
+                  trước)</span></div>
             </div>
           </div>
         </aside>

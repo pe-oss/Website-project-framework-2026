@@ -4,6 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
 
   <!-- SEO & Meta Tags -->
   <title>Minimalist Web Framework 2026 | Dual Mode (Landing & Admin)</title>
@@ -29,7 +32,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
   <!-- Main JavaScript File (ES6 Module) -->
-  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/main.js?v=3"></script>
 </head>
 
 <body>
@@ -54,240 +57,143 @@
          ==================================================================== -->
     <div id="landingView" class="page-view active">
 
-      <!-- STORE STYLE & LAYOUT FRAMEWORK SELECTOR BAR -->
-      <div class="store-selector-wrapper">
-        <div class="store-selector-header">
-          <div class="store-selector-title">
-            Các Loại Mẫu Website (Website Styles) &amp; Khung Bố Cục Block 2026
-          </div>
-          <button class="psych-toggle-btn" id="psychToggleBtn" title="Bật/Tắt nhãn phân tích hành vi tâm lý người dùng">
-            <span id="psychToggleText">Bật Phân Tích Hành Vi Người Dùng</span>
-          </button>
-        </div>
-
-        <!-- STORE PRESET BUTTONS -->
-        <div class="store-switcher-nav" id="storeSwitcherNav">
-          <button class="store-btn active" data-store="style1" title="Website Mẫu 1: Doanh Nghiệp Hiện Đại (Corporate)">
-            🏢 Website Style 1 (Doanh Nghiệp)
-          </button>
-          <button class="store-btn" data-store="style2" title="Website Mẫu 2: Hồ Sơ Tác Phẩm & Studio (Portfolio)">
-            🎨 Website Style 2 (Portfolio)
-          </button>
-          <button class="store-btn" data-store="style3" title="Website Mẫu 3: Sản Phẩm Công Nghệ & SaaS App">
-            ⚡ Website Style 3 (SaaS / Tech)
-          </button>
-          <button class="store-btn" data-store="style4" title="Website Mẫu 4: Thương Mại Điện Tử & Cửa Hàng (E-Commerce)">
-            🛒 Website Style 4 (E-Commerce)
-          </button>
-        </div>
-
-        <!-- LAYOUT FRAMEWORK FILTER BUTTONS -->
-        <div class="layout-framework-bar" id="layoutFrameworkBar">
-          <span class="layout-framework-title">Khung Bố Cục:</span>
-          <button class="layout-btn active" data-layout="all">Tất Cả Khối Layout</button>
-          <button class="layout-btn" data-layout="split-hero">Split Hero &amp; Story</button>
-          <button class="layout-btn" data-layout="grid-showcase">Grid Showcase &amp; Menu</button>
-          <button class="layout-btn" data-layout="urgency-offer">Urgency Offer (FOMO)</button>
-          <button class="layout-btn" data-layout="trust-proof">Trust &amp; Social Proof</button>
-          <button class="layout-btn" data-layout="space-location">Store Space &amp; Location</button>
-        </div>
-
-        <!-- BLOCK CLASSIFICATION LEGEND BAR -->
-        <div class="block-legend-bar" style="margin-top: 0.75rem; margin-bottom: 0;">
-          <span style="font-weight: bold; color: var(--color-text);">Chú Giải Phân Loại Khối Project:</span>
-          <span class="block-tag block-type-framework" style="margin-bottom: 0;">KHỐI FRAMEWORK (CẤU TRÚC
-            LAYOUT)</span>
-          <span class="block-tag block-type-feature" style="margin-bottom: 0;">KHỐI CHỨC NĂNG (NGHIỆP VỤ / TÍNH
-            NĂNG)</span>
-        </div>
-      </div>
-
-      <!-- ==========================================
-           BLOCK: DESIGN STYLES SHOWCASE & LIST 2026
-           ========================================== -->
-      <section class="block" id="design-styles-list">
-        <span class="block-tag block-type-framework">KHỐI FRAMEWORK: &lt;section class="design-styles-catalog"&gt; [DANH SÁCH PHONG CÁCH THIẾT KẾ]</span>
-        <h2>Danh Sách Các Phong Cách Thiết Kế Website 2026</h2>
-        <p>Hệ thống tích hợp sẵn 4 bộ nhận diện phong cách thiết kế chuyên biệt, đáp ứng đa dạng các mô hình thương mại &amp; doanh nghiệp:</p>
-
-        <div class="grid grid-2" style="gap: 1.25rem;">
-
-          <!-- STYLE CARD 1: CORPORATE -->
-          <div class="style-catalog-card" data-style-preset="style1" style="border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 1.25rem; background: var(--color-card-bg); position: relative;">
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem;">
-              <div>
-                <span class="block-tag block-type-feature" style="font-size: 0.65rem; margin-bottom: 0.25rem;">STYLE 1</span>
-                <h3 style="font-size: 1.15rem; margin-bottom: 0;">1. Website Mẫu 1: Doanh Nghiệp (Corporate &amp; Brand)</h3>
-              </div>
-              <button class="btn btn-outline store-btn" data-store="style1" style="font-size: 0.75rem; padding: 0.25rem 0.6rem;">Khám Phá Style 1</button>
-            </div>
-            <p style="font-size: 0.85rem; margin-bottom: 0.75rem;">Gam màu Indigo &amp; Espresso trầm ấm, tinh tế. Định hình thương hiệu doanh nghiệp chuyên nghiệp và câu chuyện giá trị cốt lõi.</p>
-            <div style="display: flex; gap: 0.5rem; align-items: center; font-size: 0.75rem; color: var(--color-text-muted);">
-              <span>Tone màu:</span>
-              <span style="display: inline-block; width: 14px; height: 14px; border-radius: 50%; background: #2563eb; border: 1px solid #fff;"></span>
-              <span style="display: inline-block; width: 14px; height: 14px; border-radius: 50%; background: #6f4e37; border: 1px solid #ccc;"></span>
-              <span>• Phù hợp: Website Doanh nghiệp, Tập đoàn, Thương hiệu cao cấp</span>
-            </div>
-          </div>
-
-          <!-- STYLE CARD 2: PORTFOLIO -->
-          <div class="style-catalog-card" data-style-preset="style2" style="border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 1.25rem; background: var(--color-card-bg); position: relative;">
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem;">
-              <div>
-                <span class="block-tag block-type-feature" style="font-size: 0.65rem; margin-bottom: 0.25rem;">STYLE 2</span>
-                <h3 style="font-size: 1.15rem; margin-bottom: 0;">2. Website Mẫu 2: Hồ Sơ Tác Phẩm (Portfolio &amp; Agency)</h3>
-              </div>
-              <button class="btn btn-outline store-btn" data-store="style2" style="font-size: 0.75rem; padding: 0.25rem 0.6rem;">Khám Phá Style 2</button>
-            </div>
-            <p style="font-size: 0.85rem; margin-bottom: 0.75rem;">Tone màu Vàng Bơ &amp; Amber ấm áp. Tôn vinh các dự án tiêu biểu, hồ sơ năng lực và dấu ấn sáng tạo cá nhân/studio.</p>
-            <div style="display: flex; gap: 0.5rem; align-items: center; font-size: 0.75rem; color: var(--color-text-muted);">
-              <span>Tone màu:</span>
-              <span style="display: inline-block; width: 14px; height: 14px; border-radius: 50%; background: #d97706; border: 1px solid #fff;"></span>
-              <span style="display: inline-block; width: 14px; height: 14px; border-radius: 50%; background: #fef3c7; border: 1px solid #ccc;"></span>
-              <span>• Phù hợp: Agency sáng tạo, Freelancer, Studio thiết kế, Kiến trúc</span>
-            </div>
-          </div>
-
-          <!-- STYLE CARD 3: SAAS TECH -->
-          <div class="style-catalog-card" data-style-preset="style3" style="border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 1.25rem; background: var(--color-card-bg); position: relative;">
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem;">
-              <div>
-                <span class="block-tag block-type-feature" style="font-size: 0.65rem; margin-bottom: 0.25rem;">STYLE 3</span>
-                <h3 style="font-size: 1.15rem; margin-bottom: 0;">3. Website Mẫu 3: Công Nghệ &amp; SaaS (Software Product)</h3>
-              </div>
-              <button class="btn btn-outline store-btn" data-store="style3" style="font-size: 0.75rem; padding: 0.25rem 0.6rem;">Khám Phá Style 3</button>
-            </div>
-            <p style="font-size: 0.85rem; margin-bottom: 0.75rem;">Tone màu Xanh Emerald &amp; Mint hiện đại. Trình bày rõ ràng tính năng sản phẩm công nghệ, bảng giá dịch vụ và dùng thử miễn phí.</p>
-            <div style="display: flex; gap: 0.5rem; align-items: center; font-size: 0.75rem; color: var(--color-text-muted);">
-              <span>Tone màu:</span>
-              <span style="display: inline-block; width: 14px; height: 14px; border-radius: 50%; background: #059669; border: 1px solid #fff;"></span>
-              <span style="display: inline-block; width: 14px; height: 14px; border-radius: 50%; background: #d1fae5; border: 1px solid #ccc;"></span>
-              <span>• Phù hợp: Sản phẩm SaaS, App ứng dụng, Nền tảng phần mềm Cloud</span>
-            </div>
-          </div>
-
-          <!-- STYLE CARD 4: E-COMMERCE -->
-          <div class="style-catalog-card" data-style-preset="style4" style="border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 1.25rem; background: var(--color-card-bg); position: relative;">
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem;">
-              <div>
-                <span class="block-tag block-type-feature" style="font-size: 0.65rem; margin-bottom: 0.25rem;">STYLE 4</span>
-                <h3 style="font-size: 1.15rem; margin-bottom: 0;">4. Website Mẫu 4: Thương Mại Điện Tử (E-Commerce Store)</h3>
-              </div>
-              <button class="btn btn-outline store-btn" data-store="style4" style="font-size: 0.75rem; padding: 0.25rem 0.6rem;">Khám Phá Style 4</button>
-            </div>
-            <p style="font-size: 0.85rem; margin-bottom: 0.75rem;">Tone màu Tím Cyber &amp; Slate tối ưu tỷ lệ chuyển đổi mua hàng. Tập trung vào danh mục sản phẩm, đồng hồ đếm ngược FOMO và giỏ hàng.</p>
-            <div style="display: flex; gap: 0.5rem; align-items: center; font-size: 0.75rem; color: var(--color-text-muted);">
-              <span>Tone màu:</span>
-              <span style="display: inline-block; width: 14px; height: 14px; border-radius: 50%; background: #7c3aed; border: 1px solid #fff;"></span>
-              <span style="display: inline-block; width: 14px; height: 14px; border-radius: 50%; background: #e0e7ff; border: 1px solid #ccc;"></span>
-              <span>• Phù hợp: Cửa hàng trực tuyến, Shop thời trang, Đồ công nghệ</span>
-            </div>
-          </div>
-              <span style="display: inline-block; width: 14px; height: 14px; border-radius: 50%; background: #4f46e5; border: 1px solid #fff;"></span>
-              <span style="display: inline-block; width: 14px; height: 14px; border-radius: 50%; background: #e0e7ff; border: 1px solid #ccc;"></span>
-              <span>• Ngành nghề: Phụ kiện công nghệ, Đồ gia dụng, Thời trang, E-Commerce</span>
-            </div>
-          </div>
-
-        </div>
-      </section>
 
       <!-- ==========================================
            WEBSITE STYLE 1: MODERN CORPORATE & BRAND (DOANH NGHIỆP)
            ========================================== -->
       <div class="store-preset-container active" id="presetStyle1" data-store-preset="style1">
 
-        <!-- BLOCK 1: SPLIT HERO & STORY (STYLE 1: CORPORATE) -->
+        <!-- BLOCK 1: SPLIT HERO & STORY (STYLE 1: CORPORATE SEO ARCHITECTURE) -->
         <section class="block hero-block layout-block" data-layout-type="split-hero">
           <span class="block-tag block-type-feature">KHỐI CHỨC NĂNG: &lt;section class="hero-split"&gt; [STYLE 1: DOANH NGHIỆP]</span>
-          <span class="psych-badge">Tâm Lý: Priming &amp; Sensory Trigger</span>
+          <span class="psych-badge">Tâm Lý: Authority Bias &amp; Strategic Decision Framing</span>
 
           <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 2rem; align-items: center;">
             <div>
-              <h1 style="font-size: 2.4rem; line-height: 1.2;">Tách Cà Phê Đậm Đà - Khởi Đầu Ngày Mới Trọn Vẹn</h1>
-              <p style="font-size: 1.05rem;">
-                Tận hưởng hương vị hạt Arabica Cầu Đất rang mộc nguyên chất. Không gian tối giản, tinh tế giúp bạn tập
-                trung sáng sáng và thư thái tâm hồn.
+              <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: var(--corporate-tag-bg); color: var(--corporate-accent); padding: 0.25rem 0.75rem; border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 600; margin-bottom: 0.75rem;">
+                🏢 CHIẾN LƯỢC SEO WEBSITE DOANH NGHIỆP (B2B/B2C CORPORATE)
+              </div>
+              <h1 style="font-size: 2.3rem; line-height: 1.25; color: var(--corporate-accent);">Xây Dựng Uy Tín Thương Hiệu, Thu Hút Khách Hàng Tiềm Năng Giá Trị Cao</h1>
+              <p style="font-size: 1.05rem; line-height: 1.6; margin-top: 0.75rem;">
+                SEO website doanh nghiệp tập trung vào việc định vị thẩm quyền thương hiệu, tiếp cận tệp khách hàng tiềm năng có giá trị cao và tối ưu tỷ lệ chuyển đổi thực tế — thay vì chỉ chạy theo lưu lượng truy cập đại trà thiếu giá trị thương mại.
               </p>
               <div style="display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap;">
-                <a href="#coffee-menu" class="btn btn-primary">☕ Đặt Mua Ngay (Giảm 15%)</a>
-                <a href="#coffee-story" class="btn btn-outline">Nguồn Gốc Hạt</a>
+                <a href="#corp-seo-pillars" class="btn btn-primary">📐 4 Trụ Cột SEO Cốt Lõi</a>
+                <a href="#corp-audit" class="btn btn-outline">📊 Khảo Sát &amp; Audit Kỹ Thuật</a>
               </div>
             </div>
             <div
-              style="background: var(--coffee-tag-bg); border-radius: var(--radius-md); height: 200px; display: flex; align-items: center; justify-content: center; font-size: 4rem; border: 1px solid var(--coffee-border);">
-              ☕📖
+              style="background: var(--corporate-bg-soft); border-radius: var(--radius-md); padding: 2rem 1.5rem; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; border: 1px solid var(--corporate-border); box-shadow: var(--shadow-subtle);">
+              <div style="font-size: 3.2rem; margin-bottom: 0.5rem;">📈🏛️</div>
+              <div style="font-size: 1.45rem; font-weight: 700; color: var(--corporate-accent);">High-Value Conversion</div>
+              <div style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 0.3rem;">B2B Lead Quality • Brand Authority • Search Essentials</div>
+              <div style="display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap; justify-content: center;">
+                <span style="font-size: 0.75rem; background: var(--corporate-tag-bg); color: var(--corporate-accent); padding: 0.2rem 0.5rem; border-radius: var(--radius-sm); font-weight: 600;">Core Web Vitals</span>
+                <span style="font-size: 0.75rem; background: var(--corporate-tag-bg); color: var(--corporate-accent); padding: 0.2rem 0.5rem; border-radius: var(--radius-sm); font-weight: 600;">E-E-A-T Standard</span>
+                <span style="font-size: 0.75rem; background: var(--corporate-tag-bg); color: var(--corporate-accent); padding: 0.2rem 0.5rem; border-radius: var(--radius-sm); font-weight: 600;">Schema Validated</span>
+              </div>
             </div>
           </div>
 
           <!-- Customer Psychology Insight Callout -->
           <div class="psych-note-card">
-            <h5>🧠 Phân Tích Tâm Lý Khách Hàng (Customer Psychology):</h5>
-            <div>• <strong>Tâm lý màu sắc (Color Priming):</strong> Gam màu nâu Espresso và Kem tạo cảm giác ấm áp, an
-              toàn, gợi nhớ mùi hương cà phê tự nhiên trong tiềm thức.</div>
-            <div>• <strong>Tiêu đề định vị cảm xúc:</strong> Đánh vào nhu cầu năng lượng và sự tập trung của dân văn
-              phòng vào mỗi buổi sáng.</div>
+            <h5>🧠 Phân Tích Tâm Lý Khách Hàng (Customer Psychology &amp; SEO Intent):</h5>
+            <div>• <strong>Định vị Thẩm quyền Tổ chức (Authority Bias):</strong> Doanh nghiệp B2B/B2C cần chứng minh năng lực thực tế để thuyết phục hội đồng thẩm định. Việc tập trung vào lưu lượng chất lượng cao (Qualified Traffic) loại bỏ tâm lý nghi ngại về "traffic ảo".</div>
+            <div>• <strong>Khung Quyết định Dựa trên Dữ liệu (Evidence-Based Decision):</strong> Nhấn mạnh các chỉ số kỹ thuật khách quan (Core Web Vitals, Schema, E-E-A-T) giúp nâng cao mức độ an tâm của các giám đốc công nghệ (CTO) và giám đốc tiếp thị (CMO).</div>
           </div>
         </section>
 
-        <!-- BLOCK 2: GRID SHOWCASE & MENU (COFFEE) -->
-        <section class="block layout-block" id="coffee-menu" data-layout-type="grid-showcase">
-          <span class="block-tag block-type-feature">⚡ KHỐI CHỨC NĂNG: &lt;section class="grid-menu"&gt; [THỰC ĐƠN CÀ
-            PHÊ]</span>
-          <span class="psych-badge">🧠 Choice Paradox Reduction</span>
+        <!-- BLOCK 2: GRID SHOWCASE & 4 CORE SEO PILLARS (CORPORATE) -->
+        <section class="block layout-block" id="corp-seo-pillars" data-layout-type="grid-showcase">
+          <span class="block-tag block-type-feature">⚡ KHỐI CHỨC NĂNG: &lt;section class="grid-showcase"&gt; [4 TRỤ CỘT SEO DOANH NGHIỆP TOÀN DIỆN]</span>
+          <span class="psych-badge">🧠 Strategic Clarity &amp; Value Architecture</span>
 
           <div
             style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 1.5rem;">
             <div>
-              <h2>Thực Đơn Signature Chọn Lọc</h2>
-              <p style="margin-bottom: 0;">Các món cà phê bán chạy nhất được rang tươi mỗi tuần.</p>
+              <h2>Hệ Thống 4 Trụ Cột Kỹ Thuật &amp; Chiến Lược Cốt Lõi</h2>
+              <p style="margin-bottom: 0;">Khung triển khai toàn diện đảm bảo tối ưu hóa công cụ tìm kiếm chuẩn quốc tế và tăng trưởng thương hiệu bền vững.</p>
             </div>
-            <span style="font-size: 0.85rem; color: var(--color-text-muted);">★ 4.9/5 từ 850+ đánh giá</span>
+            <span style="font-size: 0.85rem; color: var(--color-text-muted);">Chuẩn hóa theo Google Search Essentials 2026</span>
           </div>
 
           <div class="grid-4">
-            <!-- Item 1 -->
-            <div class="product-card">
-              <span class="product-badge-bestseller">🔥 BÁN CHẠY</span>
-              <div class="product-thumb">☕</div>
-              <div class="product-title">Espresso Mộc Cầu Đất</div>
-              <div class="product-desc">Đậm vị truyền thống, lớp Crema dày mịn chuẩn Ý.</div>
-              <div class="product-footer">
-                <div class="product-price">35.000đ</div>
-                <button class="btn btn-outline" style="padding: 0.25rem 0.6rem; font-size: 0.75rem;">+ Thêm</button>
+            <!-- Pillar 1: Technical SEO -->
+            <div class="product-card" style="display: flex; flex-direction: column;">
+              <span class="product-badge-bestseller">HẠ TẦNG KỸ THUẬT</span>
+              <div class="product-thumb">⚙️</div>
+              <div class="product-title" style="color: var(--corporate-accent);">1. Technical SEO</div>
+              <div style="font-size: 0.8rem; font-weight: 600; color: #1e40af; margin-bottom: 0.5rem;">Mục tiêu: Đảm bảo bọ tìm kiếm thu thập &amp; lập chỉ mục website chuẩn xác, tối ưu trải nghiệm người dùng kỹ thuật.</div>
+              <div class="product-desc" style="font-size: 0.8rem; line-height: 1.5; flex-grow: 1;">
+                <strong>Hạng mục triển khai then chốt:</strong>
+                <ul style="margin: 0.35rem 0 0 1rem; padding: 0;">
+                  <li>Tốc độ tải trang &amp; Core Web Vitals (LCP &lt; 2.5s, INP &lt; 200ms, CLS &lt; 0.1).</li>
+                  <li>Cấu trúc URL logic, sitemap.xml, robots.txt, mã phản hồi (301, 404).</li>
+                  <li>Giao diện chuẩn Mobile-First.</li>
+                  <li>Dữ liệu có cấu trúc (Schema Markup: Organization, LocalBusiness, Product/Service, FAQ).</li>
+                </ul>
+              </div>
+              <div class="product-footer" style="margin-top: 0.75rem;">
+                <div class="product-price" style="font-size: 0.75rem; color: #047857;">Audit Chuẩn W3C</div>
+                <button class="btn btn-outline" style="padding: 0.25rem 0.6rem; font-size: 0.75rem;">Chi Tiết Metric</button>
               </div>
             </div>
 
-            <!-- Item 2 -->
-            <div class="product-card">
-              <div class="product-thumb">🥛</div>
-              <div class="product-title">Cold Brew Sữa Cốt Dừa</div>
-              <div class="product-desc">Cà phê ủ lạnh 16h kết hợp cốt dừa béo nhẹ.</div>
-              <div class="product-footer">
-                <div class="product-price">45.000đ</div>
-                <button class="btn btn-outline" style="padding: 0.25rem 0.6rem; font-size: 0.75rem;">+ Thêm</button>
+            <!-- Pillar 2: On-page SEO -->
+            <div class="product-card" style="display: flex; flex-direction: column;">
+              <div class="product-thumb">📑</div>
+              <div class="product-title" style="color: var(--corporate-accent);">2. On-page SEO</div>
+              <div style="font-size: 0.8rem; font-weight: 600; color: #1e40af; margin-bottom: 0.5rem;">Mục tiêu: Tối ưu hóa nội dung và cấu trúc từng trang theo đúng ý định tìm kiếm (Search Intent) của khách hàng.</div>
+              <div class="product-desc" style="font-size: 0.8rem; line-height: 1.5; flex-grow: 1;">
+                <strong>Hạng mục triển khai then chốt:</strong>
+                <ul style="margin: 0.35rem 0 0 1rem; padding: 0;">
+                  <li>Tối ưu bộ thẻ Meta (Title chứa từ khóa chính, Meta Description kích thích CTR).</li>
+                  <li>Phân cấp cấu trúc thẻ tiêu đề (H1 duy nhất, H2, H3 mạch lạc).</li>
+                  <li>Tối ưu hình ảnh (Alt text mô tả, nén chuẩn WebP thế hệ mới).</li>
+                  <li>Điều hướng liên kết nội bộ (Internal Link) theo mô hình Topic Cluster (Cụm chủ đề).</li>
+                </ul>
+              </div>
+              <div class="product-footer" style="margin-top: 0.75rem;">
+                <div class="product-price" style="font-size: 0.75rem; color: #047857;">Cụm Topic Cluster</div>
+                <button class="btn btn-outline" style="padding: 0.25rem 0.6rem; font-size: 0.75rem;">Chi Tiết On-Page</button>
               </div>
             </div>
 
-            <!-- Item 3 -->
-            <div class="product-card">
-              <div class="product-thumb">🍵</div>
-              <div class="product-title">Matcha Latte Uji</div>
-              <div class="product-desc">Trà xanh Uji Kyoto hảo hạng pha sữa tươi thanh trùng.</div>
-              <div class="product-footer">
-                <div class="product-price">50.000đ</div>
-                <button class="btn btn-outline" style="padding: 0.25rem 0.6rem; font-size: 0.75rem;">+ Thêm</button>
+            <!-- Pillar 3: Content SEO -->
+            <div class="product-card" style="display: flex; flex-direction: column;">
+              <div class="product-thumb">✍️</div>
+              <div class="product-title" style="color: var(--corporate-accent);">3. Content SEO</div>
+              <div style="font-size: 0.8rem; font-weight: 600; color: #1e40af; margin-bottom: 0.5rem;">Mục tiêu: Thể hiện chuyên môn sâu, giải quyết "nỗi đau" của khách hàng và dẫn dắt phễu bán hàng hiệu quả.</div>
+              <div class="product-desc" style="font-size: 0.8rem; line-height: 1.5; flex-grow: 1;">
+                <strong>Hạng mục triển khai then chốt:</strong>
+                <ul style="margin: 0.35rem 0 0 1rem; padding: 0;">
+                  <li>Nghiên cứu từ khóa phân tầng: Informational (Nhận biết), Commercial (Cân nhắc), Transactional (Hành động).</li>
+                  <li>Xây dựng Case Studies, Whitepapers, báo cáo phân tích ngành B2B.</li>
+                  <li>Đáp ứng chuẩn E-E-A-T (Kinh nghiệm - Chuyên môn - Thẩm quyền - Đáng tin cậy) với hồ sơ tác giả rõ ràng.</li>
+                </ul>
+              </div>
+              <div class="product-footer" style="margin-top: 0.75rem;">
+                <div class="product-price" style="font-size: 0.75rem; color: #047857;">Chuẩn E-E-A-T</div>
+                <button class="btn btn-outline" style="padding: 0.25rem 0.6rem; font-size: 0.75rem;">Chi Tiết Content</button>
               </div>
             </div>
 
-            <!-- Item 4 -->
-            <div class="product-card">
-              <div class="product-thumb">🥐</div>
-              <div class="product-title">Croissant Bơ Pháp</div>
-              <div class="product-desc">Bánh sừng bò nướng giòn rụm ăn kèm cà phê.</div>
-              <div class="product-footer">
-                <div class="product-price">30.000đ</div>
-                <button class="btn btn-outline" style="padding: 0.25rem 0.6rem; font-size: 0.75rem;">+ Thêm</button>
+            <!-- Pillar 4: Off-page SEO -->
+            <div class="product-card" style="display: flex; flex-direction: column;">
+              <div class="product-thumb">🌐</div>
+              <div class="product-title" style="color: var(--corporate-accent);">4. Off-page SEO</div>
+              <div style="font-size: 0.8rem; font-weight: 600; color: #1e40af; margin-bottom: 0.5rem;">Mục tiêu: Gia tăng độ uy tín và thẩm quyền của tên miền (Domain Authority) thông qua các tín hiệu bên ngoài.</div>
+              <div class="product-desc" style="font-size: 0.8rem; line-height: 1.5; flex-grow: 1;">
+                <strong>Hạng mục triển khai then chốt:</strong>
+                <ul style="margin: 0.35rem 0 0 1rem; padding: 0;">
+                  <li>Xây dựng Backlink chất lượng cao từ báo chí chính thống, trang tin ngành và đối tác chiến lược.</li>
+                  <li>Tối ưu Google Business Profile (SEO Local) cho các địa chỉ văn phòng và chi nhánh đại diện.</li>
+                  <li>Quản trị danh tiếng thương hiệu (Brand Mentions, trích dẫn báo chí, đánh giá từ khách hàng).</li>
+                </ul>
+              </div>
+              <div class="product-footer" style="margin-top: 0.75rem;">
+                <div class="product-price" style="font-size: 0.75rem; color: #047857;">Domain Authority</div>
+                <button class="btn btn-outline" style="padding: 0.25rem 0.6rem; font-size: 0.75rem;">Chi Tiết Off-Page</button>
               </div>
             </div>
           </div>
@@ -295,39 +201,64 @@
           <!-- Customer Psychology Insight Callout -->
           <div class="psych-note-card">
             <h5>🧠 Phân Tích Tâm Lý Khách Hàng (Customer Psychology):</h5>
-            <div>• <strong>Giảm Nghịch Lý Lựa Chọn (Paradox of Choice):</strong> Giới hạn danh mục hiển thị tối đa 4
-              món đại diện giúp khách hàng ra quyết định nhanh hơn 300% so với menu dài tràn ngập.</div>
-            <div>• <strong>Huy hiệu Bán Chạy (Bestseller Bias):</strong> Tạo hiệu ứng tâm lý đám đông, định hướng
-              người dùng mới chọn ngay món an toàn nhất.</div>
+            <div>• <strong>Kiến trúc Giá trị Toàn diện (Value Architecture):</strong> Phân chia mạch lạc 4 trụ cột kỹ thuật &amp; chiến lược giúp doanh nghiệp hình dung bức tranh tổng thể, thấu hiểu rằng SEO không phải là thủ thuật ngắn hạn mà là năng lực tài sản số lâu dài.</div>
+            <div>• <strong>Đáp ứng Phễu Tìm kiếm Khách hàng (Search Intent Alignment):</strong> Phân tầng từ khóa Informational → Commercial → Transactional đồng hành cùng hành trình ra quyết định của khách hàng B2B qua từng điểm chạm.</div>
           </div>
         </section>
 
-        <!-- BLOCK 3: TRUST & SOCIAL PROOF (COFFEE) -->
-        <section class="block layout-block" id="coffee-story" data-layout-type="trust-proof">
-          <span class="block-tag block-type-feature">⚡ KHỐI CHỨC NĂNG: &lt;section class="social-proof"&gt; [CAM KẾT
-            &amp; CẢM NHẬN]</span>
-          <span class="psych-badge">🧠 Trust &amp; Origin Transparency</span>
+        <!-- BLOCK 3: URGENCY & STRATEGIC SEO AUDIT OFFER (CORPORATE) -->
+        <section class="block layout-block" id="corp-audit" data-layout-type="urgency-offer">
+          <span class="block-tag block-type-feature">⚡ KHỐI CHỨC NĂNG: &lt;section class="urgency-banner"&gt; [KIỂM TOÁN SEO KỸ THUẬT DOANH NGHIỆP]</span>
+          <span class="psych-badge">🧠 High-Value Scarcity &amp; Diagnostic Hook</span>
+
+          <div
+            style="background: var(--corporate-bg-soft); border: 1px solid var(--corporate-border); border-radius: var(--radius-md); padding: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.25rem;">
+            <div>
+              <span
+                style="background: #2563eb; color: #fff; font-size: 0.75rem; font-weight: bold; padding: 0.2rem 0.5rem; border-radius: 4px;">🔍
+                CHƯƠNG TRÌNH KIỂM ĐỊNH KỸ THUẬT QUÝ NÀY</span>
+              <h3 style="margin-top: 0.5rem; margin-bottom: 0.25rem;">Khảo Sát &amp; Audit Kỹ Thuật SEO Website Doanh Nghiệp Toàn Diện</h3>
+              <p style="margin-bottom: 0; font-size: 0.9rem;">
+                Báo cáo thẩm định đo lường 100+ tiêu chí kỹ thuật: Core Web Vitals (LCP, INP, CLS), Schema Markup, cấu trúc URL và phân tích lỗ hổng chuyển đổi B2B. Dành riêng cho 10 doanh nghiệp đăng ký sớm nhất.
+              </p>
+            </div>
+            <div>
+              <button class="btn btn-primary"
+                style="background-color: var(--corporate-accent); border-color: var(--corporate-accent);">⚡ Đăng Ký Kiểm Toán Kỹ Thuật (Còn 3 suất)</button>
+            </div>
+          </div>
+
+          <div class="psych-note-card">
+            <h5>🧠 Phân Tích Tâm Lý Khách Hàng (Customer Psychology):</h5>
+            <div>• <strong>Điểm chạm Chẩn đoán Rủi ro (Diagnostic Hook):</strong> Cung cấp báo cáo audit kỹ thuật cụ thể giúp doanh nghiệp nhận diện rõ các "điểm nghẽn" đang làm thất thoát khách hàng tiềm năng trước khi quyết định ký kết hợp đồng dài hạn.</div>
+          </div>
+        </section>
+
+        <!-- BLOCK 4: TRUST & SOCIAL PROOF (CORPORATE SEO AUTHORITY) -->
+        <section class="block layout-block" id="corp-profile" data-layout-type="trust-proof">
+          <span class="block-tag block-type-feature">⚡ KHỐI CHỨC NĂNG: &lt;section class="social-proof"&gt; [THẨM QUYỀN THƯƠNG HIỆU &amp; CAM KẾT HIỆU QUẢ]</span>
+          <span class="psych-badge">🧠 Institutional Trust &amp; Search Authority</span>
 
           <div class="grid-2">
             <div>
-              <h3>Cam Kết Nguồn Gốc 100% Hạt Rang Mộc</h3>
-              <p>Hạt cà phê được thu hoạch chín tay tại độ cao 1.500m Lâm Đồng. Chúng tôi không sử dụng chất bảo quản
-                hay hương liệu nhân tạo.</p>
+              <h3>Cam Kết Chuẩn Mực Google Search Essentials &amp; Chuyển Đổi Thực Tế</h3>
+              <p>Chiến lược SEO doanh nghiệp của chúng tôi được định hình từ các tiêu chuẩn chất lượng nghiêm ngặt nhất của Google, bảo vệ thương hiệu khỏi các rủi ro thuật toán và kiến tạo dòng khách hàng B2B ổn định.</p>
               <ul style="font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem;">
-                <li>✅ Nông trại đạt chứng nhận Fair-Trade</li>
-                <li>✅ Rang mộc theo mẻ nhỏ hàng tuần</li>
-                <li>✅ Đổi trả miễn phí nếu không hài lòng vị hạt</li>
+                <li>✅ <strong>White-hat SEO:</strong> 100% tuân thủ nguyên tắc quản trị trang web của Google (Google Search Essentials).</li>
+                <li>✅ <strong>Hạ tầng vững chắc:</strong> Đạt điểm xanh Core Web Vitals (LCP &lt; 2.5s, INP &lt; 200ms, CLS &lt; 0.1) trên 100% trang đích.</li>
+                <li>✅ <strong>Đo lường đa chiều:</strong> Báo cáo minh bạch trên Google Search Console, GA4 và hệ thống CRM doanh nghiệp.</li>
+                <li>✅ <strong>Chuyển đổi thương mại:</strong> Định hướng nội dung giải quyết đúng bài toán kinh doanh, gia tăng chỉ số MQL/SQL.</li>
               </ul>
             </div>
 
             <div
               style="background: var(--color-block-badge); border-radius: var(--radius-md); padding: 1.5rem; border: 1px solid var(--color-border);">
-              <h4 style="margin-bottom: 0.5rem;">Cảm Nhận Từ Khách Hàng</h4>
-              <p style="font-size: 0.9rem; font-style: italic;">
-                "Vị cà phê Cold Brew cực kỳ đậm đà nhưng mượt mà, không bị chua gắt. Đóng gói rất chu đáo và giao
-                nhanh mộc mạc."
+              <h4 style="margin-bottom: 0.5rem;">Đánh Giá Từ Giám Đốc Tiếp Thị B2B</h4>
+              <p style="font-size: 0.9rem; font-style: italic; line-height: 1.6;">
+                "Nhờ triển khai mô hình Topic Cluster cùng tối ưu dữ liệu có cấu trúc Schema Organization, website tập đoàn đã tăng 220% lượng tìm kiếm từ khóa thương mại, thu về hơn 45 hợp đồng thầu doanh nghiệp lớn trong vòng 9 tháng mà không cần chi tiêu quảng cáo đại trà."
               </p>
-              <div style="font-size: 0.8rem; font-weight: bold; margin-top: 1rem;">— Nguyễn Anh Quân (Founder Studio)
+              <div style="font-size: 0.85rem; font-weight: bold; margin-top: 1rem; color: var(--corporate-accent);">
+                — ThS. Nguyễn Đình Hoàng (Giám Đốc Tiếp Thị Số, TechLogistics Vietnam)
               </div>
             </div>
           </div>
@@ -335,52 +266,46 @@
           <!-- Customer Psychology Insight Callout -->
           <div class="psych-note-card">
             <h5>🧠 Phân Tích Tâm Lý Khách Hàng (Customer Psychology):</h5>
-            <div>• <strong>Triệt tiêu rủi ro (Risk Reversal):</strong> Cam kết đổi trả giúp xóa bỏ sự nghi ngại về
-              chất lượng khi đặt mua trực tuyến.</div>
-            <div>• <strong>Truyền tải câu chuyện chân thực (Authenticity Framing):</strong> Hình ảnh quy trình làm hạt
-              minh bạch làm tăng giá trị nhận thức (Perceived Value).</div>
+            <div>• <strong>Xóa tan E ngại Thuật toán (Risk Mitigation):</strong> Cam kết tuân thủ nguyên tắc chính thống của Google giúp lãnh đạo doanh nghiệp tin tưởng vào tính an toàn, không lo website bị phạt hoặc mất thứ hạng đột ngột.</div>
+            <div>• <strong>Chứng thực Hiệu quả Kinh doanh (Business Impact Validation):</strong> Đưa ra kết quả cụ thể về hợp đồng thực tế và tối ưu chi phí quảng cáo là bằng chứng xác thực nhất tác động đến quyết định đầu tư.</div>
           </div>
         </section>
 
-        <!-- BLOCK 4: STORE SPACE & LOCATION SHOWCASE (COFFEE) -->
-        <section class="block layout-block" id="coffee-space" data-layout-type="space-location">
-          <span class="block-tag block-type-feature">⚡ KHỐI CHỨC NĂNG: &lt;section class="store-space-ambience"&gt;
-            [KHÔNG GIAN &amp; ĐỊA ĐIỂM]</span>
-          <span class="psych-badge">🧠 Spatial Ambience &amp; Mental Simulation</span>
+        <!-- BLOCK 5: STORE SPACE & LOCATION SHOWCASE (CORPORATE HEADQUARTERS & LOCAL SEO) -->
+        <section class="block layout-block" id="corp-headquarters" data-layout-type="space-location">
+          <span class="block-tag block-type-feature">⚡ KHỐI CHỨC NĂNG: &lt;section class="corporate-headquarters"&gt; [TRỤ SỞ DOANH NGHIỆP &amp; SEO LOCAL]</span>
+          <span class="psych-badge">🧠 Physical Solidity &amp; Schema LocalBusiness</span>
 
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
             <div
-              style="background: var(--coffee-bg-soft); border: 1px solid var(--coffee-border); border-radius: var(--radius-md); padding: 1.5rem;">
+              style="background: var(--corporate-bg-soft); border: 1px solid var(--corporate-border); border-radius: var(--radius-md); padding: 1.5rem;">
               <span
-                style="font-size: 0.75rem; font-weight: bold; color: var(--coffee-accent); text-transform: uppercase;">🌿
-                KHÔNG GIAN QUÁN &amp; TRẢI NGHIỆM</span>
-              <h3 style="margin-top: 0.5rem;">Work &amp; Chill Corner Window View</h3>
-              <p style="font-size: 0.9rem;">
-                Không gian thiết kế tối giản tràn ngập ánh sáng tự nhiên, trang bị ổ cắm điện riêng từng bàn, Wi-Fi 6
-                tốc độ cao và nhạc Lo-Fi nhẹ nhàng.
+                style="font-size: 0.75rem; font-weight: bold; color: var(--corporate-accent); text-transform: uppercase;">📍
+                TỐI ƯU GOOGLE BUSINESS PROFILE &amp; THỰC THỂ</span>
+              <h3 style="margin-top: 0.5rem;">Trung Tâm Điều Hành Dữ Liệu &amp; Chiến Lược Số</h3>
+              <p style="font-size: 0.9rem; line-height: 1.6;">
+                Khẳng định vị thế thực thể doanh nghiệp (Entity Authority) với hệ thống văn phòng đã được xác minh toàn diện trên Google Maps và tích hợp chuẩn Schema LocalBusiness, phục vụ các phiên tư vấn chiến lược cấp cao.
               </p>
               <div
                 style="background: var(--color-card-bg); padding: 0.75rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border); margin-top: 1rem; font-size: 0.85rem;">
-                ☕ <strong>Gợi ý trải nghiệm tại chỗ:</strong> Thưởng thức <em>Cold Brew Sữa Cốt Dừa</em> kèm
-                <em>Croissant Bơ Pháp</em> trong lúc làm việc.
+                🌐 <strong>Định danh thực thể số:</strong> Đã đồng bộ NAP (Name, Address, Phone) nhất quán trên 50+ danh bạ doanh nghiệp uy tín và báo chí ngành.
               </div>
             </div>
 
             <div
               style="border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 1.5rem; background: var(--color-card-bg);">
-              <h4 style="margin-bottom: 0.75rem;">📍 Địa Điểm Quán &amp; Giờ Phục Vụ</h4>
+              <h4 style="margin-bottom: 0.75rem;">🏛️ Trụ Sở Doanh Nghiệp &amp; Chi Nhánh Tiếp Đón</h4>
               <div style="font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.6rem;">
-                <div>🏢 <strong>Địa chỉ:</strong> 128 Nguyễn Trãi, Phường Bến Thành, Quận 1, TP.HCM</div>
-                <div>⏰ <strong>Giờ mở cửa:</strong> 07:00 - 22:30 (Tất cả các ngày trong tuần)</div>
-                <div>🅿️ <strong>Tiện ích:</strong> Bãi giữ xe máy free &amp; chỗ đỗ ô tô rộng rãi</div>
-                <div>🛵 <strong>Đặt giao nhanh:</strong> Có mặt trên GrabFood, ShopeeFood, Baemin</div>
+                <div>🏢 <strong>Trụ sở chính (TP.HCM):</strong> Tòa nhà Nexus Corporate Tower, 3A Tôn Đức Thắng, Phường Bến Nghé, Quận 1</div>
+                <div>🏛️ <strong>Văn phòng miền Bắc:</strong> Tầng 18, Pacific Place, 83B Lý Thường Kiệt, Quận Hoàn Kiếm, Hà Nội</div>
+                <div>⏰ <strong>Thời gian làm việc:</strong> 08:30 - 17:30 (Thứ Hai - Thứ Sáu)</div>
+                <div>📞 <strong>Hotline Chiến lược B2B:</strong> (028) 3822 9999 • corporate-seo@nexuscorp.vn</div>
               </div>
               <div style="margin-top: 1.25rem; display: flex; gap: 0.75rem;">
                 <button class="btn btn-primary"
-                  style="background-color: var(--coffee-accent); border-color: var(--coffee-accent); font-size: 0.8rem; padding: 0.4rem 0.8rem;">🗺️
-                  Xem Sơ Đồ Chỉ Đường</button>
-                <button class="btn btn-outline" style="font-size: 0.8rem; padding: 0.4rem 0.8rem;">📱 Đặt Chỗ Bàn Làm
-                  Việc</button>
+                  style="background-color: var(--corporate-accent); border-color: var(--corporate-accent); font-size: 0.8rem; padding: 0.4rem 0.8rem;">📍
+                  Chỉ Đường Google Maps</button>
+                <button class="btn btn-outline" style="font-size: 0.8rem; padding: 0.4rem 0.8rem;">📅 Đặt Lịch Làm Việc 1:1</button>
               </div>
             </div>
           </div>
@@ -388,180 +313,165 @@
           <!-- Customer Psychology Insight Callout -->
           <div class="psych-note-card">
             <h5>🧠 Phân Tích Tâm Lý Khách Hàng (Customer Psychology):</h5>
-            <div>• <strong>Mô phỏng kịch bản thực tế (Mental Simulation Effect):</strong> Việc miêu tả chi tiết không
-              gian ánh sáng, ổ cắm điện và nhạc nền giúp khách hàng lập tức hình dung trải nghiệm ngồi làm việc mượt
-              mà tại quán, biến mong muốn thành quyết định ghé thăm.</div>
-            <div>• <strong>Gắn kết sản phẩm với bối cảnh (Contextual Product Association):</strong> Gợi ý combo món ăn
-              đi kèm không gian cụ thể làm gia tăng tỷ lệ gọi thêm món (Upselling).</div>
+            <div>• <strong>Củng cố Niềm tin Thực thể (Entity Trust &amp; Physical Legitimacy):</strong> Doanh nghiệp có địa chỉ vật lý xác thực rõ ràng trên Google Maps và số điện thoại bàn làm tăng gấp đôi độ uy tín trong mắt khách hàng doanh nghiệp.</div>
+            <div>• <strong>Khẳng định Quy mô Doanh nghiệp:</strong> Sự hiện diện ở các trung tâm tài chính trọng yếu tại hai đầu cầu kinh tế (Hà Nội &amp; TP.HCM) là minh chứng vững chắc cho năng lực tài chính và uy tín phục vụ đối tác.</div>
           </div>
         </section>
 
       </div>
 
       <!-- ==========================================
-           WEBSITE STYLE 2: MINIMALIST PORTFOLIO & STUDIO
+           WEBSITE STYLE 2: MINIMALIST PORTFOLIO & STUDIO (HỒ SƠ TÁC PHẨM)
            ========================================== -->
       <div class="store-preset-container" id="presetStyle2" data-store-preset="style2">
 
         <!-- BLOCK 1: SPLIT HERO (STYLE 2: PORTFOLIO) -->
         <section class="block hero-block layout-block" data-layout-type="split-hero">
-          <span class="block-tag block-type-feature">⚡ KHỐI CHỨC NĂNG: &lt;section class="hero-bakery"&gt; [STYLE 2: PORTFOLIO]</span>
-          <span class="psych-badge">🧠 Appetite &amp; Freshness Cue</span>
+          <span class="block-tag block-type-feature">⚡ KHỐI CHỨC NĂNG: &lt;section class="hero-portfolio"&gt; [STYLE 2: PORTFOLIO &amp; AGENCY]</span>
+          <span class="psych-badge">🧠 Visual Halo Effect &amp; Aesthetic Priming</span>
 
           <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 2rem; align-items: center;">
             <div>
-              <h1 style="font-size: 2.4rem; line-height: 1.2; color: var(--bakery-accent);">Bánh Tươi Nướng Mới Mỗi
-                Sáng - Ngọt Ngào Từng Khoảnh Khắc</h1>
+              <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: var(--portfolio-tag-bg); color: var(--portfolio-accent); padding: 0.25rem 0.75rem; border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 600; margin-bottom: 0.75rem;">
+                🎨 LUMEN CREATIVE STUDIO • EST. 2020
+              </div>
+              <h1 style="font-size: 2.4rem; line-height: 1.2; color: var(--portfolio-accent);">Sáng Tạo Độc Bản - Kiến Tạo Dấu Ấn Thị Giác &amp; Trải Nghiệm Số Đột Phá</h1>
               <p style="font-size: 1.05rem;">
-                Thưởng thức những chiếc bánh ngọt nướng thủ công với bơ Pháp Anchor thơm nức. Bánh chỉ làm trong ngày,
-                không sử dụng chất bảo quản.
+                Chúng tôi là studio thiết kế độc lập chuyên sâu về nhận diện thương hiệu cao cấp, giao diện số UI/UX và tương tác 3D đa giác quan cho các nhãn hàng tiên phong toàn cầu.
               </p>
               <div style="display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap;">
-                <a href="#bakery-menu" class="btn btn-primary"
-                  style="background-color: var(--bakery-accent); border-color: var(--bakery-accent);">🍰 Xem Thực Đơn
-                  Bánh Tươi</a>
-                <a href="#bakery-urgent" class="btn btn-outline">🔥 Ưu Đãi Đợt Nướng 6h00</a>
+                <a href="#portfolio-projects" class="btn btn-primary"
+                  style="background-color: var(--portfolio-accent); border-color: var(--portfolio-accent);">🎨 Xem Tác Phẩm Tiêu Biểu</a>
+                <a href="#studio-booking" class="btn btn-outline">⚡ Lịch Nhận Dự Án Mới</a>
               </div>
             </div>
             <div
-              style="background: var(--bakery-tag-bg); border-radius: var(--radius-md); height: 200px; display: flex; align-items: center; justify-content: center; font-size: 4rem; border: 1px solid var(--bakery-border);">
-              🍰🧁
+              style="background: var(--portfolio-bg-soft); border-radius: var(--radius-md); padding: 2rem 1.5rem; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; border: 1px solid var(--portfolio-border); box-shadow: var(--shadow-subtle);">
+              <div style="font-size: 3.5rem; margin-bottom: 0.5rem;">🎨✨</div>
+              <div style="font-size: 1.35rem; font-weight: 700; color: var(--portfolio-accent);">Awwwards Site of the Year</div>
+              <div style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 0.3rem;">Red Dot Best of the Best 2026 Winner</div>
+              <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+                <span style="font-size: 0.75rem; background: var(--portfolio-tag-bg); color: var(--portfolio-accent); padding: 0.2rem 0.5rem; border-radius: var(--radius-sm); font-weight: 600;">FWA of the Day</span>
+                <span style="font-size: 0.75rem; background: var(--portfolio-tag-bg); color: var(--portfolio-accent); padding: 0.2rem 0.5rem; border-radius: var(--radius-sm); font-weight: 600;">100% Bespoke</span>
+              </div>
             </div>
           </div>
 
           <div class="psych-note-card">
             <h5>🧠 Phân Tích Tâm Lý Khách Hàng (Customer Psychology):</h5>
-            <div>• <strong>Tâm lý thèm ăn trực giác (Sensory Craving):</strong> Tone màu vàng nướng và hình ảnh mộc
-              mạc khơi gợi vị giác ngay khi lướt nhìn.</div>
-            <div>• <strong>Định vị "Tươi trong ngày" (Freshness Framing):</strong> Khách hàng sẵn sàng trả giá cao hơn
-              20-30% cho thực phẩm gắn liền với yếu tố tươi mới thủ công.</div>
+            <div>• <strong>Hiệu ứng hào quang thị giác (Visual Halo Effect):</strong> Bố cục khoảng trắng tinh tế, đường nét sắc sảo và tỷ lệ thị giác vàng khiến người xem lập tức mặc định năng lực nghệ thuật của studio ở đẳng cấp thượng thừa.</div>
+            <div>• <strong>Định vị độc bản (Bespoke Identity Framing):</strong> Khách hàng cao cấp và thương hiệu xa xỉ sẵn sàng chi trả mức thù lao gấp 3-5 lần để sở hữu sản phẩm thiết kế mang dấu ấn độc nhất vô nhị.</div>
           </div>
         </section>
 
-        <!-- BLOCK 2: URGENCY & SCARCITY OFFER (BAKERY) -->
-        <section class="block layout-block" id="bakery-urgent" data-layout-type="urgency-offer">
-          <span class="block-tag block-type-feature">⚡ KHỐI CHỨC NĂNG: &lt;section class="urgency-banner"&gt; [ƯU ĐÃI
-            ĐỢT NƯỚNG]</span>
-          <span class="psych-badge">🧠 Scarcity &amp; FOMO Effect</span>
+        <!-- BLOCK 2: URGENCY & SCARCITY OFFER (PORTFOLIO BOOKING) -->
+        <section class="block layout-block" id="studio-booking" data-layout-type="urgency-offer">
+          <span class="block-tag block-type-feature">⚡ KHỐI CHỨC NĂNG: &lt;section class="urgency-banner"&gt; [LỊCH TIẾP NHẬN DỰ ÁN GIỚI HẠN]</span>
+          <span class="psych-badge">🧠 Elite Exclusivity &amp; Scarcity Bias</span>
 
           <div
-            style="background: var(--bakery-bg-soft); border: 1px solid var(--bakery-border); border-radius: var(--radius-md); padding: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+            style="background: var(--portfolio-bg-soft); border: 1px solid var(--portfolio-border); border-radius: var(--radius-md); padding: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
             <div>
               <span
                 style="background: #ef4444; color: #fff; font-size: 0.75rem; font-weight: bold; padding: 0.2rem 0.5rem; border-radius: 4px;">⏰
-                ĐỢT BÁNH NÓNG HỔI LÚC 6:00 AM</span>
-              <h3 style="margin-top: 0.5rem; margin-bottom: 0.25rem;">Combo Tiramisu &amp; Croissant Bơ Giảm 25%</h3>
-              <p style="margin-bottom: 0; font-size: 0.9rem;">Chỉ nhận tối đa 20 đơn đặt trước trong khung giờ sáng để
-                đảm bảo chất lượng bánh vừa ra lò.</p>
+                QUY TRÌNH TIẾP NHẬN CHỌN LỌC Q3/2026</span>
+              <h3 style="margin-top: 0.5rem; margin-bottom: 0.25rem;">Chỉ Tiếp Nhận Tối Đa 02 Dự Án Thiết Kế Mới Mỗi Tháng</h3>
+              <p style="margin-bottom: 0; font-size: 0.9rem;">Toàn bộ giám đốc sáng tạo sẽ dành 100% thời gian nghiên cứu văn hóa thương hiệu và hoàn thiện tỉ mỉ từng khung hình pixel.</p>
             </div>
             <div>
               <button class="btn btn-primary"
-                style="background-color: var(--bakery-accent); border-color: var(--bakery-accent);">⚡ Giữ Suất Ưu Đãi
-                (Còn 5 suất)</button>
+                style="background-color: var(--portfolio-accent); border-color: var(--portfolio-accent);">⚡ Đăng Ký Slot Hợp Tác (Đã giữ 1/2 slot)</button>
             </div>
           </div>
 
           <div class="psych-note-card">
             <h5>🧠 Phân Tích Tâm Lý Khách Hàng (Customer Psychology):</h5>
-            <div>• <strong>Tâm lý sợ bỏ lỡ (FOMO - Fear of Missing Out):</strong> Số lượng có hạn ("Còn 5 suất") thôi
-              thúc khách hàng chốt đơn ngay mà không hoãn lại.</div>
+            <div>• <strong>Tâm lý chọn lọc tinh hoa (Elite Exclusivity):</strong> Thông điệp giới hạn nhận dự án ("Đã giữ 1/2 slot") khơi dậy tâm lý muốn được chọn và loại bỏ sự mặc cả về giá trị chất xám.</div>
           </div>
         </section>
 
-        <!-- BLOCK 3: GRID SHOWCASE (BAKERY) -->
-        <section class="block layout-block" id="bakery-menu" data-layout-type="grid-showcase">
-          <span class="block-tag block-type-feature">⚡ KHỐI CHỨC NĂNG: &lt;section class="grid-bakery"&gt; [DANH MỤC
-            BÁNH TƯƠI]</span>
-          <span class="psych-badge">🧠 Contrast &amp; Price Anchoring</span>
+        <!-- BLOCK 3: GRID SHOWCASE (PORTFOLIO PROJECTS) -->
+        <section class="block layout-block" id="portfolio-projects" data-layout-type="grid-showcase">
+          <span class="block-tag block-type-feature">⚡ KHỐI CHỨC NĂNG: &lt;section class="grid-portfolio"&gt; [BỘ SƯU TẬP DỰ ÁN TIÊU BIỂU]</span>
+          <span class="psych-badge">🧠 Creative Proof &amp; Case Study Anchor</span>
 
           <div class="grid-4">
+            <!-- Project 1 -->
             <div class="product-card">
-              <span class="product-badge-urgent">CHỈ CÒN 3 BÁNH</span>
-              <div class="product-thumb">🎂</div>
-              <div class="product-title">Bánh Kem Dâu Tây Fresh</div>
-              <div class="product-desc">Cốt bánh bông lan mềm mịn, dâu Đà Lạt tươi.</div>
+              <span class="product-badge-bestseller">AWWWARDS SOTD</span>
+              <div class="product-thumb">💎</div>
+              <div class="product-title">Aura Haute Horlogerie</div>
+              <div class="product-desc">Định danh bản sắc thương hiệu &amp; trải nghiệm số WebGL 3D cho thương hiệu đồng hồ xa xỉ Thụy Sỹ.</div>
               <div class="product-footer">
-                <div><span class="product-price-old">320.000đ</span><span class="product-price">270.000đ</span></div>
-                <button class="btn btn-outline" style="padding: 0.25rem 0.6rem; font-size: 0.75rem;">Đặt Ngay</button>
+                <div class="product-price">Brand &amp; 3D Web</div>
+                <button class="btn btn-outline" style="padding: 0.25rem 0.6rem; font-size: 0.75rem;">Xem Case Study</button>
               </div>
             </div>
 
+            <!-- Project 2 -->
             <div class="product-card">
-              <div class="product-thumb">🍩</div>
-              <div class="product-title">Donut Socola Hạt Dẻ</div>
-              <div class="product-desc">Phủ lớp Socola Bỉ 70% và vụn hạt dẻ nướng.</div>
+              <div class="product-thumb">📱</div>
+              <div class="product-title">FinFlow Banking App</div>
+              <div class="product-desc">Thiết kế Design System toàn diện và giao diện ứng dụng tài chính thế hệ mới phục vụ 2.5M người dùng.</div>
               <div class="product-footer">
-                <div class="product-price">35.000đ</div>
-                <button class="btn btn-outline" style="padding: 0.25rem 0.6rem; font-size: 0.75rem;">Đặt Ngay</button>
+                <div class="product-price">UI/UX &amp; App</div>
+                <button class="btn btn-outline" style="padding: 0.25rem 0.6rem; font-size: 0.75rem;">Xem Case Study</button>
               </div>
             </div>
 
+            <!-- Project 3 -->
             <div class="product-card">
-              <div class="product-thumb">🥧</div>
-              <div class="product-title">Egg Tart Hồng Kông</div>
-              <div class="product-desc">Vỏ bánh ngàn lớp giòn xốp, nhân trứng béo ngậy.</div>
+              <div class="product-thumb">🔮</div>
+              <div class="product-title">Cyber Metropolis 3D</div>
+              <div class="product-desc">Phim ngắn Motion Graphics 3D và nghệ thuật tương tác không gian tại Triển lãm Thiết kế Quốc tế Milan.</div>
               <div class="product-footer">
-                <div class="product-price">28.000đ</div>
-                <button class="btn btn-outline" style="padding: 0.25rem 0.6rem; font-size: 0.75rem;">Đặt Ngay</button>
+                <div class="product-price">CGI &amp; Motion</div>
+                <button class="btn btn-outline" style="padding: 0.25rem 0.6rem; font-size: 0.75rem;">Xem Case Study</button>
               </div>
             </div>
 
+            <!-- Project 4 -->
             <div class="product-card">
-              <div class="product-thumb">🍪</div>
-              <div class="product-title">Cookies Bơ Hạt Macca</div>
-              <div class="product-desc">Bánh quy bơ giòn thơm, đóng hộp sang trọng.</div>
+              <div class="product-thumb">📖</div>
+              <div class="product-title">Mono Architecture Monograph</div>
+              <div class="product-desc">Ấn phẩm sách mỹ thuật và nền tảng lưu trữ trực tuyến tôn vinh kiến trúc tối giản hiện đại.</div>
               <div class="product-footer">
-                <div class="product-price">85.000đ</div>
-                <button class="btn btn-outline" style="padding: 0.25rem 0.6rem; font-size: 0.75rem;">Đặt Ngay</button>
+                <div class="product-price">Art Direction</div>
+                <button class="btn btn-outline" style="padding: 0.25rem 0.6rem; font-size: 0.75rem;">Xem Case Study</button>
               </div>
             </div>
           </div>
 
           <div class="psych-note-card">
             <h5>🧠 Phân Tích Tâm Lý Khách Hàng (Customer Psychology):</h5>
-            <div>• <strong>Mỏ neo giá (Price Anchoring):</strong> Hiển thị giá cũ gạch ngang (320k -> 270k) kích hoạt
-              cảm xúc "mua được giá hời".</div>
+            <div>• <strong>Chứng minh năng lực thực tế (Show Don't Tell):</strong> Trình bày các Case Study đa dạng từ Mobile App đến 3D WebGL thuyết phục khách hàng bằng chất lượng tác phẩm trực quan thay vì lời hứa suông.</div>
           </div>
         </section>
 
-        <!-- BLOCK 4: STORE SPACE & LOCATION SHOWCASE (BAKERY) -->
-        <section class="block layout-block" id="bakery-space" data-layout-type="space-location">
-          <span class="block-tag block-type-feature">⚡ KHỐI CHỨC NĂNG: &lt;section class="bakery-kitchen-space"&gt;
-            [BẾP MỞ &amp; ĐỊA CHỈ TIỆM]</span>
-          <span class="psych-badge">🧠 Open Kitchen &amp; Freshness Priming</span>
+        <!-- BLOCK 4: TRUST & AWARDS (PORTFOLIO) -->
+        <section class="block layout-block" id="portfolio-awards" data-layout-type="trust-proof">
+          <span class="block-tag block-type-feature">⚡ KHỐI CHỨC NĂNG: &lt;section class="social-proof-agency"&gt; [GIẢI THƯỞNG &amp; ĐỐI TÁC SÁNG TẠO]</span>
+          <span class="psych-badge">🧠 Third-Party Prestige Validation</span>
 
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
-            <div
-              style="background: var(--bakery-bg-soft); border: 1px solid var(--bakery-border); border-radius: var(--radius-md); padding: 1.5rem;">
-              <span
-                style="font-size: 0.75rem; font-weight: bold; color: var(--bakery-accent); text-transform: uppercase;">🥖
-                KHÔNG GIAN BẾP MỞ &amp; THỬ BÁNH</span>
-              <h3 style="margin-top: 0.5rem;">Quầy Nướng Bánh Trực Tiếp (Live Kitchen)</h3>
-              <p style="font-size: 0.9rem;">
-                Tận mắt chứng kiến quy trình thợ làm bánh nhào bột nướng bơ Pháp thơm nức. Khách ghé tiệm luôn được
-                thử bánh quy nướng mới miễn phí tại quầy.
-              </p>
-              <div
-                style="background: var(--color-card-bg); padding: 0.75rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border); margin-top: 1rem; font-size: 0.85rem;">
-                🥐 <strong>Đợt bánh ra lò tại chỗ:</strong> Sáng 06:00 &amp; Chiều 14:00 (Nóng hổi vừa ra lò).
-              </div>
+          <div class="grid-2">
+            <div>
+              <h3>Bảng Vàng Thành Tích &amp; Chuẩn Mực Nghệ Thuật</h3>
+              <p>Mỗi tác phẩm của LUMEN STUDIO được tôi luyện qua hàng trăm giờ phác thảo, thử nghiệm chất liệu và được công nhận bởi các hội đồng mỹ thuật thế giới.</p>
+              <ul style="font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem;">
+                <li>✅ 12 Giải thưởng Awwwards Site of the Day &amp; Developer Award</li>
+                <li>✅ Giải thưởng Red Dot Design Concept Winner 2025 &amp; 2026</li>
+                <li>✅ 100% dự án được bàn giao kèm Style Guide &amp; Design Token chuẩn hóa</li>
+              </ul>
             </div>
 
             <div
-              style="border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 1.5rem; background: var(--color-card-bg);">
-              <h4 style="margin-bottom: 0.75rem;">📍 Địa Chỉ Tiệm Bánh &amp; Đặt Hàng</h4>
-              <div style="font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.6rem;">
-                <div>🏛️ <strong>Địa chỉ:</strong> 45 Lý Tự Trọng, Phường Bến Nghé, Quận 1, TP.HCM</div>
-                <div>⏰ <strong>Giờ mở cửa:</strong> 06:00 - 21:00 (Bánh tươi phục vụ theo đợt)</div>
-                <div>🎂 <strong>Nhận đặt bánh sinh nhật:</strong> Theo yêu cầu trước 24 tiếng</div>
-                <div>📦 <strong>Đóng gói:</strong> Hộp giấy giữ nhiệt &amp; túi thân thiện môi trường</div>
-              </div>
-              <div style="margin-top: 1.25rem; display: flex; gap: 0.75rem;">
-                <button class="btn btn-primary"
-                  style="background-color: var(--bakery-accent); border-color: var(--bakery-accent); font-size: 0.8rem; padding: 0.4rem 0.8rem;">🗺️
-                  Ghé Tiệm Thử Bánh</button>
-                <button class="btn btn-outline" style="font-size: 0.8rem; padding: 0.4rem 0.8rem;">📱 Đặt Bánh Sinh
-                  Nhật</button>
+              style="background: var(--color-block-badge); border-radius: var(--radius-md); padding: 1.5rem; border: 1px solid var(--color-border);">
+              <h4 style="margin-bottom: 0.5rem;">Cảm Nhận Từ Giám Đốc Thương Hiệu</h4>
+              <p style="font-size: 0.9rem; font-style: italic;">
+                "LUMEN STUDIO không đơn thuần là bên thực thi thiết kế. Họ mang đến góc nhìn đột phá về tư duy nghệ thuật, biến những ý niệm trừu tượng thành trải nghiệm thị giác làm rung động khách hàng."
+              </p>
+              <div style="font-size: 0.85rem; font-weight: bold; margin-top: 1rem; color: var(--portfolio-accent);">
+                — Marcus Chen (Global Brand Director, Chronos Haute Horlogerie)
               </div>
             </div>
           </div>
@@ -569,171 +479,246 @@
           <!-- Customer Psychology Insight Callout -->
           <div class="psych-note-card">
             <h5>🧠 Phân Tích Tâm Lý Khách Hàng (Customer Psychology):</h5>
-            <div>• <strong>Minh bạch quy trình (Open Kitchen Transparency):</strong> Bếp mở cho phép quan sát trực
-              tiếp giúp đánh tan sự hoài nghi về vệ sinh và độ tươi của thực phẩm.</div>
-            <div>• <strong>Mồi vị giác miễn phí (Reciprocity Effect):</strong> Mời ăn thử bánh quy mộc mạc tại quầy
-              kích hoạt tâm lý đáp lại, làm tăng tỷ lệ mua thêm sản phẩm chính lên 45%.</div>
+            <div>• <strong>Bảo chứng từ bên thứ ba (Prestige Validation):</strong> Các giải thưởng thiết kế quốc tế uy tín dập tắt mọi nghi ngờ về năng lực sáng tạo của agency.</div>
           </div>
         </section>
 
-      </div>
+        <!-- BLOCK 5: STORE SPACE & LOCATION SHOWCASE (STUDIO LAB) -->
+        <section class="block layout-block" id="portfolio-studio-space" data-layout-type="space-location">
+          <span class="block-tag block-type-feature">⚡ KHỐI CHỨC NĂNG: &lt;section class="studio-creative-lab"&gt; [CREATIVE LAB &amp; XƯỞNG THỰC NGHIỆM]</span>
+          <span class="psych-badge">🧠 Creative Atmosphere &amp; Inspiration Cue</span>
 
-      <!-- ==========================================
-           WEBSITE STYLE 3: SAAS & TECH PRODUCT (CÔNG NGHỆ)
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
+            <div
+              style="background: var(--portfolio-bg-soft); border: 1px solid var(--portfolio-border); border-radius: var(--radius-md); padding: 1.5rem;">
+              <span
+                style="font-size: 0.75rem; font-weight: bold; color: var(--portfolio-accent); text-transform: uppercase;">🎨
+                KHÔNG GIAN SÁNG TẠO &amp; LAB THỰC NGHIỆM</span>
+              <h3 style="margin-top: 0.5rem;">Lumen Spatial Lab &amp; Xưởng In Thủ Công</h3>
+              <p style="font-size: 0.9rem;">
+                Không gian thiết kế mở tràn ngập ánh sáng tự nhiên với thư viện mẫu màu Pantone chuẩn quốc tế, phòng chiếu thực tế ảo VR Spatial và bàn kiểm thử bản in mỹ thuật trực tiếp.
+              </p>
+              <div
+                style="background: var(--color-card-bg); padding: 0.75rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border); margin-top: 1rem; font-size: 0.85rem;">
+                ☕ <strong>Đặc quyền đối tác:</strong> Các buổi Brainstorming ý tưởng trực tiếp bên tách cà phê rang mộc tại vườn kính studio.
+              </div>
+            </div>
+
+            <div
+              style="border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 1.5rem; background: var(--color-card-bg);">
+              <h4 style="margin-bottom: 0.75rem;">📍 Địa Chỉ Studio &amp; Lịch Hẹn</h4>
+              <div style="font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.6rem;">
+                <div>🏛️ <strong>Địa chỉ:</strong> Villa 12, Khu Sáng Tạo Thảo Điền, TP. Thủ Đức, TP.HCM</div>
+                <div>⏰ <strong>Giờ làm việc:</strong> 09:00 - 18:30 (Thứ 2 - Thứ 6, Tiếp khách theo lịch hẹn)</div>
+                <div>📩 <strong>Liên hệ dự án:</strong> hello@lumenstudio.design</div>
+                <div>🌐 <strong>Ấn phẩm quốc tế:</strong> Featured on Behance, Dribbble &amp; Designboom</div>
+              </div>
+              <div style="margin-top: 1.25rem; display: flex; gap: 0.75rem;">
+                <button class="btn btn-primary"
+                  style="background-color: var(--portfolio-accent); border-color: var(--portfolio-accent); font-size: 0.8rem; padding: 0.4rem 0.8rem;">🗺️
+                  Ghé Thăm Studio</button>
+                <button class="btn btn-outline" style="font-size: 0.8rem; padding: 0.4rem 0.8rem;">☕ Đặt Lịch Cà Phê Ý Tưởng</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Customer Psychology Insight Callout -->
+          <div class="psych-note-card">
+            <h5>🧠 Phân Tích Tâm Lý Khách Hàng (Customer Psychology):</h5>
+            <div>• <strong>Không gian truyền cảm hứng (Creative Atmosphere Cue):</strong> Khắc họa không gian làm việc có gu thẩm mỹ độc đáo củng cố niềm tin tuyệt đối rằng sản phẩm studio tạo ra sẽ có hồn và sắc sảo.</div>
+            <div>• <strong>Trải nghiệm tiếp đón thân mật (Relational Selling):</strong> Lời mời thảo luận ý tưởng bên tách cà phê giúp gỡ bỏ không khí đàm phán thương mại căng thẳng, tăng tỷ lệ chốt hợp đồng lên 60%.</div>
+          </div>
+        </section>
+
+      </div>      <!-- ==========================================
+           WEBSITE STYLE 3: SAAS & TECH PRODUCT (CÔNG NGHỆ & PHẦN MỀM)
            ========================================== -->
       <div class="store-preset-container" id="presetStyle3" data-store-preset="style3">
 
         <!-- BLOCK 1: SPLIT HERO (STYLE 3: SAAS TECH) -->
         <section class="block hero-block layout-block" data-layout-type="split-hero">
-          <span class="block-tag block-type-feature">⚡ KHỐI CHỨC NĂNG: &lt;section class="hero-grocery"&gt; [STYLE 3: SAAS TECH]</span>
-          <span class="psych-badge">🧠 Health &amp; Trust Priming</span>
+          <span class="block-tag block-type-feature">⚡ KHỐI CHỨC NĂNG: &lt;section class="hero-saas"&gt; [STYLE 3: SAAS TECH &amp; AI]</span>
+          <span class="psych-badge">🧠 Frictionless Onboarding &amp; Innovation Priming</span>
 
           <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 2rem; align-items: center;">
             <div>
-              <h1 style="font-size: 2.4rem; line-height: 1.2; color: var(--grocery-accent);">Nông Sản Hữu Cơ Tươi Sạch
-                - Từ Nông Trại Đến Bữa Ăn Gia Đình</h1>
+              <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: var(--saas-tag-bg); color: var(--saas-accent); padding: 0.25rem 0.75rem; border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 600; margin-bottom: 0.75rem;">
+                ⚡ CLOUDSPHERE AI • NEXT-GEN SAAS 2026
+              </div>
+              <h1 style="font-size: 2.4rem; line-height: 1.2; color: var(--saas-accent);">Nền Tảng Tự Động Hóa Vận Hành &amp; Phân Tích Doanh Nghiệp Bằng AI</h1>
               <p style="font-size: 1.05rem;">
-                Cung cấp rau củ quả đạt chuẩn VietGAP &amp; Organic. Giao hàng tận nơi trong 2 giờ, cam kết đổi trả
-                100% nếu sản phẩm không tươi ngon.
+                CLOUDSPHERE kết nối mọi luồng dữ liệu phân tán, tự động hóa chuỗi quy trình nghiệp vụ và cung cấp dự báo kinh doanh chuẩn xác theo thời gian thực. Giảm 60% thời gian xử lý thủ công cho hơn 2.500+ doanh nghiệp.
               </p>
               <div style="display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap;">
-                <a href="#grocery-items" class="btn btn-primary"
-                  style="background-color: var(--grocery-accent); border-color: var(--grocery-accent);">🥬 Mua Sắm
-                  Thực Phẩm Sạch</a>
-                <a href="#grocery-trust" class="btn btn-outline">🛡️ Chứng Nhận Organic</a>
+                <a href="#saas-earlybird" class="btn btn-primary"
+                  style="background-color: var(--saas-accent); border-color: var(--saas-accent);">⚡ Dùng Thử Miễn Phí 14 Ngày</a>
+                <a href="#saas-features" class="btn btn-outline">🖥️ Xem Live Demo Sản Phẩm</a>
               </div>
             </div>
             <div
-              style="background: var(--grocery-tag-bg); border-radius: var(--radius-md); height: 200px; display: flex; align-items: center; justify-content: center; font-size: 4rem; border: 1px solid var(--grocery-border);">
-              🥬🍎
+              style="background: var(--saas-bg-soft); border-radius: var(--radius-md); padding: 2rem 1.5rem; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; border: 1px solid var(--saas-border); box-shadow: var(--shadow-subtle);">
+              <div style="font-size: 3.5rem; margin-bottom: 0.5rem;">⚡🤖</div>
+              <div style="font-size: 1.35rem; font-weight: 700; color: var(--saas-accent);">Real-Time AI Engine</div>
+              <div style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 0.3rem;">99.99% Uptime SLA • &lt; 15ms Latency</div>
+              <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+                <span style="font-size: 0.75rem; background: var(--saas-tag-bg); color: var(--saas-accent); padding: 0.2rem 0.5rem; border-radius: var(--radius-sm); font-weight: 600;">SOC2 Type II</span>
+                <span style="font-size: 0.75rem; background: var(--saas-tag-bg); color: var(--saas-accent); padding: 0.2rem 0.5rem; border-radius: var(--radius-sm); font-weight: 600;">No Credit Card</span>
+              </div>
             </div>
           </div>
 
           <div class="psych-note-card">
             <h5>🧠 Phân Tích Tâm Lý Khách Hàng (Customer Psychology):</h5>
-            <div>• <strong>Sự tin cậy sức khỏe (Health Framing):</strong> Gam màu xanh lá Emerald gieo vào tâm trí
-              người tiêu dùng sự an toàn tuyệt đối về sức khỏe gia đình.</div>
+            <div>• <strong>Xóa bỏ rào cản thử nghiệm (Frictionless Onboarding):</strong> Cam kết "Dùng thử 14 ngày không cần thẻ tín dụng" giúp khách hàng lập tức trải nghiệm sản phẩm mà không có rào cản tâm lý sợ bị trừ tiền.</div>
+            <div>• <strong>Chứng thực hiệu suất kỹ thuật (Technical Credibility):</strong> Con số "Uptime 99.99% và độ trễ &lt; 15ms" giải tỏa nỗi lo gián đoạn vận hành của các nhà quản trị CNTT (CTO/Tech Lead).</div>
           </div>
         </section>
 
-        <!-- BLOCK 2: GRID SHOWCASE (GROCERY) -->
-        <section class="block layout-block" id="grocery-items" data-layout-type="grid-showcase">
-          <span class="block-tag block-type-feature">⚡ KHỐI CHỨC NĂNG: &lt;section class="grid-grocery"&gt; [NÔNG SẢN
-            COMBO]</span>
-          <span class="psych-badge">🧠 Bundle Framing &amp; Convenience</span>
+        <!-- BLOCK 2: GRID SHOWCASE (SAAS CORE MODULES) -->
+        <section class="block layout-block" id="saas-features" data-layout-type="grid-showcase">
+          <span class="block-tag block-type-feature">⚡ KHỐI CHỨC NĂNG: &lt;section class="grid-saas"&gt; [CÁC MODULE TÍNH NĂNG CỐT LÕI]</span>
+          <span class="psych-badge">🧠 Feature Utility &amp; Cognitive Clarity</span>
 
           <div class="grid-4">
+            <!-- Module 1 -->
             <div class="product-card">
-              <span class="product-badge-bestseller">COMBO HOT</span>
-              <div class="product-thumb">🥗</div>
-              <div class="product-title">Combo Rau Clean 7 Ngày</div>
-              <div class="product-desc">Gồm Cải kale, Xà lách thủy canh, Cà chua chery.</div>
+              <span class="product-badge-bestseller">AI CORE</span>
+              <div class="product-thumb">🧠</div>
+              <div class="product-title">AI Predictive Engine</div>
+              <div class="product-desc">Mô hình học máy tự động phân tích xu hướng mua sắm, phát hiện dị thường và dự báo doanh số.</div>
               <div class="product-footer">
-                <div class="product-price">180.000đ</div>
-                <button class="btn btn-outline" style="padding: 0.25rem 0.6rem; font-size: 0.75rem;">+ Mua
-                  Combo</button>
+                <div class="product-price">Tích Hợp Sẵn</div>
+                <button class="btn btn-outline" style="padding: 0.25rem 0.6rem; font-size: 0.75rem;">Chi Tiết</button>
               </div>
             </div>
 
+            <!-- Module 2 -->
             <div class="product-card">
-              <div class="product-thumb">🥑</div>
-              <div class="product-title">Bơ Sáp 034 Đắk Lắk</div>
-              <div class="product-desc">Bơ dẻo ngậy, thu hái tươi tại vườn (Kg).</div>
+              <div class="product-thumb">⚙️</div>
+              <div class="product-title">Workflow Automation No-Code</div>
+              <div class="product-desc">Kéo thả thiết lập kịch bản tự động hóa gửi email, đồng bộ CRM và phân luồng tác vụ đa nền tảng.</div>
               <div class="product-footer">
-                <div class="product-price">65.000đ / kg</div>
-                <button class="btn btn-outline" style="padding: 0.25rem 0.6rem; font-size: 0.75rem;">+ Mua</button>
+                <div class="product-price">100+ Template</div>
+                <button class="btn btn-outline" style="padding: 0.25rem 0.6rem; font-size: 0.75rem;">Chi Tiết</button>
               </div>
             </div>
 
+            <!-- Module 3 -->
             <div class="product-card">
-              <div class="product-thumb">🥩</div>
-              <div class="product-title">Thịt Bò Mỹ Mát Thượng Hạng</div>
-              <div class="product-desc">Cắt sẵn chuyên làm Steak hoặc Nướng (500g).</div>
+              <div class="product-thumb">📊</div>
+              <div class="product-title">Real-Time Data Pipeline</div>
+              <div class="product-desc">Đồng bộ dữ liệu đa nguồn tức thì với bảng điều khiển trực quan hóa thời gian thực không độ trễ.</div>
               <div class="product-footer">
-                <div class="product-price">220.000đ</div>
-                <button class="btn btn-outline" style="padding: 0.25rem 0.6rem; font-size: 0.75rem;">+ Mua</button>
+                <div class="product-price">REST &amp; Webhook</div>
+                <button class="btn btn-outline" style="padding: 0.25rem 0.6rem; font-size: 0.75rem;">Chi Tiết</button>
               </div>
             </div>
 
+            <!-- Module 4 -->
             <div class="product-card">
-              <div class="product-thumb">🍎</div>
-              <div class="product-title">Táo Envy Nhập Khẩu New Zealand</div>
-              <div class="product-desc">Giòn ngọt mọng nước, hộp 1kg chuẩn ngạch.</div>
+              <div class="product-thumb">🔒</div>
+              <div class="product-title">Enterprise Identity &amp; RBAC</div>
+              <div class="product-desc">Đăng nhập một lần (SSO SAML/OIDC), phân quyền vai trò chi tiết và nhật ký kiểm toán bất biến.</div>
               <div class="product-footer">
-                <div class="product-price">145.000đ</div>
-                <button class="btn btn-outline" style="padding: 0.25rem 0.6rem; font-size: 0.75rem;">+ Mua</button>
+                <div class="product-price">Bảo Mật Kép</div>
+                <button class="btn btn-outline" style="padding: 0.25rem 0.6rem; font-size: 0.75rem;">Chi Tiết</button>
               </div>
             </div>
           </div>
 
           <div class="psych-note-card">
             <h5>🧠 Phân Tích Tâm Lý Khách Hàng (Customer Psychology):</h5>
-            <div>• <strong>Đóng gói tiện lợi (Convenience Packaging):</strong> Tạo Combo giải quyết bài toán "Hôm nay
-              ăn gì?", loại bỏ ma sát suy nghĩ của người mua.</div>
+            <div>• <strong>Rõ ràng về công năng (Feature Utility Clarity):</strong> Phân tách 4 module tính năng mạch lạc giúp người xem dễ dàng đối chiếu với các công cụ đang dùng, nhận thấy sự ưu việt của giải pháp all-in-one.</div>
           </div>
         </section>
 
-        <!-- BLOCK 3: TRUST & CERTIFICATION (GROCERY) -->
-        <section class="block layout-block" id="grocery-trust" data-layout-type="trust-proof">
-          <span class="block-tag block-type-feature">⚡ KHỐI CHỨC NĂNG: &lt;section class="grocery-trust"&gt; [CAM KẾT
-            AN TOÀN]</span>
-          <span class="psych-badge">🧠 Risk Reversal Guarantee</span>
+        <!-- BLOCK 3: URGENCY OFFER (SAAS EARLY-BIRD) -->
+        <section class="block layout-block" id="saas-earlybird" data-layout-type="urgency-offer">
+          <span class="block-tag block-type-feature">⚡ KHỐI CHỨC NĂNG: &lt;section class="urgency-banner"&gt; [ƯU ĐÃI EARLY-BIRD SAAS]</span>
+          <span class="psych-badge">🧠 Grandfathered Pricing &amp; Scarcity</span>
+
+          <div
+            style="background: var(--saas-bg-soft); border: 1px solid var(--saas-border); border-radius: var(--radius-md); padding: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+            <div>
+              <span
+                style="background: #ef4444; color: #fff; font-size: 0.75rem; font-weight: bold; padding: 0.2rem 0.5rem; border-radius: 4px;">⏰
+                CHƯƠNG TRÌNH KHỞI ĐỘNG CÙNG AI 2026</span>
+              <h3 style="margin-top: 0.5rem; margin-bottom: 0.25rem;">Giảm 40% Trọn Đời Gói Enterprise Cho 50 Doanh Nghiệp Đầu Tiên</h3>
+              <p style="margin-bottom: 0; font-size: 0.9rem;">Khóa mức giá ưu đãi vĩnh viễn (Grandfathered Pricing) kèm gói Onboarding 1-1 chuyên sâu từ Kỹ sư giải pháp trong 3 tháng đầu.</p>
+            </div>
+            <div>
+              <button class="btn btn-primary"
+                style="background-color: var(--saas-accent); border-color: var(--saas-accent);">⚡ Giữ Mức Giá Giảm 40% (Còn 7 tài khoản)</button>
+            </div>
+          </div>
+
+          <div class="psych-note-card">
+            <h5>🧠 Phân Tích Tâm Lý Khách Hàng (Customer Psychology):</h5>
+            <div>• <strong>Mỏ neo giá ưu đãi vĩnh viễn (Grandfathered Rate Bias):</strong> Việc khóa giá trọn đời tạo động lực chốt đơn rất mạnh, vì khách hàng biết rằng nếu bỏ lỡ mức giá này sẽ không bao giờ xuất hiện lại.</div>
+          </div>
+        </section>
+
+        <!-- BLOCK 4: TRUST & SECURITY CERTIFICATION (SAAS) -->
+        <section class="block layout-block" id="saas-trust" data-layout-type="trust-proof">
+          <span class="block-tag block-type-feature">⚡ KHỐI CHỨC NĂNG: &lt;section class="saas-trust"&gt; [BẢO MẬT &amp; CAM KẾT VẬN HÀNH]</span>
+          <span class="psych-badge">🧠 Enterprise Security &amp; Zero Downtime</span>
 
           <div class="grid-3">
-            <div style="padding: 1rem; background: var(--color-block-badge); border-radius: var(--radius-sm);">
-              <h4>🚚 Giao Nhanh 2 Giờ</h4>
-              <p style="font-size: 0.85rem; margin-bottom: 0;">Đảm bảo độ tươi nguyên như vừa hái tại vườn.</p>
+            <div style="padding: 1rem; background: var(--color-block-badge); border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
+              <h4>🔒 Chuẩn SOC2 &amp; ISO 27001</h4>
+              <p style="font-size: 0.85rem; margin-bottom: 0;">Mã hóa dữ liệu 2 chiều chuẩn AES-256 ở trạng thái lưu trữ và truyền tải.</p>
             </div>
-            <div style="padding: 1rem; background: var(--color-block-badge); border-radius: var(--radius-sm);">
-              <h4>🛡️ Đổi Trả 24H Miễn Phí</h4>
-              <p style="font-size: 0.85rem; margin-bottom: 0;">Hoàn tiền 100% nếu rau bị dập nát hoặc không vừa ý.</p>
+            <div style="padding: 1rem; background: var(--color-block-badge); border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
+              <h4>⚡ Cam Kết Uptime 99.99%</h4>
+              <p style="font-size: 0.85rem; margin-bottom: 0;">Chính sách hoàn tiền theo từng bậc thỏa thuận cam kết dịch vụ (SLA) nếu có sự cố.</p>
             </div>
-            <div style="padding: 1rem; background: var(--color-block-badge); border-radius: var(--radius-sm);">
-              <h4>📜 100% Chứng Nhận VietGAP</h4>
-              <p style="font-size: 0.85rem; margin-bottom: 0;">Quét mã QR truy xuất nguồn gốc từng lô hàng.</p>
+            <div style="padding: 1rem; background: var(--color-block-badge); border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
+              <h4>🌐 Tuân Thủ GDPR &amp; PDPA</h4>
+              <p style="font-size: 0.85rem; margin-bottom: 0;">Tuân thủ nghiêm ngặt các quy định pháp lý quốc tế về quyền riêng tư dữ liệu.</p>
             </div>
+          </div>
+
+          <div class="psych-note-card" style="margin-top: 1rem;">
+            <h5>🧠 Phân Tích Tâm Lý Khách Hàng (Customer Psychology):</h5>
+            <div>• <strong>An tâm bảo mật dữ liệu (Cybersecurity Trust Priming):</strong> Các chứng nhận quốc tế độc lập giải quyết bài toán nghi ngại bảo mật dữ liệu mật của khách hàng doanh nghiệp khi đưa hệ thống lên đám mây.</div>
           </div>
         </section>
 
-        <!-- BLOCK 4: STORE SPACE & LOCATION SHOWCASE (GROCERY) -->
-        <section class="block layout-block" id="grocery-space" data-layout-type="space-location">
-          <span class="block-tag block-type-feature">⚡ KHỐI CHỨC NĂNG: &lt;section class="grocery-storefront"&gt;
-            [GIAN HÀNG MÁT &amp; CHI NHÁNH]</span>
-          <span class="psych-badge">🧠 Sensory Cleanliness &amp; Multi-Branch</span>
+        <!-- BLOCK 5: STORE SPACE & LOCATION SHOWCASE (SAAS INFRASTRUCTURE) -->
+        <section class="block layout-block" id="saas-infrastructure" data-layout-type="space-location">
+          <span class="block-tag block-type-feature">⚡ KHỐI CHỨC NĂNG: &lt;section class="saas-datacenter"&gt; [HẠ TẦNG CLOUD &amp; HỖ TRỢ 24/7]</span>
+          <span class="psych-badge">🧠 Global Infrastructure Reliability</span>
 
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
             <div
-              style="background: var(--grocery-bg-soft); border: 1px solid var(--grocery-border); border-radius: var(--radius-md); padding: 1.5rem;">
+              style="background: var(--saas-bg-soft); border: 1px solid var(--saas-border); border-radius: var(--radius-md); padding: 1.5rem;">
               <span
-                style="font-size: 0.75rem; font-weight: bold; color: var(--grocery-accent); text-transform: uppercase;">🥬
-                GIAN HÀNG MÁT CHUẨN ORGANIC</span>
-              <h3 style="margin-top: 0.5rem;">Trưng Bày Phun Sương Bảo Quản 5°C</h3>
+                style="font-size: 0.75rem; font-weight: bold; color: var(--saas-accent); text-transform: uppercase;">🌐
+                HẠ TẦNG CLOUD TOÀN CẦU PHÂN TÁN</span>
+              <h3 style="margin-top: 0.5rem;">Cụm Data Center Đa Vùng Active-Active</h3>
               <p style="font-size: 0.9rem;">
-                Gian hàng rau củ quả được phun sương tự động duy trì độ ẩm và độ giòn ngọt tự nhiên. Khách hàng được
-                tự tay chọn lựa từng bó rau tươi mọng.
+                Hệ thống máy chủ đám mây đặt tại 4 trung tâm dữ liệu độc lập (Singapore, Tokyo, Frankfurt và Oregon), tự động chuyển vùng dự phòng (Failover) dưới 100ms khi một trung tâm gặp sự cố.
               </p>
               <div
                 style="background: var(--color-card-bg); padding: 0.75rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border); margin-top: 1rem; font-size: 0.85rem;">
-                🥦 <strong>Dịch vụ tại chỗ:</strong> Hỗ trợ sơ chế &amp; hút chân không miễn phí cho khách mua tại cửa
-                hàng.
+                ⚡ <strong>Tốc độ kết nối:</strong> Băng thông peering trực tiếp với mạng cáp quang biển quốc tế, đảm bảo tốc độ phản hồi API cực nhanh.
               </div>
             </div>
 
             <div
               style="border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 1.5rem; background: var(--color-card-bg);">
-              <h4 style="margin-bottom: 0.75rem;">📍 Hệ Thống Chi Nhánh Cửa Hàng</h4>
+              <h4 style="margin-bottom: 0.75rem;">📍 Kênh Hỗ Trợ Kỹ Thuật Chuyên Biệt 24/7</h4>
               <div style="font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.6rem;">
-                <div>🏪 <strong>CN1 (Trung tâm):</strong> 88 Hai Bà Trưng, Quận 1, TP.HCM</div>
-                <div>🏪 <strong>CN2 (Phía Nam):</strong> 215 Nguyễn Thị Thập, Quận 7, TP.HCM</div>
-                <div>🏪 <strong>CN3 (Hà Nội):</strong> 102 Cầu Giấy, Quận Cầu Giấy, Hà Nội</div>
-                <div>⚡ <strong>Dịch vụ Click &amp; Collect:</strong> Đặt online - Lấy tại cửa hàng trong 5 phút</div>
+                <div>🛠️ <strong>Đội ngũ kỹ sư hỗ trợ:</strong> Trực ca 24/7/365 qua kênh Slack/Teams chuyên dụng</div>
+                <div>⏱️ <strong>Thời gian phản hồi SLA:</strong> Dưới 3 phút cho sự cố mức độ Critical</div>
+                <div>📚 <strong>Cổng tài liệu Developer:</strong> API Reference, SDK Python/Node.js &amp; Webhook</div>
+                <div>📡 <strong>Trạng thái hệ thống:</strong> Giám sát độc lập công khai tại status.cloudsphere.ai</div>
               </div>
               <div style="margin-top: 1.25rem; display: flex; gap: 0.75rem;">
                 <button class="btn btn-primary"
-                  style="background-color: var(--grocery-accent); border-color: var(--grocery-accent); font-size: 0.8rem; padding: 0.4rem 0.8rem;">📍
-                  Tìm Chi Nhánh Gần Nhất</button>
-                <button class="btn btn-outline" style="font-size: 0.8rem; padding: 0.4rem 0.8rem;">📦 Đặt Giao Tận Nhà
-                  2H</button>
+                  style="background-color: var(--saas-accent); border-color: var(--saas-accent); font-size: 0.8rem; padding: 0.4rem 0.8rem;">🌐
+                  Xem Trạng Thái Uptime</button>
+                <button class="btn btn-outline" style="font-size: 0.8rem; padding: 0.4rem 0.8rem;">💬 Kết Nối Kỹ Sư Hệ Thống</button>
               </div>
             </div>
           </div>
@@ -741,10 +726,7 @@
           <!-- Customer Psychology Insight Callout -->
           <div class="psych-note-card">
             <h5>🧠 Phân Tích Tâm Lý Khách Hàng (Customer Psychology):</h5>
-            <div>• <strong>Tín hiệu thị giác chuẩn sạch (Sensory Hygiene Cue):</strong> Hình ảnh phun sương bảo quản
-              nhiệt độ chuẩn kích thích cảm nhận về độ tươi ngon hảo hạng.</div>
-            <div>• <strong>Giảm ma sát nhận hàng (Click &amp; Collect Convenience):</strong> Tùy chọn đặt online lấy
-              tại cửa hàng thu hút nhóm khách bận rộn muốn tiết kiệm thời gian chờ giao.</div>
+            <div>• <strong>Bằng chứng vững chắc về hạ tầng (Infrastructure Proof):</strong> Khách hàng công nghệ luôn tìm kiếm sự đảm bảo rằng dữ liệu của họ không bị mất mát và đội ngũ hỗ trợ luôn sẵn sàng xử lý sự cố bất kỳ lúc nào.</div>
           </div>
         </section>
 
@@ -757,41 +739,39 @@
 
         <!-- BLOCK 1: SPLIT HERO (STYLE 4: E-COMMERCE) -->
         <section class="block hero-block layout-block" data-layout-type="split-hero">
-          <span class="block-tag block-type-feature">⚡ KHỐI CHỨC NĂNG: &lt;section class="hero-general"&gt; [STYLE 4: E-COMMERCE]</span>
+          <span class="block-tag block-type-feature">⚡ KHỐI CHỨC NĂNG: &lt;section class="hero-ecommerce"&gt; [STYLE 4: E-COMMERCE]</span>
           <span class="psych-badge">🧠 High-Conversion Action Driven</span>
 
           <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 2rem; align-items: center;">
             <div>
-              <h1 style="font-size: 2.4rem; line-height: 1.2; color: var(--general-accent);">Siêu Đại Hội Mua Sắm 2026
-                - Giảm Đến 50% Toàn Bộ Sản Phẩm</h1>
+              <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: var(--ecommerce-tag-bg); color: var(--ecommerce-accent); padding: 0.25rem 0.75rem; border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 600; margin-bottom: 0.75rem;">
+                🛒 NOVA TECH STORE 2026
+              </div>
+              <h1 style="font-size: 2.4rem; line-height: 1.2; color: var(--ecommerce-accent);">Siêu Đại Hội Mua Sắm Công Nghệ 2026 - Giảm Đến 50% Toàn Bộ Sản Phẩm</h1>
               <p style="font-size: 1.05rem;">
-                Khám phá hàng ngàn sản phẩm phụ kiện công nghệ, đồ gia dụng thông minh và quà tặng cao cấp với chính
-                sách bảo hành 12 tháng 1 đổi 1.
+                Khám phá hàng ngàn phụ kiện công nghệ chính hãng, thiết bị góc làm việc thông minh và quà tặng cao cấp với chính sách bảo hành 12 tháng 1 đổi 1.
               </p>
               <div style="display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap;">
                 <a href="#general-deals" class="btn btn-primary"
-                  style="background-color: var(--general-accent); border-color: var(--general-accent);">🛍️ Săn Deal
-                  Flash Sale</a>
-                <a href="#general-proof" class="btn btn-outline">⭐ Xem 2.400+ Đánh Giá</a>
+                  style="background-color: var(--ecommerce-accent); border-color: var(--ecommerce-accent);">🛍️ Săn Deal Flash Sale</a>
+                <a href="#ecommerce-catalog" class="btn btn-outline">📦 Xem Danh Mục Hot</a>
               </div>
             </div>
             <div
-              style="background: var(--general-tag-bg); border-radius: var(--radius-md); height: 200px; display: flex; align-items: center; justify-content: center; font-size: 4rem; border: 1px solid var(--general-border);">
+              style="background: var(--ecommerce-tag-bg); border-radius: var(--radius-md); height: 200px; display: flex; align-items: center; justify-content: center; font-size: 4rem; border: 1px solid var(--ecommerce-border); box-shadow: var(--shadow-subtle);">
               🛍️🎧
             </div>
           </div>
 
           <div class="psych-note-card">
             <h5>🧠 Phân Tích Tâm Lý Khách Hàng (Customer Psychology):</h5>
-            <div>• <strong>Tối ưu hóa chuyển đổi (Conversion-focused Typography & Accent):</strong> Tông màu Indigo
-              hiện đại kết hợp nút CTA rực rỡ tạo động lực click ngay tức thì.</div>
+            <div>• <strong>Tối ưu hóa chuyển đổi (Conversion-focused Typography &amp; Accent):</strong> Tông màu Indigo rực rỡ kết hợp nút CTA nổi bật tạo động lực bấm mua tức thì.</div>
           </div>
         </section>
 
-        <!-- BLOCK 2: URGENCY OFFER (GENERAL) -->
+        <!-- BLOCK 2: URGENCY OFFER (E-COMMERCE FLASH SALE) -->
         <section class="block layout-block" id="general-deals" data-layout-type="urgency-offer">
-          <span class="block-tag block-type-feature">⚡ KHỐI CHỨC NĂNG: &lt;section class="flash-sale-grid"&gt; [FLASH
-            SALE ĐẾM NGƯỢC]</span>
+          <span class="block-tag block-type-feature">⚡ KHỐI CHỨC NĂNG: &lt;section class="flash-sale-grid"&gt; [FLASH SALE ĐẾM NGƯỢC]</span>
           <span class="psych-badge">🧠 Loss Aversion &amp; Countdown</span>
 
           <div
@@ -808,8 +788,7 @@
               <div class="product-title">Tai Nghe Bluetooth ANC 2026</div>
               <div class="product-desc">Chống ồn chủ động, pin 30h liên tục.</div>
               <div class="product-footer">
-                <div><span class="product-price-old">1.200.000đ</span><span class="product-price">720.000đ</span>
-                </div>
+                <div><span class="product-price-old">1.200.000đ</span><span class="product-price">720.000đ</span></div>
                 <button class="btn btn-outline" style="padding: 0.25rem 0.6rem; font-size: 0.75rem;">Mua Ngay</button>
               </div>
             </div>
@@ -848,15 +827,80 @@
 
           <div class="psych-note-card">
             <h5>🧠 Phân Tích Tâm Lý Khách Hàng (Customer Psychology):</h5>
-            <div>• <strong>Tâm lý né tránh mất mát (Loss Aversion):</strong> Đếm ngược thời gian làm khách hàng cảm
-              thấy nếu không mua ngay sẽ bị bỏ lỡ khoản hời 480.000đ.</div>
+            <div>• <strong>Tâm lý né tránh mất mát (Loss Aversion):</strong> Đếm ngược thời gian làm khách hàng cảm thấy nếu không mua ngay sẽ bị bỏ lỡ khoản hời 480.000đ.</div>
           </div>
         </section>
 
-        <!-- BLOCK 3: SOCIAL PROOF (GENERAL) -->
+        <!-- BLOCK 3: GRID SHOWCASE (E-COMMERCE CATALOG) -->
+        <section class="block layout-block" id="ecommerce-catalog" data-layout-type="grid-showcase">
+          <span class="block-tag block-type-feature">⚡ KHỐI CHỨC NĂNG: &lt;section class="grid-ecommerce"&gt; [DANH MỤC CÔNG NGHỆ XU HƯỚNG]</span>
+          <span class="psych-badge">🧠 Choice Variety &amp; Social Desirability</span>
+
+          <div
+            style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 1.5rem;">
+            <div>
+              <h2>Phụ Kiện Góc Làm Việc &amp; Phong Cách Sống</h2>
+              <p style="margin-bottom: 0;">Sản phẩm tuyển chọn đạt điểm đánh giá 4.8+ sao từ người dùng.</p>
+            </div>
+            <span style="font-size: 0.85rem; color: var(--color-text-muted);">Giao nhanh 2H nội thành</span>
+          </div>
+
+          <div class="grid-4">
+            <!-- Product 1 -->
+            <div class="product-card">
+              <span class="product-badge-bestseller">TRENDING</span>
+              <div class="product-thumb">🔌</div>
+              <div class="product-title">Hub Type-C 8-in-1 Nhôm CNC</div>
+              <div class="product-desc">Xuất 4K 60Hz HDMI, sạc 100W PD, khe đọc thẻ SD kép.</div>
+              <div class="product-footer">
+                <div class="product-price">550.000đ</div>
+                <button class="btn btn-outline" style="padding: 0.25rem 0.6rem; font-size: 0.75rem;">Thêm Giỏ Hàng</button>
+              </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+              <div class="product-thumb">💡</div>
+              <div class="product-title">Đèn Treo Màn Hình Chống Cận</div>
+              <div class="product-desc">Cảm ứng không dây, điều chỉnh nhiệt độ màu 2700K - 6500K.</div>
+              <div class="product-footer">
+                <div class="product-price">680.000đ</div>
+                <button class="btn btn-outline" style="padding: 0.25rem 0.6rem; font-size: 0.75rem;">Thêm Giỏ Hàng</button>
+              </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+              <div class="product-thumb">🖱️</div>
+              <div class="product-title">Chuột Công Thái Học Ergonomic</div>
+              <div class="product-desc">Góc nghiêng tự nhiên 57°, chống mỏi cổ tay khi làm việc lâu.</div>
+              <div class="product-footer">
+                <div class="product-price">790.000đ</div>
+                <button class="btn btn-outline" style="padding: 0.25rem 0.6rem; font-size: 0.75rem;">Thêm Giỏ Hàng</button>
+              </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+              <div class="product-thumb">📱</div>
+              <div class="product-title">Đế Sạc Không Dây MagSafe 3-in-1</div>
+              <div class="product-desc">Sạc cùng lúc iPhone, Apple Watch và Tai nghe AirPods.</div>
+              <div class="product-footer">
+                <div class="product-price">850.000đ</div>
+                <button class="btn btn-outline" style="padding: 0.25rem 0.6rem; font-size: 0.75rem;">Thêm Giỏ Hàng</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="psych-note-card">
+            <h5>🧠 Phân Tích Tâm Lý Khách Hàng (Customer Psychology):</h5>
+            <div>• <strong>Hiệu ứng khao khát xã hội (Social Desirability):</strong> Gợi ý các phụ kiện Setup góc làm việc thông minh đánh trúng nhu cầu khẳng định gu thẩm mỹ và phong cách sống hiện đại của người trẻ.</div>
+          </div>
+        </section>
+
+        <!-- BLOCK 4: SOCIAL PROOF (E-COMMERCE) -->
         <section class="block layout-block" id="general-proof" data-layout-type="trust-proof">
-          <span class="block-tag block-type-feature">⚡ KHỐI CHỨC NĂNG: &lt;section class="social-proof-general"&gt;
-            [BẰNG CHỨNG XÃ HỘI]</span>
+          <span class="block-tag block-type-feature">⚡ KHỐI CHỨC NĂNG: &lt;section class="social-proof-general"&gt; [BẰNG CHỨNG XÃ HỘI]</span>
           <span class="psych-badge">🧠 Social Proof &amp; Bandwagon Effect</span>
 
           <div style="text-align: center; max-width: 650px; margin: 0 auto;">
@@ -865,38 +909,35 @@
 
             <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 1.5rem; flex-wrap: wrap;">
               <div>
-                <div style="font-size: 2rem; font-weight: bold; color: var(--general-accent);">4.9 / 5.0</div>
+                <div style="font-size: 2rem; font-weight: bold; color: var(--ecommerce-accent);">4.9 / 5.0</div>
                 <div style="font-size: 0.85rem; color: var(--color-text-muted);">★ ★ ★ ★ ★ (2.450 đánh giá)</div>
               </div>
               <div>
-                <div style="font-size: 2rem; font-weight: bold; color: var(--general-accent);">99.4%</div>
+                <div style="font-size: 2rem; font-weight: bold; color: var(--ecommerce-accent);">99.4%</div>
                 <div style="font-size: 0.85rem; color: var(--color-text-muted);">Khách hàng sẵn sàng giới thiệu</div>
               </div>
               <div>
-                <div style="font-size: 2rem; font-weight: bold; color: var(--general-accent);">24 Tiếng</div>
-                <div style="font-size: 0.85rem; color: var(--color-text-muted);">Tốc độ xử lý giao hàng trung bình
-                </div>
+                <div style="font-size: 2rem; font-weight: bold; color: var(--ecommerce-accent);">24 Tiếng</div>
+                <div style="font-size: 0.85rem; color: var(--color-text-muted);">Tốc độ xử lý giao hàng trung bình</div>
               </div>
             </div>
           </div>
         </section>
 
-        <!-- BLOCK 4: STORE SPACE & LOCATION SHOWCASE (GENERAL) -->
+        <!-- BLOCK 5: STORE SPACE & LOCATION SHOWCASE (E-COMMERCE SHOWROOM) -->
         <section class="block layout-block" id="general-space" data-layout-type="space-location">
-          <span class="block-tag block-type-feature">⚡ KHỐI CHỨC NĂNG: &lt;section class="showroom-experience"&gt;
-            [SHOWROOM DÙNG THỬ &amp; CHÍNH SÁCH]</span>
+          <span class="block-tag block-type-feature">⚡ KHỐI CHỨC NĂNG: &lt;section class="showroom-experience"&gt; [SHOWROOM DÙNG THỬ &amp; CHÍNH SÁCH]</span>
           <span class="psych-badge">🧠 Try-Before-You-Buy &amp; Zero Risk</span>
 
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
             <div
-              style="background: var(--general-bg-soft); border: 1px solid var(--general-border); border-radius: var(--radius-md); padding: 1.5rem;">
+              style="background: var(--ecommerce-bg-soft); border: 1px solid var(--ecommerce-border); border-radius: var(--radius-md); padding: 1.5rem;">
               <span
-                style="font-size: 0.75rem; font-weight: bold; color: var(--general-accent); text-transform: uppercase;">🎧
+                style="font-size: 0.75rem; font-weight: bold; color: var(--ecommerce-accent); text-transform: uppercase;">🎧
                 SHOWROOM DÙNG THỬ TRỰC TIẾP</span>
               <h3 style="margin-top: 0.5rem;">Bàn Trải Nghiệm Công Nghệ Live Demo</h3>
               <p style="font-size: 0.9rem;">
-                Trải nghiệm đeo thử Tai nghe ANC chống ồn, test phím cơ Silent và đo chỉ số Smartwatch miễn phí trước
-                khi đưa ra quyết định mua sắm.
+                Trải nghiệm đeo thử Tai nghe ANC chống ồn, test phím cơ Silent và đo chỉ số Smartwatch miễn phí trước khi đưa ra quyết định mua sắm.
               </p>
               <div
                 style="background: var(--color-card-bg); padding: 0.75rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border); margin-top: 1rem; font-size: 0.85rem;">
@@ -915,10 +956,9 @@
               </div>
               <div style="margin-top: 1.25rem; display: flex; gap: 0.75rem;">
                 <button class="btn btn-primary"
-                  style="background-color: var(--general-accent); border-color: var(--general-accent); font-size: 0.8rem; padding: 0.4rem 0.8rem;">📍
+                  style="background-color: var(--ecommerce-accent); border-color: var(--ecommerce-accent); font-size: 0.8rem; padding: 0.4rem 0.8rem;">📍
                   Đăng Ký Trải Nghiệm</button>
-                <button class="btn btn-outline" style="font-size: 0.8rem; padding: 0.4rem 0.8rem;">💬 Chat Kỹ Thuật
-                  Viên</button>
+                <button class="btn btn-outline" style="font-size: 0.8rem; padding: 0.4rem 0.8rem;">💬 Chat Kỹ Thuật Viên</button>
               </div>
             </div>
           </div>
@@ -926,9 +966,7 @@
           <!-- Customer Psychology Insight Callout -->
           <div class="psych-note-card">
             <h5>🧠 Phân Tích Tâm Lý Khách Hàng (Customer Psychology):</h5>
-            <div>• <strong>Dùng thử trước khi mua (Try-Before-You-Buy Effect):</strong> Cho phép khách hàng cầm nắm và
-              trải nghiệm thực tế giúp nâng quyền sở hữu tâm lý (Psychological Ownership), làm tỷ lệ từ chối giảm về
-              gần như 0%.</div>
+            <div>• <strong>Dùng thử trước khi mua (Try-Before-You-Buy Effect):</strong> Cho phép khách hàng cầm nắm và trải nghiệm thực tế giúp nâng quyền sở hữu tâm lý (Psychological Ownership), làm tỷ lệ từ chối giảm về gần như 0%.</div>
           </div>
         </section>
 

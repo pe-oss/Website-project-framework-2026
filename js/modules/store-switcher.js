@@ -3,13 +3,17 @@
    ========================================== */
 
 const storeBrandingMap = {
-  style1: 'STYLE 1 (CORPORATE)',
+  style1: 'STYLE 1 (DOANH NGHIỆP)',
   style2: 'STYLE 2 (PORTFOLIO)',
-  style3: 'STYLE 3 (SAAS TECH)',
+  style3: 'STYLE 3 (SAAS CÔNG NGHỆ)',
   style4: 'STYLE 4 (E-COMMERCE)',
-  coffee: 'STYLE 1 (CORPORATE)',
+  corporate: 'STYLE 1 (DOANH NGHIỆP)',
+  portfolio: 'STYLE 2 (PORTFOLIO)',
+  saas: 'STYLE 3 (SAAS CÔNG NGHỆ)',
+  ecommerce: 'STYLE 4 (E-COMMERCE)',
+  coffee: 'STYLE 1 (DOANH NGHIỆP)',
   bakery: 'STYLE 2 (PORTFOLIO)',
-  grocery: 'STYLE 3 (SAAS TECH)',
+  grocery: 'STYLE 3 (SAAS CÔNG NGHỆ)',
   general: 'STYLE 4 (E-COMMERCE)'
 };
 
@@ -18,10 +22,14 @@ const storeAliasMap = {
   bakery: 'style2',
   grocery: 'style3',
   general: 'style4',
-  style1: 'coffee',
-  style2: 'bakery',
-  style3: 'grocery',
-  style4: 'general'
+  corporate: 'style1',
+  portfolio: 'style2',
+  saas: 'style3',
+  ecommerce: 'style4',
+  style1: 'corporate',
+  style2: 'portfolio',
+  style3: 'saas',
+  style4: 'ecommerce'
 };
 
 export function initStoreSwitcher() {

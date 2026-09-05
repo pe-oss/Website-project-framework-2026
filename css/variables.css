@@ -81,35 +81,55 @@
   --transition-normal: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 
   /* -----------------------------------
-     6. Store Style Palette Tokens (Phong cách Cửa hàng)
+     6. Store Style Palette Tokens (Phong cách Giao diện 2026)
      ----------------------------------- */
-  /* Cà phê (Coffee): Warm Espresso, Rich Caramel, Cream */
-  --coffee-accent: #8b5a2b;
-  --coffee-accent-hover: #6f4721;
-  --coffee-bg-soft: #fbf6f0;
-  --coffee-border: #e6d7c3;
-  --coffee-tag-bg: #eddcc6;
+  /* Style 1: Doanh Nghiệp (Corporate & Brand) - Indigo / Deep Slate */
+  --corporate-accent: #2563eb;
+  --corporate-accent-hover: #1d4ed8;
+  --corporate-bg-soft: #f1f5f9;
+  --corporate-border: #cbd5e1;
+  --corporate-tag-bg: #e2e8f0;
+  --coffee-accent: var(--corporate-accent);
+  --coffee-accent-hover: var(--corporate-accent-hover);
+  --coffee-bg-soft: var(--corporate-bg-soft);
+  --coffee-border: var(--corporate-border);
+  --coffee-tag-bg: var(--corporate-tag-bg);
 
-  /* Tiệm Bánh (Bakery): Warm Rose, Golden Crust, Soft Cream */
-  --bakery-accent: #d97706;
-  --bakery-accent-hover: #b45309;
-  --bakery-bg-soft: #fffbeb;
-  --bakery-border: #fde68a;
-  --bakery-tag-bg: #fef3c7;
+  /* Style 2: Hồ Sơ Tác Phẩm (Minimalist Portfolio & Studio) - Amber / Warm Ochre */
+  --portfolio-accent: #d97706;
+  --portfolio-accent-hover: #b45309;
+  --portfolio-bg-soft: #fffbeb;
+  --portfolio-border: #fde68a;
+  --portfolio-tag-bg: #fef3c7;
+  --bakery-accent: var(--portfolio-accent);
+  --bakery-accent-hover: var(--portfolio-accent-hover);
+  --bakery-bg-soft: var(--portfolio-bg-soft);
+  --bakery-border: var(--portfolio-border);
+  --bakery-tag-bg: var(--portfolio-tag-bg);
 
-  /* Thực Phẩm Clean (Grocery): Organic Emerald, Mint, Amber */
-  --grocery-accent: #059669;
-  --grocery-accent-hover: #047857;
-  --grocery-bg-soft: #ecfdf5;
-  --grocery-border: #a7f3d0;
-  --grocery-tag-bg: #d1fae5;
+  /* Style 3: Công Nghệ & SaaS (SaaS & Tech Product) - Emerald / Mint Tech */
+  --saas-accent: #059669;
+  --saas-accent-hover: #047857;
+  --saas-bg-soft: #ecfdf5;
+  --saas-border: #a7f3d0;
+  --saas-tag-bg: #d1fae5;
+  --grocery-accent: var(--saas-accent);
+  --grocery-accent-hover: var(--saas-accent-hover);
+  --grocery-bg-soft: var(--saas-bg-soft);
+  --grocery-border: var(--saas-border);
+  --grocery-tag-bg: var(--saas-tag-bg);
 
-  /* Cửa Hàng Tổng Hợp (General Store): Dynamic Indigo, High-Contrast Red */
-  --general-accent: #4f46e5;
-  --general-accent-hover: #4338ca;
-  --general-bg-soft: #eef2ff;
-  --general-border: #c7d2fe;
-  --general-tag-bg: #e0e7ff;
+  /* Style 4: Thương Mại Điện Tử (E-Commerce & Retail) - Indigo Violet / Cyber Red */
+  --ecommerce-accent: #4f46e5;
+  --ecommerce-accent-hover: #4338ca;
+  --ecommerce-bg-soft: #eef2ff;
+  --ecommerce-border: #c7d2fe;
+  --ecommerce-tag-bg: #e0e7ff;
+  --general-accent: var(--ecommerce-accent);
+  --general-accent-hover: var(--ecommerce-accent-hover);
+  --general-bg-soft: var(--ecommerce-bg-soft);
+  --general-border: var(--ecommerce-border);
+  --general-tag-bg: var(--ecommerce-tag-bg);
 
   /* Customer Psychology Tokens */
   --psych-purple: #8b5cf6;
@@ -140,22 +160,34 @@
   --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.3);
   --shadow-hover: 0 4px 20px rgba(0, 0, 0, 0.5);
 
-  /* Dark Store Accent Soft Backgrounds */
-  --coffee-bg-soft: #241a14;
-  --coffee-border: #443224;
-  --coffee-tag-bg: #36261b;
+  /* Dark Style Accent Soft Backgrounds */
+  --corporate-bg-soft: #0f172a;
+  --corporate-border: #1e293b;
+  --corporate-tag-bg: #1e293b;
+  --coffee-bg-soft: var(--corporate-bg-soft);
+  --coffee-border: var(--corporate-border);
+  --coffee-tag-bg: var(--corporate-tag-bg);
 
-  --bakery-bg-soft: #2a1f10;
-  --bakery-border: #4a3617;
-  --bakery-tag-bg: #3b2b13;
+  --portfolio-bg-soft: #1c1917;
+  --portfolio-border: #44403c;
+  --portfolio-tag-bg: #292524;
+  --bakery-bg-soft: var(--portfolio-bg-soft);
+  --bakery-border: var(--portfolio-border);
+  --bakery-tag-bg: var(--portfolio-tag-bg);
 
-  --grocery-bg-soft: #0e271d;
-  --grocery-border: #184c37;
-  --grocery-tag-bg: #143d2c;
+  --saas-bg-soft: #061e16;
+  --saas-border: #0f3e2e;
+  --saas-tag-bg: #092e21;
+  --grocery-bg-soft: var(--saas-bg-soft);
+  --grocery-border: var(--saas-border);
+  --grocery-tag-bg: var(--saas-tag-bg);
 
-  --general-bg-soft: #181a30;
-  --general-border: #2c3258;
-  --general-tag-bg: #222746;
+  --ecommerce-bg-soft: #13122b;
+  --ecommerce-border: #272559;
+  --ecommerce-tag-bg: #1d1b46;
+  --general-bg-soft: var(--ecommerce-bg-soft);
+  --general-border: var(--ecommerce-border);
+  --general-tag-bg: var(--ecommerce-tag-bg);
 
   --psych-bg-soft: #201735;
   --psych-border: #3d2b63;
@@ -172,67 +204,79 @@
 /* -----------------------------------
    8. Global Store Style Full-Page Theme Overrides
    ----------------------------------- */
-[data-store-style="coffee"],
-[data-store-style="style1"] {
-  --color-accent: var(--coffee-accent);
-  --color-accent-hover: var(--coffee-accent-hover);
-  --color-bg: #faf7f2;
-  --color-border: var(--coffee-border);
-  --color-block-badge: var(--coffee-tag-bg);
-}
-
-[data-store-style="bakery"],
-[data-store-style="style2"] {
-  --color-accent: var(--bakery-accent);
-  --color-accent-hover: var(--bakery-accent-hover);
-  --color-bg: #fffdf5;
-  --color-border: var(--bakery-border);
-  --color-block-badge: var(--bakery-tag-bg);
-}
-
-[data-store-style="grocery"],
-[data-store-style="style3"] {
-  --color-accent: var(--grocery-accent);
-  --color-accent-hover: var(--grocery-accent-hover);
-  --color-bg: #f4fbf7;
-  --color-border: var(--grocery-border);
-  --color-block-badge: var(--grocery-tag-bg);
-}
-
-[data-store-style="general"],
-[data-store-style="style4"] {
-  --color-accent: var(--general-accent);
-  --color-accent-hover: var(--general-accent-hover);
+/* Style 1: Doanh Nghiệp (Corporate & Brand) */
+[data-store-style="style1"],
+[data-store-style="corporate"],
+[data-store-style="coffee"] {
+  --color-accent: var(--corporate-accent);
+  --color-accent-hover: var(--corporate-accent-hover);
   --color-bg: #f8fafc;
-  --color-border: var(--general-border);
-  --color-block-badge: var(--general-tag-bg);
+  --color-border: var(--corporate-border);
+  --color-block-badge: var(--corporate-tag-bg);
+}
+
+/* Style 2: Hồ Sơ Tác Phẩm (Portfolio & Creative Studio) */
+[data-store-style="style2"],
+[data-store-style="portfolio"],
+[data-store-style="bakery"] {
+  --color-accent: var(--portfolio-accent);
+  --color-accent-hover: var(--portfolio-accent-hover);
+  --color-bg: #fffdfa;
+  --color-border: var(--portfolio-border);
+  --color-block-badge: var(--portfolio-tag-bg);
+}
+
+/* Style 3: Công Nghệ & SaaS (SaaS & Tech Product) */
+[data-store-style="style3"],
+[data-store-style="saas"],
+[data-store-style="grocery"] {
+  --color-accent: var(--saas-accent);
+  --color-accent-hover: var(--saas-accent-hover);
+  --color-bg: #f5fbf8;
+  --color-border: var(--saas-border);
+  --color-block-badge: var(--saas-tag-bg);
+}
+
+/* Style 4: Thương Mại Điện Tử (E-Commerce & Retail) */
+[data-store-style="style4"],
+[data-store-style="ecommerce"],
+[data-store-style="general"] {
+  --color-accent: var(--ecommerce-accent);
+  --color-accent-hover: var(--ecommerce-accent-hover);
+  --color-bg: #f8fafc;
+  --color-border: var(--ecommerce-border);
+  --color-block-badge: var(--ecommerce-tag-bg);
 }
 
 /* Dark Mode Store Style Global Overrides */
-[data-theme="dark"][data-store-style="coffee"],
-[data-theme="dark"][data-store-style="style1"] {
-  --color-bg: #1a1410;
-  --color-border: var(--coffee-border);
-  --color-block-badge: var(--coffee-tag-bg);
+[data-theme="dark"][data-store-style="style1"],
+[data-theme="dark"][data-store-style="corporate"],
+[data-theme="dark"][data-store-style="coffee"] {
+  --color-bg: #0b0f19;
+  --color-border: var(--corporate-border);
+  --color-block-badge: var(--corporate-tag-bg);
 }
 
-[data-theme="dark"][data-store-style="bakery"],
-[data-theme="dark"][data-store-style="style2"] {
-  --color-bg: #1c160e;
-  --color-border: var(--bakery-border);
-  --color-block-badge: var(--bakery-tag-bg);
+[data-theme="dark"][data-store-style="style2"],
+[data-theme="dark"][data-store-style="portfolio"],
+[data-theme="dark"][data-store-style="bakery"] {
+  --color-bg: #141210;
+  --color-border: var(--portfolio-border);
+  --color-block-badge: var(--portfolio-tag-bg);
 }
 
-[data-theme="dark"][data-store-style="grocery"],
-[data-theme="dark"][data-store-style="style3"] {
-  --color-bg: #091712;
-  --color-border: var(--grocery-border);
-  --color-block-badge: var(--grocery-tag-bg);
+[data-theme="dark"][data-store-style="style3"],
+[data-theme="dark"][data-store-style="saas"],
+[data-theme="dark"][data-store-style="grocery"] {
+  --color-bg: #06130e;
+  --color-border: var(--saas-border);
+  --color-block-badge: var(--saas-tag-bg);
 }
 
-[data-theme="dark"][data-store-style="general"],
-[data-theme="dark"][data-store-style="style4"] {
-  --color-bg: #101222;
-  --color-border: var(--general-border);
-  --color-block-badge: var(--general-tag-bg);
+[data-theme="dark"][data-store-style="style4"],
+[data-theme="dark"][data-store-style="ecommerce"],
+[data-theme="dark"][data-store-style="general"] {
+  --color-bg: #0e0f1d;
+  --color-border: var(--ecommerce-border);
+  --color-block-badge: var(--ecommerce-tag-bg);
 }

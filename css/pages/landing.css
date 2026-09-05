@@ -56,28 +56,36 @@
 }
 
 /* Active States per Store Theme */
+.store-btn[data-store="style1"].active,
+.store-btn[data-store="corporate"].active,
 .store-btn[data-store="coffee"].active {
-  background-color: var(--coffee-accent);
+  background-color: var(--corporate-accent);
   color: #fff;
-  border-color: var(--coffee-accent);
+  border-color: var(--corporate-accent);
 }
 
+.store-btn[data-store="style2"].active,
+.store-btn[data-store="portfolio"].active,
 .store-btn[data-store="bakery"].active {
-  background-color: var(--bakery-accent);
+  background-color: var(--portfolio-accent);
   color: #fff;
-  border-color: var(--bakery-accent);
+  border-color: var(--portfolio-accent);
 }
 
+.store-btn[data-store="style3"].active,
+.store-btn[data-store="saas"].active,
 .store-btn[data-store="grocery"].active {
-  background-color: var(--grocery-accent);
+  background-color: var(--saas-accent);
   color: #fff;
-  border-color: var(--grocery-accent);
+  border-color: var(--saas-accent);
 }
 
+.store-btn[data-store="style4"].active,
+.store-btn[data-store="ecommerce"].active,
 .store-btn[data-store="general"].active {
-  background-color: var(--general-accent);
+  background-color: var(--ecommerce-accent);
   color: #fff;
-  border-color: var(--general-accent);
+  border-color: var(--ecommerce-accent);
 }
 
 /* Layout Framework Selector Filter */
@@ -120,62 +128,86 @@
 }
 
 /* Store Dynamic Preset Styling Overrides */
+[data-store-style="style1"] .hero-block,
+[data-store-style="corporate"] .hero-block,
 [data-store-style="coffee"] .hero-block {
-  background-color: var(--coffee-bg-soft);
-  border-color: var(--coffee-border);
+  background-color: var(--corporate-bg-soft);
+  border-color: var(--corporate-border);
 }
+[data-store-style="style1"] .btn-primary,
+[data-store-style="corporate"] .btn-primary,
 [data-store-style="coffee"] .btn-primary {
-  background-color: var(--coffee-accent);
-  border-color: var(--coffee-accent);
+  background-color: var(--corporate-accent);
+  border-color: var(--corporate-accent);
   color: #fff;
 }
+[data-store-style="style1"] .block-tag,
+[data-store-style="corporate"] .block-tag,
 [data-store-style="coffee"] .block-tag {
-  background-color: var(--coffee-tag-bg);
-  color: var(--coffee-accent);
-  border-color: var(--coffee-border);
+  background-color: var(--corporate-tag-bg);
+  color: var(--corporate-accent);
+  border-color: var(--corporate-border);
 }
 
+[data-store-style="style2"] .hero-block,
+[data-store-style="portfolio"] .hero-block,
 [data-store-style="bakery"] .hero-block {
-  background-color: var(--bakery-bg-soft);
-  border-color: var(--bakery-border);
+  background-color: var(--portfolio-bg-soft);
+  border-color: var(--portfolio-border);
 }
+[data-store-style="style2"] .btn-primary,
+[data-store-style="portfolio"] .btn-primary,
 [data-store-style="bakery"] .btn-primary {
-  background-color: var(--bakery-accent);
-  border-color: var(--bakery-accent);
+  background-color: var(--portfolio-accent);
+  border-color: var(--portfolio-accent);
   color: #fff;
 }
+[data-store-style="style2"] .block-tag,
+[data-store-style="portfolio"] .block-tag,
 [data-store-style="bakery"] .block-tag {
-  background-color: var(--bakery-tag-bg);
-  color: var(--bakery-accent);
-  border-color: var(--bakery-border);
+  background-color: var(--portfolio-tag-bg);
+  color: var(--portfolio-accent);
+  border-color: var(--portfolio-border);
 }
 
+[data-store-style="style3"] .hero-block,
+[data-store-style="saas"] .hero-block,
 [data-store-style="grocery"] .hero-block {
-  background-color: var(--grocery-bg-soft);
-  border-color: var(--grocery-border);
+  background-color: var(--saas-bg-soft);
+  border-color: var(--saas-border);
 }
+[data-store-style="style3"] .btn-primary,
+[data-store-style="saas"] .btn-primary,
 [data-store-style="grocery"] .btn-primary {
-  background-color: var(--grocery-accent);
-  border-color: var(--grocery-accent);
+  background-color: var(--saas-accent);
+  border-color: var(--saas-accent);
   color: #fff;
 }
+[data-store-style="style3"] .block-tag,
+[data-store-style="saas"] .block-tag,
 [data-store-style="grocery"] .block-tag {
-  background-color: var(--grocery-tag-bg);
-  color: var(--grocery-accent);
-  border-color: var(--grocery-border);
+  background-color: var(--saas-tag-bg);
+  color: var(--saas-accent);
+  border-color: var(--saas-border);
 }
 
+[data-store-style="style4"] .hero-block,
+[data-store-style="ecommerce"] .hero-block,
 [data-store-style="general"] .hero-block {
-  background-color: var(--general-bg-soft);
-  border-color: var(--general-border);
+  background-color: var(--ecommerce-bg-soft);
+  border-color: var(--ecommerce-border);
 }
+[data-store-style="style4"] .btn-primary,
+[data-store-style="ecommerce"] .btn-primary,
 [data-store-style="general"] .btn-primary {
-  background-color: var(--general-accent);
-  border-color: var(--general-accent);
+  background-color: var(--ecommerce-accent);
+  border-color: var(--ecommerce-accent);
   color: #fff;
 }
+[data-store-style="style4"] .block-tag,
+[data-store-style="ecommerce"] .block-tag,
 [data-store-style="general"] .block-tag {
-  background-color: var(--general-tag-bg);
-  color: var(--general-accent);
-  border-color: var(--general-border);
+  background-color: var(--ecommerce-tag-bg);
+  color: var(--ecommerce-accent);
+  border-color: var(--ecommerce-border);
 }
