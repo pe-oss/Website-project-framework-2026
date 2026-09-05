@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | Minimalist Web Framework 2026</title>
+  <meta name="description" content="Giao diện Bảng điều khiển Quản trị Minimalist Admin Dashboard 2026.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Framework Stylesheets -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Main JS Module -->
+  <script type="module" src="js/main.js?v=3"></script>
+</head>
+
+<body>
+
+  <!-- Ambient Backdrop -->
+  <div class="bg-ambient-backdrop" id="bgAmbientBackdrop">
+    <div class="bg-ambient-layer bg-ambient-left" style="background-image: url('assets/images/flank_left.jpg');"></div>
+    <div class="bg-ambient-layer bg-ambient-right" style="background-image: url('assets/images/flank_right.jpg');">
+    </div>
+    <div class="bg-ambient-overlay"></div>
+  </div>
+
+  <!-- Header Placeholder for Component Loader -->
+  <div id="header-component"></div>
+
+  <!-- Main Content Area -->
+  <main class="container site-main-content" style="margin-top: 2rem;">
+    <div id="adminView" class="page-view active">
+
+      <!-- Admin Hero & Overview Section -->
+      <section class="block">
+        <span class="block-tag block-type-framework">🏗️ ADMIN DASHBOARD: OVERVIEW</span>
+        <h2>Bảng Điều Khiển Quản Trị Hệ Thống 2026</h2>
+        <p>Giao diện điều hành trực quan, theo dõi doanh thu, lưu lượng và quản lý sản phẩm toàn diện.</p>
+
+        <!-- Stats Grid -->
+        <div class="grid grid-3 admin-stats-grid">
+          <div class="stat-card">
+            <span class="customizer-label">Tổng Doanh Thu</span>
+            <div class="stat-value">128.5M đ</div>
+            <span class="stat-change up">↑ +14.2% so với tháng trước</span>
+          </div>
+
+          <div class="stat-card">
+            <span class="customizer-label">Đơn Hàng Mới</span>
+            <div class="stat-value">1,420</div>
+            <span class="stat-change up">↑ +8.5% hôm nay</span>
+          </div>
+
+          <div class="stat-card">
+            <span class="customizer-label">Khách Hàng Mới</span>
+            <div class="stat-value">385</div>
+            <span class="stat-change down">↓ -2.1% tuần này</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Admin Layout Split (Primary Content & Sidebar) -->
+      <div class="layout-split">
+        <article class="content-primary">
+          <div class="block">
+            <span class="block-tag block-type-feature">⚡ CHỨC NĂNG: BẢNG QUẢN LÝ SẢN PHẨM</span>
+            <h3>Danh Sách Sản Phẩm Trong Kho</h3>
+
+            <div class="data-table-wrapper" style="margin-top: 1rem;">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>MÃ SP</th>
+                    <th>TÊN SẢN PHẨM</th>
+                    <th>DANH MỤC</th>
+                    <th>GIÁ BÁN</th>
+                    <th>TRẠNG THÁI</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>#SP-101</td>
+                    <td>Cà Phê Cold Brew Signature</td>
+                    <td>Đồ Uống</td>
+                    <td>55.000đ</td>
+                    <td><span class="status-badge active">Còn Hàng</span></td>
+                  </tr>
+                  <tr>
+                    <td>#SP-102</td>
+                    <td>Bánh Croissant Bơ Tươi</td>
+                    <td>Bánh Ngọt</td>
+                    <td>42.000đ</td>
+                    <td><span class="status-badge active">Còn Hàng</span></td>
+                  </tr>
+                  <tr>
+                    <td>#SP-103</td>
+                    <td>Trái Cây Organic ViệtGAP</td>
+                    <td>Thực Phẩm</td>
+                    <td>120.000đ</td>
+                    <td><span class="status-badge pending">Chờ Nhập</span></td>
+                  </tr>
+                  <tr>
+                    <td>#SP-104</td>
+                    <td>Combo Phụ Kiện Minimalist</td>
+                    <td>Tổng Hợp</td>
+                    <td>299.000đ</td>
+                    <td><span class="status-badge inactive">Hết Hàng</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </article>
+
+        <aside class="content-sidebar">
+          <div class="block">
+            <span class="block-tag block-type-feature">⚡ CHỨC NĂNG: TÁC VỤ NHANH</span>
+            <h4>Tác Vụ Quản Trị</h4>
+            <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.75rem;">
+              <button class="btn btn-outline" style="justify-content: flex-start;">👤 Thêm Người Dùng Mới</button>
+              <button class="btn btn-outline" style="justify-content: flex-start;">⚙️ Cấu Hình Hệ Thống</button>
+              <button class="btn btn-outline" style="justify-content: flex-start;">📦 Sao Lưu Dữ Liệu</button>
+              <button class="btn btn-outline" style="justify-content: flex-start;">🔒 Kiểm Tra Bảo Mật</button>
+            </div>
+          </div>
+
+          <div class="block">
+            <span class="block-tag">WIDGET: RECENT ACTIVITY</span>
+            <h4>Nhật Ký Hoạt Động</h4>
+            <div style="font-size: 0.8rem; display: flex; flex-direction: column; gap: 0.75rem; margin-top: 0.75rem;">
+              <div>• <strong>System:</strong> Đã sao lưu database thành công <span style="opacity: 0.6;">(10 phút
+                  trước)</span></div>
+              <div>• <strong>Admin:</strong> Cập nhật thông tin phân quyền <span style="opacity: 0.6;">(1 giờ
+                  trước)</span></div>
+              <div>• <strong>User #1003:</strong> Gửi yêu cầu hỗ trợ tài khoản <span style="opacity: 0.6;">(3 giờ
+                  trước)</span></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer Placeholder for Component Loader -->
+  <div id="footer-component"></div>
+
+  <!-- Customizer Placeholder for Component Loader -->
+  <div id="customizer-component"></div>
+
+</body>
+
+</html>

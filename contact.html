@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liên Hệ | Minimalist Web Framework 2026</title>
+  <meta name="description" content="Trang liên hệ và gửi phản hồi kỹ thuật về dự án Minimalist Web Framework 2026.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Framework Stylesheets -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Main JS Module -->
+  <script type="module" src="js/main.js?v=3"></script>
+</head>
+
+<body>
+
+  <!-- Ambient Backdrop -->
+  <div class="bg-ambient-backdrop" id="bgAmbientBackdrop">
+    <div class="bg-ambient-layer bg-ambient-left" style="background-image: url('assets/images/flank_left.jpg');"></div>
+    <div class="bg-ambient-layer bg-ambient-right" style="background-image: url('assets/images/flank_right.jpg');">
+    </div>
+    <div class="bg-ambient-overlay"></div>
+  </div>
+
+  <div id="header-component"></div>
+
+  <main class="container site-main-content" style="margin-top: 2rem;">
+    <section class="block">
+      <span class="block-tag block-type-feature">📬 CONTACT & SUPPORT</span>
+      <h2>Liên Hệ Kỹ Thuật & Đóng Góp</h2>
+      <p>Gửi thông tin thắc mắc hoặc yêu cầu tích hợp tính năng mới cho dự án.</p>
+
+      <form style="display: flex; flex-direction: column; gap: 1rem; max-width: 500px; margin-top: 1rem;"
+        onsubmit="event.preventDefault(); alert('Cảm ơn bạn đã gửi liên hệ!');">
+        <div>
+          <label style="font-size: 0.85rem; font-weight: bold; display: block; margin-bottom: 0.3rem;">Họ và
+            Tên:</label>
+          <input type="text" placeholder="Nguyễn Văn A" required
+            style="width: 100%; padding: 0.6rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); background: var(--color-card-bg); color: var(--color-text);">
+        </div>
+
+        <div>
+          <label style="font-size: 0.85rem; font-weight: bold; display: block; margin-bottom: 0.3rem;">Email Liên
+            Hệ:</label>
+          <input type="email" placeholder="email@example.com" required
+            style="width: 100%; padding: 0.6rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); background: var(--color-card-bg); color: var(--color-text);">
+        </div>
+
+        <div>
+          <label style="font-size: 0.85rem; font-weight: bold; display: block; margin-bottom: 0.3rem;">Nội Dung Góp
+            Ý:</label>
+          <textarea rows="4" placeholder="Nhập câu hỏi hoặc phản hồi của bạn..." required
+            style="width: 100%; padding: 0.6rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); background: var(--color-card-bg); color: var(--color-text);"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="align-self: flex-start;">✉️ Gửi Liên Hệ</button>
+      </form>
+    </section>
+  </main>
+
+  <div id="footer-component"></div>
+  <div id="customizer-component"></div>
+
+</body>
+
+</html>

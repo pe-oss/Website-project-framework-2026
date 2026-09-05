@@ -1,72 +1,60 @@
 /* ==========================================
-   VARIABLES.CSS - Design Tokens & System Theme
-   Quản lý toàn bộ thông số màu sắc, typography,
-   khoảng cách và hiệu ứng tại một nơi duy nhất.
+   VARIABLES.CSS - Minimalist Design System 2026
+   Hệ thống Design Tokens tối giản, tinh tế
    ========================================== */
 
 :root {
   /* -----------------------------------
-     1. Bảng Màu Theme Light (Mặc định)
+     1. Bảng Màu Minimalist (Light Theme)
      ----------------------------------- */
-  /* Colors HSL Format */
-  --hsl-primary: 224, 71%, 12%;      /* Deep Blue/Navy */
-  --hsl-accent: 250, 84%, 64%;       /* Indigo Accent */
-  --hsl-accent-hover: 250, 84%, 58%;
-  --hsl-secondary: 199, 89%, 48%;    /* Vibrant Cyan */
-  --hsl-bg: 220, 20%, 98%;           /* Light Cool Gray */
-  --hsl-card-bg: 0, 0%, 100%;        /* Pure White */
-  --hsl-text: 224, 71%, 12%;         /* Primary Text */
-  --hsl-text-muted: 220, 15%, 45%;   /* Muted Gray Text */
-  --hsl-border: 220, 15%, 90%;       /* Subtle Border */
+  --hsl-primary: 0, 0%, 9%;           /* Nearly Black #171717 */
+  --hsl-accent: 220, 90%, 56%;        /* Deep Minimal Indigo #2563eb */
+  --hsl-accent-hover: 220, 90%, 48%;
+  --hsl-bg: 0, 0%, 98%;              /* Clean Off-White #fafafa */
+  --hsl-card-bg: 0, 0%, 100%;        /* Pure White #ffffff */
+  --hsl-text: 0, 0%, 12%;            /* Primary Charcoal Text */
+  --hsl-text-muted: 0, 0%, 45%;      /* Slate Muted Text */
+  --hsl-border: 0, 0%, 88%;          /* Delicate 1px Border #e5e5e5 */
+  --hsl-block-badge: 0, 0%, 94%;     /* Light Gray Badge */
 
   /* Applied Colors */
   --color-primary: hsl(var(--hsl-primary));
   --color-accent: hsl(var(--hsl-accent));
   --color-accent-hover: hsl(var(--hsl-accent-hover));
-  --color-secondary: hsl(var(--hsl-secondary));
   --color-bg: hsl(var(--hsl-bg));
   --color-card-bg: hsl(var(--hsl-card-bg));
   --color-text: hsl(var(--hsl-text));
   --color-text-muted: hsl(var(--hsl-text-muted));
   --color-border: hsl(var(--hsl-border));
+  --color-block-badge: hsl(var(--hsl-block-badge));
 
-  /* Gradient Accents */
-  --gradient-primary: linear-gradient(135deg, hsl(250, 84%, 64%), hsl(199, 89%, 48%));
-  --gradient-card: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.6));
-
-  /* Glassmorphism Light */
-  --glass-bg: rgba(255, 255, 255, 0.7);
-  --glass-border: rgba(255, 255, 255, 0.4);
-  --glass-blur: blur(12px);
-
-  /* Shadows */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
-  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.12);
-  --shadow-glow: 0 0 30px rgba(99, 102, 241, 0.25);
+  /* Minimalist Shadows & Borders */
+  --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 4px 20px rgba(0, 0, 0, 0.08);
 
   /* -----------------------------------
-     2. Typography (Phông Chữ & Kích Thước)
+     2. Typography (Phông Chữ Tối Giản)
      ----------------------------------- */
   --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-heading: 'Outfit', var(--font-sans);
+  --font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
 
   --font-size-xs: 0.75rem;   /* 12px */
   --font-size-sm: 0.875rem;  /* 14px */
   --font-size-base: 1rem;    /* 16px */
   --font-size-lg: 1.125rem;  /* 18px */
-  --font-size-xl: 1.25rem;   /* 20px */
-  --font-size-2xl: 1.75rem;  /* 28px */
+  --font-size-xl: 1.35rem;   /* 21px */
+  --font-size-2xl: 1.85rem;  /* 30px */
   --font-size-3xl: 2.5rem;   /* 40px */
-  --font-size-4xl: 3.5rem;   /* 56px */
+  --font-size-4xl: 3.25rem;  /* 52px */
 
-  --font-weight-regular: 400;
+  --font-weight-normal: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
 
   /* -----------------------------------
-     3. Spacing Scale (Thang Khoảng Cách)
+     3. Spacing Scale (Khoảng Cách Tinh Tế)
      ----------------------------------- */
   --space-1: 0.25rem;  /* 4px */
   --space-2: 0.5rem;   /* 8px */
@@ -75,43 +63,220 @@
   --space-6: 1.5rem;   /* 24px */
   --space-8: 2rem;     /* 32px */
   --space-12: 3rem;    /* 48px */
-  --space-16: 4rem;    /* 64px */
+  --space-16: 4.5rem;  /* 72px */
 
   /* -----------------------------------
-     4. Border Radius (Bo Góc)
+     4. Border Radius (Bo Góc Tối Giản)
      ----------------------------------- */
-  --radius-sm: 0.375rem;  /* 6px */
-  --radius-md: 0.75rem;   /* 12px */
-  --radius-lg: 1.25rem;   /* 20px */
+  --radius-sm: 0.25rem;  /* 4px */
+  --radius-md: 0.5rem;   /* 8px */
+  --radius-lg: 0.85rem;  /* 14px */
   --radius-full: 9999px;
 
   /* -----------------------------------
-     5. Layout & Transition Settings
+     5. Container & Transition
      ----------------------------------- */
-  --container-max-width: 1200px;
+  --container-max-width: 1140px;
   --transition-fast: 0.15s ease;
-  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-slow: 0.5s ease;
+  --transition-normal: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* -----------------------------------
+     6. Store Style Palette Tokens (Phong cách Giao diện 2026)
+     ----------------------------------- */
+  /* Style 1: Doanh Nghiệp (Corporate & Brand) - Indigo / Deep Slate */
+  --corporate-accent: #2563eb;
+  --corporate-accent-hover: #1d4ed8;
+  --corporate-bg-soft: #f1f5f9;
+  --corporate-border: #cbd5e1;
+  --corporate-tag-bg: #e2e8f0;
+  --coffee-accent: var(--corporate-accent);
+  --coffee-accent-hover: var(--corporate-accent-hover);
+  --coffee-bg-soft: var(--corporate-bg-soft);
+  --coffee-border: var(--corporate-border);
+  --coffee-tag-bg: var(--corporate-tag-bg);
+
+  /* Style 2: Hồ Sơ Tác Phẩm (Minimalist Portfolio & Studio) - Amber / Warm Ochre */
+  --portfolio-accent: #d97706;
+  --portfolio-accent-hover: #b45309;
+  --portfolio-bg-soft: #fffbeb;
+  --portfolio-border: #fde68a;
+  --portfolio-tag-bg: #fef3c7;
+  --bakery-accent: var(--portfolio-accent);
+  --bakery-accent-hover: var(--portfolio-accent-hover);
+  --bakery-bg-soft: var(--portfolio-bg-soft);
+  --bakery-border: var(--portfolio-border);
+  --bakery-tag-bg: var(--portfolio-tag-bg);
+
+  /* Style 3: Công Nghệ & SaaS (SaaS & Tech Product) - Emerald / Mint Tech */
+  --saas-accent: #059669;
+  --saas-accent-hover: #047857;
+  --saas-bg-soft: #ecfdf5;
+  --saas-border: #a7f3d0;
+  --saas-tag-bg: #d1fae5;
+  --grocery-accent: var(--saas-accent);
+  --grocery-accent-hover: var(--saas-accent-hover);
+  --grocery-bg-soft: var(--saas-bg-soft);
+  --grocery-border: var(--saas-border);
+  --grocery-tag-bg: var(--saas-tag-bg);
+
+  /* Style 4: Thương Mại Điện Tử (E-Commerce & Retail) - Indigo Violet / Cyber Red */
+  --ecommerce-accent: #4f46e5;
+  --ecommerce-accent-hover: #4338ca;
+  --ecommerce-bg-soft: #eef2ff;
+  --ecommerce-border: #c7d2fe;
+  --ecommerce-tag-bg: #e0e7ff;
+  --general-accent: var(--ecommerce-accent);
+  --general-accent-hover: var(--ecommerce-accent-hover);
+  --general-bg-soft: var(--ecommerce-bg-soft);
+  --general-border: var(--ecommerce-border);
+  --general-tag-bg: var(--ecommerce-tag-bg);
+
+  /* Customer Psychology Tokens */
+  --psych-purple: #8b5cf6;
+  --psych-bg-soft: #f5f3ff;
+  --psych-border: #ddd6fe;
+
+  /* Framework vs Feature Classification Badges */
+  --tag-framework-bg: #e0f2fe;
+  --tag-framework-color: #0369a1;
+  --tag-framework-border: #7dd3fc;
+
+  --tag-feature-bg: #dcfce7;
+  --tag-feature-color: #15803d;
+  --tag-feature-border: #86efac;
 }
 
 /* -----------------------------------
-   6. Bảng Màu Theme Dark (Giao Diện Tối)
+   7. Minimalist Dark Theme
    ----------------------------------- */
 [data-theme="dark"] {
-  --hsl-primary: 224, 71%, 95%;
-  --hsl-bg: 224, 30%, 8%;            /* Dark Navy/Charcoal background */
-  --hsl-card-bg: 224, 25%, 12%;       /* Dark Card Container */
-  --hsl-text: 220, 20%, 96%;
-  --hsl-text-muted: 220, 15%, 65%;
-  --hsl-border: 224, 20%, 20%;
+  --hsl-bg: 0, 0%, 7%;               /* Charcoal Black #121212 */
+  --hsl-card-bg: 0, 0%, 11%;        /* Dark Elevated Surface #1c1c1c */
+  --hsl-text: 0, 0%, 93%;            /* Clean Off-White Text */
+  --hsl-text-muted: 0, 0%, 60%;      /* Subtle Gray */
+  --hsl-border: 0, 0%, 20%;          /* Dark Delicate Border */
+  --hsl-block-badge: 0, 0%, 16%;     /* Dark Badge */
 
-  --gradient-card: linear-gradient(180deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.8));
+  --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-hover: 0 4px 20px rgba(0, 0, 0, 0.5);
 
-  /* Glassmorphism Dark */
-  --glass-bg: rgba(15, 23, 42, 0.75);
-  --glass-border: rgba(255, 255, 255, 0.08);
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.6);
-  --shadow-glow: 0 0 35px rgba(129, 140, 248, 0.3);
+  /* Dark Style Accent Soft Backgrounds */
+  --corporate-bg-soft: #0f172a;
+  --corporate-border: #1e293b;
+  --corporate-tag-bg: #1e293b;
+  --coffee-bg-soft: var(--corporate-bg-soft);
+  --coffee-border: var(--corporate-border);
+  --coffee-tag-bg: var(--corporate-tag-bg);
+
+  --portfolio-bg-soft: #1c1917;
+  --portfolio-border: #44403c;
+  --portfolio-tag-bg: #292524;
+  --bakery-bg-soft: var(--portfolio-bg-soft);
+  --bakery-border: var(--portfolio-border);
+  --bakery-tag-bg: var(--portfolio-tag-bg);
+
+  --saas-bg-soft: #061e16;
+  --saas-border: #0f3e2e;
+  --saas-tag-bg: #092e21;
+  --grocery-bg-soft: var(--saas-bg-soft);
+  --grocery-border: var(--saas-border);
+  --grocery-tag-bg: var(--saas-tag-bg);
+
+  --ecommerce-bg-soft: #13122b;
+  --ecommerce-border: #272559;
+  --ecommerce-tag-bg: #1d1b46;
+  --general-bg-soft: var(--ecommerce-bg-soft);
+  --general-border: var(--ecommerce-border);
+  --general-tag-bg: var(--ecommerce-tag-bg);
+
+  --psych-bg-soft: #201735;
+  --psych-border: #3d2b63;
+
+  --tag-framework-bg: #0c2a40;
+  --tag-framework-color: #38bdf8;
+  --tag-framework-border: #0369a1;
+
+  --tag-feature-bg: #0f3822;
+  --tag-feature-color: #4ade80;
+  --tag-feature-border: #15803d;
+}
+
+/* -----------------------------------
+   8. Global Store Style Full-Page Theme Overrides
+   ----------------------------------- */
+/* Style 1: Doanh Nghiệp (Corporate & Brand) */
+[data-store-style="style1"],
+[data-store-style="corporate"],
+[data-store-style="coffee"] {
+  --color-accent: var(--corporate-accent);
+  --color-accent-hover: var(--corporate-accent-hover);
+  --color-bg: #f8fafc;
+  --color-border: var(--corporate-border);
+  --color-block-badge: var(--corporate-tag-bg);
+}
+
+/* Style 2: Hồ Sơ Tác Phẩm (Portfolio & Creative Studio) */
+[data-store-style="style2"],
+[data-store-style="portfolio"],
+[data-store-style="bakery"] {
+  --color-accent: var(--portfolio-accent);
+  --color-accent-hover: var(--portfolio-accent-hover);
+  --color-bg: #fffdfa;
+  --color-border: var(--portfolio-border);
+  --color-block-badge: var(--portfolio-tag-bg);
+}
+
+/* Style 3: Công Nghệ & SaaS (SaaS & Tech Product) */
+[data-store-style="style3"],
+[data-store-style="saas"],
+[data-store-style="grocery"] {
+  --color-accent: var(--saas-accent);
+  --color-accent-hover: var(--saas-accent-hover);
+  --color-bg: #f5fbf8;
+  --color-border: var(--saas-border);
+  --color-block-badge: var(--saas-tag-bg);
+}
+
+/* Style 4: Thương Mại Điện Tử (E-Commerce & Retail) */
+[data-store-style="style4"],
+[data-store-style="ecommerce"],
+[data-store-style="general"] {
+  --color-accent: var(--ecommerce-accent);
+  --color-accent-hover: var(--ecommerce-accent-hover);
+  --color-bg: #f8fafc;
+  --color-border: var(--ecommerce-border);
+  --color-block-badge: var(--ecommerce-tag-bg);
+}
+
+/* Dark Mode Store Style Global Overrides */
+[data-theme="dark"][data-store-style="style1"],
+[data-theme="dark"][data-store-style="corporate"],
+[data-theme="dark"][data-store-style="coffee"] {
+  --color-bg: #0b0f19;
+  --color-border: var(--corporate-border);
+  --color-block-badge: var(--corporate-tag-bg);
+}
+
+[data-theme="dark"][data-store-style="style2"],
+[data-theme="dark"][data-store-style="portfolio"],
+[data-theme="dark"][data-store-style="bakery"] {
+  --color-bg: #141210;
+  --color-border: var(--portfolio-border);
+  --color-block-badge: var(--portfolio-tag-bg);
+}
+
+[data-theme="dark"][data-store-style="style3"],
+[data-theme="dark"][data-store-style="saas"],
+[data-theme="dark"][data-store-style="grocery"] {
+  --color-bg: #06130e;
+  --color-border: var(--saas-border);
+  --color-block-badge: var(--saas-tag-bg);
+}
+
+[data-theme="dark"][data-store-style="style4"],
+[data-theme="dark"][data-store-style="ecommerce"],
+[data-theme="dark"][data-store-style="general"] {
+  --color-bg: #0e0f1d;
+  --color-border: var(--ecommerce-border);
+  --color-block-badge: var(--ecommerce-tag-bg);
 }

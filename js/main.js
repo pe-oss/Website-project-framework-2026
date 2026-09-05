@@ -1,112 +1,70 @@
 /* ==========================================
-   MAIN.JS - Vanilla JavaScript Application Logic
-   Xử lý tương tác giao diện, Dark Mode & Navigation
+   MAIN.JS - ES6 Master Application Module Entry Point
+   Xử lý khởi tạo hệ thống và kết nối các module giao diện
    ========================================== */
 
-document.addEventListener('DOMContentLoaded', () => {
-  // Kho lưu trữ DOM elements
-  const themeToggleBtn = document.getElementById('themeToggle');
-  const themeIcon = document.getElementById('themeIcon');
-  const menuToggleBtn = document.getElementById('menuToggle');
-  const navMenu = document.getElementById('navMenu');
-  const navLinks = document.querySelectorAll('.nav-link');
+import { loadComponents, updateActiveNav } from './modules/component-loader.js?v=3';
+import { initTheme } from './modules/theme.js';
+import { initViewMode } from './modules/view-mode.js';
+import { initStoreSwitcher } from './modules/store-switcher.js';
+import { initCustomizer } from './modules/customizer.js';
+import { initPsychology } from './modules/psychology.js';
+import { initAnimations } from './modules/animations.js';
+import { initCopySnippet } from './modules/copy-snippet.js';
 
-  /* -----------------------------------
-     1. Xử lý Dark / Light Theme Switcher
-     ----------------------------------- */
-  const savedTheme = localStorage.getItem('theme') || 
-    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+document.addEventListener('DOMContentLoaded', async () => {
+  // 1. Tải tự động các thành phần giao diện tái sử dụng (Header, Footer, Customizer) nếu có
+  await loadComponents();
 
-  // Áp dụng theme ban đầu
-  setTheme(savedTheme);
+  // 2. Khởi tạo các module tính năng
+  updateActiveNav();
+  initSettingsDropdown();
+  initTheme();
+  initViewMode();
+  initStoreSwitcher();
+  initCustomizer();
+  initPsychology();
+  initCopySnippet();
+  initAnimations();
 
-  if (themeToggleBtn) {
-    themeToggleBtn.addEventListener('click', () => {
-      const currentTheme = document.documentElement.getAttribute('data-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      setTheme(newTheme);
+  console.log('🚀 Minimalist Framework 2026 initialized cleanly with ES6 Modules!');
+});
+
+function initSettingsDropdown() {
+  const settingsToggleBtn = document.getElementById('settingsToggleBtn');
+  const settingsDropdownMenu = document.getElementById('settingsDropdownMenu');
+  const settingsCloseBtn = document.getElementById('settingsCloseBtn');
+
+  if (settingsToggleBtn && settingsDropdownMenu) {
+    settingsToggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = settingsDropdownMenu.classList.toggle('show');
+      settingsToggleBtn.classList.toggle('active', isOpen);
+      settingsToggleBtn.setAttribute('aria-expanded', isOpen);
+    });
+
+    if (settingsCloseBtn) {
+      settingsCloseBtn.addEventListener('click', () => {
+        settingsDropdownMenu.classList.remove('show');
+        settingsToggleBtn.classList.remove('active');
+        settingsToggleBtn.setAttribute('aria-expanded', 'false');
+      });
+    }
+
+    document.addEventListener('click', (e) => {
+      if (!settingsDropdownMenu.contains(e.target) && !settingsToggleBtn.contains(e.target)) {
+        settingsDropdownMenu.classList.remove('show');
+        settingsToggleBtn.classList.remove('active');
+        settingsToggleBtn.setAttribute('aria-expanded', 'false');
+      }
     });
   }
 
-  function setTheme(theme) {
-    if (theme === 'dark') {
-      document.documentElement.setAttribute('data-theme', 'dark');
-      if (themeIcon) themeIcon.textContent = '☀️';
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.documentElement.setAttribute('data-theme', 'light');
-      if (themeIcon) themeIcon.textContent = '🌙';
-      localStorage.setItem('theme', 'light');
-    }
-  }
-
-  /* -----------------------------------
-     2. Responsive Mobile Navigation Menu
-     ----------------------------------- */
+  const menuToggleBtn = document.getElementById('menuToggle');
+  const navMenu = document.getElementById('navMenu');
   if (menuToggleBtn && navMenu) {
     menuToggleBtn.addEventListener('click', () => {
       navMenu.classList.toggle('is-active');
-      const isExpanded = navMenu.classList.contains('is-active');
-      menuToggleBtn.setAttribute('aria-expanded', isExpanded);
-    });
-
-    // Đóng menu di động khi nhấp ra ngoài hoặc chọn link
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('is-active');
-        if (menuToggleBtn) menuToggleBtn.setAttribute('aria-expanded', 'false');
-      });
     });
   }
-
-  /* -----------------------------------
-     3. Smooth Scrolling & Active State
-     ----------------------------------- */
-  navLinks.forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      const targetId = this.getAttribute('href');
-      if (targetId.startsWith('#') && targetId.length > 1) {
-        e.preventDefault();
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          const headerHeight = document.querySelector('.site-header').offsetHeight;
-          const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-          
-          window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-          });
-
-          // Cập nhật trạng thái active
-          navLinks.forEach(l => l.classList.remove('active'));
-          this.classList.add('active');
-        }
-      }
-    });
-  });
-
-  /* -----------------------------------
-     4. Interactive Code Snippet Copy Demo
-     ----------------------------------- */
-  const copyBtn = document.getElementById('copyCodeBtn');
-  if (copyBtn) {
-    copyBtn.addEventListener('click', () => {
-      const codeSnippet = document.getElementById('codeSnippetText');
-      if (codeSnippet) {
-        navigator.clipboard.writeText(codeSnippet.innerText).then(() => {
-          const originalText = copyBtn.innerText;
-          copyBtn.innerText = '✓ Đã Copy!';
-          copyBtn.style.background = 'var(--gradient-primary)';
-          copyBtn.style.color = '#fff';
-          setTimeout(() => {
-            copyBtn.innerText = originalText;
-            copyBtn.style.background = '';
-            copyBtn.style.color = '';
-          }, 2000);
-        });
-      }
-    });
-  }
-
-  console.log('🚀 Website Framework 2026 initialized successfully!');
-});
+}
